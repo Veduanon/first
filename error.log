@@ -18,3 +18,8 @@ pm_winnt:notice] [pid 4912:tid 408] AH00354: Child: Starting 64 worker threads.
 [Tue Apr 19 16:07:33.795795 2022] [core:notice] [pid 2624:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Tue Apr 19 16:07:33.795795 2022] [mpm_winnt:notice] [pid 2624:tid 384] AH00418: Parent: Created child process 3520
 [Tue Apr 19 16:07:35.420363 2022] [mpm_winnt:notice] [pid 3520:tid 400] AH00354: Child: Starting 64 worker threads.
+[Wed Apr 20 07:43:49.531475 2022] [core:warn] [pid 2656:tid 384] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 20 07:43:52.062653 2022] [mpm_winnt:notice] [pid 2656:tid 384] AH00455: Apache/2.4.53 (Win64) PHP/8.1.5 configured -- resuming normal operations
+[Wed Apr 20 07:43:52.062653 2022] [mpm_winnt:notice] [pid 2656:tid 384] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Wed Apr 20 07:43:52.062653 2022] [core:notice] [pid 2656:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Wed Apr 20 07:43:52.078269 2022] [mpm_winnt:notice] [pid 2656:tid 384] AH00418: Parent: Created child process 3452
