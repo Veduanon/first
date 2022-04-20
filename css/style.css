@@ -1,9 +1,280 @@
 *{
     margin: 0;
     padding: 0;
+    border: 0;
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+*,*::before, *::after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
 html{
-    background-color: aqua;
+    scroll-behavior: smooth;
 }
+
+a {
+    text-decoration: none;
+}
+
+body{
+    background-color: #101219;
+}
+
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header_nav{
+    height: 9vh;
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dimash{
+    margin-left: 25px;
+    font-size: 30px;
+}
+
+.nav_ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav_ul li{
+    margin: 0 20px;
+}
+
+.header_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.header_text_1{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 55px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.header_text_2{
+    width: 84%;
+    margin: 30px auto;
+    font-size: 25px;
+    text-align: center;
+}
+
+.squares{
+    display: flex;
+}
+
+.square{
+    width: 430px;
+    height: 200px;
+    margin: 10px 10px;
+    padding: 20px 40px;
+    background-color: blue;
+}
+
+.section_1{
+    width: 100%;
+    height: auto;
+    background-color: #15171d;
+}
+
+.section_1_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_1_1 h1{
+    margin: 40px 0 20px 0;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.square_2{
+    width: 350px;
+    height: 450px;
+    margin: 20px 15px 0 15px;
+    padding: 20px 40px;
+    background-color: blue;
+}
+
+.squares_2{
+    display: grid;
+    grid-template-areas: "num1 num2 num3" "num4 num5 num6";
+    margin-bottom: 70px;
+}
+.num1{
+    grid-area: num1;
+}
+.num2{
+    grid-area: num2;
+}
+.num3{
+    grid-area: num3;
+}
+.num4{
+    grid-area: num4;
+}
+.num5{
+    grid-area: num5;
+}
+.num6{
+    grid-area: num6;
+}
+
+.section_2_1{
+    display: flex;
+}
+
+.section_2_1_1 img{
+    height: 230px;
+    width: 340px;
+}
+
+.section_2_1_1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_2_1_2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: left; */
+    margin-bottom: 50px;
+}
+
+.section_2_1_2_text{
+    width: 80%;
+    margin: 30px auto;
+}
+
+.section_2_1_2_text h1{
+    margin: 10px 0 10px 0;
+}
+
+.squares_3{
+    display: flex;
+}
+
+
+.square_3{
+    width: 200px;
+    height: 150px;
+    margin: 0 10px 0 10px;
+    padding: 20px 40px;
+    background-color: blue;
+}
+
+.section_3{
+    background: radial-gradient(at top, #FEFFFF, #A7CECC);background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
+}
+
+.section_3_1{
+    height: auto;
+    width: 100%;
+    padding: 60px;
+}
+
+.section_4_1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_4_1 h2{
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 35px;
+    color: rgb(214, 157, 52);
+    text-decoration: line-through;
+	text-decoration-color: rgb(214, 157, 52);
+    /* как удлинить зачеркивание текста */
+}
+
+.section_4_1 h1{
+    font-size: 35px;
+    padding-bottom: 100px;
+}
+
+.section_4_1 h1 span{
+    border-bottom: rgb(214, 157, 52);
+    /* как сделать нижнее подчеркивание низко*/
+}
+
+.section_4_1 div div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.section_4_1 div div input{
+    height: 50px;
+    width: 400px;
+    background-color: #15171d;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+.section_4_1 div div input:focus{
+    border-bottom: 2px solid rgb(214, 157, 52);
+    /* как убрать бордер везде кроме низа */
+}
+
+.section_4_1 div  textarea{
+    background-color: #15171d;
+    margin-bottom: 100px;
+}
+
+footer{
+    background-color: #15171d;
+}
+
+.section_5_1{
+    display: flex;
+    padding: 40px 0;
+}
+
+.section_5 div{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.footer_square{
+    margin: 0;
+    border: 2px solid rgb(214, 157, 52);
+    background-color: #15171d;
+}
+
+/*  
+    основные цвета
+    background-color: #15171d, #101219;
+*/
