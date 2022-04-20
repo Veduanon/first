@@ -7,3 +7,16 @@
 html{
     background-color: aqua;
 }
+.auth{
+    position: absolute;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    top: 0;
+    flex-direction: column;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+}
