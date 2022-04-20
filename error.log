@@ -23,3 +23,4 @@ pm_winnt:notice] [pid 4912:tid 408] AH00354: Child: Starting 64 worker threads.
 [Wed Apr 20 07:43:52.062653 2022] [mpm_winnt:notice] [pid 2656:tid 384] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
 [Wed Apr 20 07:43:52.062653 2022] [core:notice] [pid 2656:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
 [Wed Apr 20 07:43:52.078269 2022] [mpm_winnt:notice] [pid 2656:tid 384] AH00418: Parent: Created child process 3452
+[Wed Apr 20 07:43:53.906341 2022] [mpm_winnt:notice] [pid 3452:tid 404] AH00354: Child: Starting 64 worker threads.
