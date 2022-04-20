@@ -14,6 +14,14 @@
    measurementId: "G-VWPRTXX3KG"
  };
 
+ var input = document.getElementById("password");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+   }
+ });
+
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 
@@ -28,7 +36,9 @@
   .then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-    alert("SignIn");
+    document.getElementById('myBtn').onclick = function() {
+      window.location.href = 'admin.html';
+    };
   })
   .catch((error) => {
     var errorCode = error.code;
