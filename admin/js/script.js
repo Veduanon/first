@@ -13,7 +13,7 @@
    appId: "1:1084761966152:web:e6fddc1644ab9c841afa7d",
    measurementId: "G-VWPRTXX3KG"
  };
-
+// pressing Enter 
  var input = document.getElementById("password");
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -37,7 +37,7 @@ input.addEventListener("keyup", function(event) {
     // Signed in
     var user = userCredential.user;
     document.getElementById('myBtn').onclick = function() {
-      window.location.href = 'admin.html';
+      window.location.href = 'adminpanel.html';
     };
   })
   .catch((error) => {
@@ -46,3 +46,7 @@ input.addEventListener("keyup", function(event) {
     alert(errorMessage);
   });
  }
+ // reset passwords
+ document.getElementById('resetPassword').onclick = function() {
+   window.location.href = 'password.html';
+  };
