@@ -9,11 +9,27 @@
 </head>
 <body>
     <div class="auth">
-        <input type="email"  placeholder="Email" id="email">
-        <input id="password" type="password" placeholder="Password">
-        <button id="myBtn" onclick="signIn()">Sign In</button>
-        <button id="resetPassword" onclick="resetPassword()">Забыл пароль</button>
-        button
+        <div class="square">
+            <div class="text">
+                <h1>Авторизация</h1>
+            </div>
+            <div class="mail">
+                <input type="email"  placeholder="Email" id="email">
+            </div>
+            <div class="pass">
+                <input id="password" type="password" placeholder="Password">
+            </div>
+
+            <div class="buttons">
+                <div class="buttons1">
+                    <button id="myBtn" onclick="signIn()">Sign In</button>
+                </div>
+            </div>
+            <div class="reset">
+                <span><a href="#">Забыл пароль?</a></span>
+            </div>
+        </div>
+        
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
