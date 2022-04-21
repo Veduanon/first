@@ -30,16 +30,20 @@ body{
     margin: 0 auto;
 }
 
+.home{
+    background-color: #15171d;
+}
+
 .header_nav{
     height: 9vh;
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dimash{
+.logo{
     margin-left: 25px;
     font-size: 30px;
 }
@@ -88,7 +92,8 @@ body{
     height: 200px;
     margin: 10px 10px;
     padding: 20px 40px;
-    background-color: blue;
+    /* background-color: blue; */
+    border: 2px solid #f9a766    ;
 }
 
 .section_1{
@@ -104,7 +109,7 @@ body{
     align-items: center;
 }
 
-.section_1_1 h1{
+.section_1_1 h2{
     margin: 40px 0 20px 0;
     font-size: 30px;
     font-weight: 500;
@@ -115,7 +120,11 @@ body{
     height: 450px;
     margin: 20px 15px 0 15px;
     padding: 20px 40px;
-    background-color: blue;
+    background-color: #101219;
+}
+
+.square_2:hover{
+    border-bottom: 1px solid #f9a766;
 }
 
 .squares_2{
@@ -147,8 +156,11 @@ body{
 }
 
 .section_2_1_1 img{
-    height: 230px;
-    width: 340px;
+    /* height: 230px;
+    width: 340px; */
+    height: 350px;
+    width: 300px;
+    padding: 10px 0;
 }
 
 .section_2_1_1{
@@ -162,16 +174,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* text-align: left; */
     margin-bottom: 50px;
 }
 
 .section_2_1_2_text{
-    width: 80%;
-    margin: 30px auto;
+    padding: 30px;
 }
 
-.section_2_1_2_text h1{
+.section_2_1_2_text h2{
     margin: 10px 0 10px 0;
 }
 
@@ -181,15 +191,16 @@ body{
 
 
 .square_3{
-    width: 200px;
+    width: 250px;
     height: 150px;
     margin: 0 10px 0 10px;
     padding: 20px 40px;
-    background-color: blue;
+    /* background-color: blue; */
+    border: 2px solid #f9a766;
 }
 
 .section_3{
-    background: radial-gradient(at top, #FEFFFF, #A7CECC);background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
+    background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
 }
 
 .section_3_1{
@@ -208,49 +219,48 @@ body{
 }
 
 .section_4_1 h2{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
-    margin-top: 35px;
-    color: rgb(214, 157, 52);
-    text-decoration: line-through;
-	text-decoration-color: rgb(214, 157, 52);
+    padding: 20px 0 5px 0;
     /* как удлинить зачеркивание текста */
 }
 
-.section_4_1 h1{
-    font-size: 35px;
-    padding-bottom: 100px;
+.section_4_1 h3{
+    font-size: 30px;
+    padding-bottom: 40px;
 }
 
-.section_4_1 h1 span{
-    border-bottom: rgb(214, 157, 52);
-    /* как сделать нижнее подчеркивание низко*/
-}
-
-.section_4_1 div div{
+.section_4_1 form div{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    gap: 15px;
+    min-width: 1200px;
 }
 
 
-.section_4_1 div div input{
+.section_4_1 form div input{
     height: 50px;
-    width: 400px;
+    width: 100%;
     background-color: #15171d;
     border: 0;
     margin-bottom: 20px;
+    padding-left: 20px;
+    outline: none;
 }
 
-.section_4_1 div div input:focus{
-    border-bottom: 2px solid rgb(214, 157, 52);
-    /* как убрать бордер везде кроме низа */
+.section_4_1 form div input:focus{
+    border-bottom: 2px solid #f9a766;
 }
 
-.section_4_1 div  textarea{
+.section_4_1 form textarea{
     background-color: #15171d;
     margin-bottom: 100px;
+    padding: 20px;
+    outline: none;
+    min-height: 200px;
+    min-width: 1200px;
+    max-width: 1200px;
+    overflow: hidden;
 }
 
 footer{
@@ -270,11 +280,12 @@ footer{
 
 .footer_square{
     margin: 0;
-    border: 2px solid rgb(214, 157, 52);
+    border: 2px solid #f9a766;
     background-color: #15171d;
 }
 
 /*  
+    основные размеры font-size 16px
     основные цвета
-    background-color: #15171d, #101219;
+    background-color: #15171d, #101219, #f9a766 (оранжевый);
 */
