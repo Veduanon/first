@@ -2,21 +2,122 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    text-decoration: none;
 }
 
 html{
-    background-color: aqua;
+    background-color: #101219;
 }
 .auth{
-    position: absolute;
-    margin: auto;
-    align-items: center;
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    top: 0;
-    flex-direction: column;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    align-items: center;
+    justify-content: center;
+
+}
+.square{
+    width: 35vw;
+    height: 350px;
+    background-color: #15171d;
+    border-radius: 10px;
+    border: 2px solid #f9a766;
+}
+input{
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    height: 40px;
+    width: 400px;
+}
+button{
+    margin-bottom: 10px;
+    height: 40px;
     width: 100px;
+    border-radius: 8px;
+    border: none;
+}
+h1{
+    color: rgb(255, 255, 255);
+    font-size: 130%;
+}
+.text{
+    text-align: center;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mail{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pass{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#password{
+    padding: 10px;
+}
+#email{
+    padding: 10px;
+}
+
+
+
+#myBtn{
+    transition: 0.2s;
+    width: 400px;
+    background-color: white;
+}
+#myBtn:hover{
+    transition: 0.2s;
+    background-color: #f9a766;
+}
+#myBtn:active{
+    background-color: white;
+}
+#resetPassword{
+    transition: 0.2s;
+}
+
+#resetPassword:hover{
+    transition: 0.2s;
+    /* background-color: rgb(255, 140, 0); */
+}
+
+
+.buttons{
+    height: auto;
+    display: flex;
+}
+.buttons1{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reset{
+    width: 100%;
+    height: 20px;
+    text-align: center;
+}
+
+span{
+    font-size: 70%;
+}
+a{
+    color: #f9a766;
+    transition: 0.2s;
+}
+a:hover{
+    color: white;
+    transition: 0.2s;
 }
