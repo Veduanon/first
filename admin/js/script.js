@@ -13,15 +13,6 @@
    appId: "1:1084761966152:web:e6fddc1644ab9c841afa7d",
    measurementId: "G-VWPRTXX3KG"
  };
-// pressing Enter 
- var input = document.getElementById("password");
-input.addEventListener("keyup", function(event) {
-  if (event.keyCode === 13) {
-    event.preventDefault();
-    document.getElementById("myBtn").click();
-   }
- });
-
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 
@@ -48,5 +39,5 @@ input.addEventListener("keyup", function(event) {
  }
  // reset passwords
  document.getElementById('resetPassword').onclick = function() {
-   window.location.href = 'password.html';
+   window.location.href = 'passwordReset.html';
   };
