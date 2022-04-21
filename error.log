@@ -1,0 +1,18 @@
+[Wed Apr 20 20:57:25.909784 2022] [core:warn] [pid 2608:tid 384] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Apr 20 20:57:26.181470 2022] [mpm_winnt:notice] [pid 2608:tid 384] AH00455: Apache/2.4.53 (Win64) PHP/8.1.5 configured -- resuming normal operations
+[Wed Apr 20 20:57:26.181470 2022] [mpm_winnt:notice] [pid 2608:tid 384] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Wed Apr 20 20:57:26.181470 2022] [core:notice] [pid 2608:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Wed Apr 20 20:57:26.183527 2022] [mpm_winnt:notice] [pid 2608:tid 384] AH00418: Parent: Created child process 3492
+[Wed Apr 20 20:57:28.301563 2022] [mpm_winnt:notice] [pid 3492:tid 400] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 21 07:51:40.939586 2022] [core:warn] [pid 2728:tid 392] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Apr 21 07:51:41.380652 2022] [mpm_winnt:notice] [pid 2728:tid 392] AH00455: Apache/2.4.53 (Win64) PHP/8.1.5 configured -- resuming normal operations
+[Thu Apr 21 07:51:41.380652 2022] [mpm_winnt:notice] [pid 2728:tid 392] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Thu Apr 21 07:51:41.380652 2022] [core:notice] [pid 2728:tid 392] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Apr 21 07:51:41.382768 2022] [mpm_winnt:notice] [pid 2728:tid 392] AH00418: Parent: Created child process 3372
+[Thu Apr 21 07:51:43.295883 2022] [mpm_winnt:notice] [pid 3372:tid 400] AH00354: Child: Starting 64 worker threads.
+[Thu Apr 21 15:47:42.483516 2022] [core:warn] [pid 2680:tid 384] AH00098: pid file C:/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Apr 21 15:47:42.736487 2022] [mpm_winnt:notice] [pid 2680:tid 384] AH00455: Apache/2.4.53 (Win64) PHP/8.1.5 configured -- resuming normal operations
+[Thu Apr 21 15:47:42.736487 2022] [mpm_winnt:notice] [pid 2680:tid 384] AH00456: Apache Lounge VS16 Server built: Mar 16 2022 11:26:15
+[Thu Apr 21 15:47:42.736487 2022] [core:notice] [pid 2680:tid 384] AH00094: Command line: 'C:\\Apache24\\bin\\httpd.exe -d C:/Apache24'
+[Thu Apr 21 15:47:42.736487 2022] [mpm_winnt:notice] [pid 2680:tid 384] AH00418: Parent: Created child process 3580
+[Thu Apr 21 15:47:44.774769 2022] [mpm_winnt:notice] [pid 3580:tid 400] AH00354: Child: Starting 64 worker threads.
