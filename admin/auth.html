@@ -16,21 +16,25 @@
             <div class="text">
                 <h1>Авторизация</h1>
             </div>
-            <div class="mail">
-                <input type="email"  placeholder="Email" id="email">
-            </div>
-            <div class="pass">
-                <input id="password" type="password" placeholder="Password">
-            </div>
-
-            <div class="buttons">
-                <div class="buttons1">
-                    <button id="myBtn" onclick="signIn()">Sign In</button>
+                <div class="mail">
+                    <input type="email"  placeholder="Email" id="email" required="required">
                 </div>
+                <div class="pass">
+                    <input id="password" type="password" placeholder="Password" required="required">
+                </div>
+
+                <div class="buttons">
+                    <div class="buttons1">
+                        <button type="submit" id="myBtn" onclick="signIn()">Вход</button>
+                    </div>
+                
             </div>
             <div class="reset">
+
                 <span><a href="passwordReset.html">Забыл пароль?</a></span>
+                
             </div>
+            
         </div>
         
     </div>
