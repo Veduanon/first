@@ -1,0 +1,72 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.display{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+
+
+.section1{
+    height: 100%;
+    width: 15%;
+}
+.menu{
+    height: 100vh;
+    width: 15vw;
+    background-color: #101828;
+}
+.section2{
+    width: 85%;
+    height: 100%;
+}
+.nav{
+    height: 15%;
+    width: 100%;
+    background-color: #fafafa;
+    border-bottom: 3px solid #393cae;
+}
+.content{
+    height: 85%;
+    width: 100%;
+     background-color: #dcdee2; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
