@@ -12,39 +12,42 @@
 </head>
 
 <body>
-    <header>
-        <nav class="home">
-            <div class="container">
-                <div class="header_nav">
-                    <div class="logo">
-                        <a href="index.html">Dimash</a>
-                    </div>
-                    
-            
-                    <ul class="nav_ul">
-                        <a href="#">
-                            <li>Главная</li>
-                        </a>
-                        <a href="#section_1">
-                            <li>Услуги</li>
-                        </a>
-                        <a href="">
-                            <li>Блог</li>
-                        </a>
-                        <a href="#section_2_1">
-                            <li>О компаний</li>
-                        </a>
-                        <a href="">
-                            <li>Отзывы</li>
-                        </a>
-                        <a href="#section_4_1">
-                            <li>Контакты</li>
-                        </a>
-                    </ul>
+    <div class="hidden_block"></div>
+    
+
+    <nav class="home">
+        <div class="container">
+            <div class="header_nav">
+                <div class="logo">
+                    <a href="index.html">Dimash</a>
                 </div>
-            </div>
-        </nav>
+                
         
+                <ul class="nav_ul">
+                    <a href="#">
+                        <li>Главная</li>
+                    </a>
+                    <a href="#section_1">
+                        <li>Услуги</li>
+                    </a>
+                    <a href="">
+                        <li>Блог</li>
+                    </a>
+                    <a href="#section_2_1">
+                        <li>О компаний</li>
+                    </a>
+                    <a href="">
+                        <li>Отзывы</li>
+                    </a>
+                    <a href="#section_4_1">
+                        <li>Контакты</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>    
         <div class="container">
             <div class="header_content">
                 <h1 class="header_text_1">
@@ -63,6 +66,7 @@
             </div>
         </div>
     </header>
+    
 
     <div class="section_1" id="section_1">
         <div class="container">
@@ -129,14 +133,14 @@
                 <h2>контакты</h2>
                 <h3>Связаться с Нами</h3>
 
-                <form action="">
+                <form action="" id="data">
                     <div>
                         <input type="text" placeholder="Имя">
                         <input type="email" placeholder="Email">
                         <input type="text" placeholder="Тема">
                     </div>
                     <textarea name="" id="" cols="170" rows="10" placeholder="Сообщение"></textarea>
-                    <button></button>                    
+                    <button type="submit" class="section_4_button" form="data">Отправить</button>                    
                 </form>
 
             </div>
@@ -149,15 +153,15 @@
                 <div class="section_5_1">
                     <div class="square footer_square">
                         напишите email
-                        <!-- <i class="fas fa-envelope"></i> -->
+                        <i class="fas fa-envelope"></i>
                     </div>
                     <div class="square footer_square">
                         адрес
-                        <!-- <i class="fa-solid fa-location-dot"></i> -->
+                        <i class="fa-solid fa-location-dot"></i>
                     </div>
                     <div class="square footer_square">
                         номер
-                        <!-- <i class="fa-solid fa-phone-flip"></i> -->
+                        <i class="fa-solid fa-phone-flip"></i>
                     </div>
                     
                 </div>
@@ -169,7 +173,7 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
 </body>
