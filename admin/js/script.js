@@ -52,8 +52,16 @@
     alert(err.message)
   })
 }
+// modal window
 $(function(){
   $('.click').click(function(){
       $('.test_click').toggleClass('views');
+  });
+});
+
+$(function() {
+  $('.close_x').click(function() {
+      $('.test_click').addClass('none');
+      $('.test_click').removeClass('flex');
   });
 });
