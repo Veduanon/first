@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 a {
     text-decoration: none;
 }
@@ -34,17 +30,24 @@ body{
     margin: 0 auto;
 }
 
+.hidden_block {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: -2;
+}
 
-
-.home{
+.navigation{
     background-color: #15171d;
     position: fixed;
     width: 100%;
     z-index: 1;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 5%);
+    top: 0;
 }
 
 .header_nav{
-    height: 9vh;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -70,8 +73,9 @@ body{
 header{
     position: fixed;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
     top: 9vh;
+    height: calc(100vh - 70px);
 }
 
 .header_content{
@@ -107,7 +111,6 @@ header{
     height: 200px;
     margin: 10px 10px;
     padding: 20px 40px;
-    /* background-color: blue; */
     border: 2px solid #f9a766    ;
 }
 
@@ -116,7 +119,7 @@ header{
     height: auto;
     background-color: #15171d;
     position: relative;
-    top: 109vh;
+    
 }
 
 .section_1_1{
@@ -133,7 +136,7 @@ header{
 }
 
 .square_2{
-    width: 350px;
+    max-width: 350px;
     height: 450px;
     margin: 20px 15px 0 15px;
     padding: 20px 40px;
@@ -146,6 +149,7 @@ header{
 
 .squares_2{
     display: grid;
+    grid-template-columns: repeat(3, 350px);
     grid-template-areas: "num1 num2 num3" "num4 num5 num6";
     margin-bottom: 70px;
 }
@@ -171,7 +175,7 @@ header{
 .section_2{
     background-color: #101219;
     position: relative;
-    top: 109vh;
+    
 }
 
 .section_2_1{
@@ -179,8 +183,6 @@ header{
 }
 
 .section_2_1_1 img{
-    /* height: 230px;
-    width: 340px; */
     height: 350px;
     width: 300px;
     padding: 10px 0;
@@ -218,13 +220,15 @@ header{
     height: 150px;
     margin: 0 10px 0 10px;
     padding: 20px 40px;
-    /* background-color: blue; */
     border: 2px solid #f9a766;
+}
+
+.squares_3 i {
+    font-size: 30px;
 }
 
 .section_3{
     position: relative;
-    top: 109vh;
     background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
 }
 
@@ -237,7 +241,7 @@ header{
 .section_4{
     background-color: #101219;
     position: relative;
-    top: 109vh;
+    
 }
 
 .section_4_1{
@@ -277,6 +281,7 @@ header{
     margin-bottom: 20px;
     padding-left: 20px;
     outline: none;
+    font-size: 14px;
 }
 
 .section_4_1 form div input:focus{
@@ -292,6 +297,7 @@ header{
     min-width: 1200px;
     max-width: 1200px;
     overflow: hidden;
+    font-size: 14px;
 }
 
 .section_4_button{
@@ -304,7 +310,6 @@ header{
 footer{
     background-color: #15171d;
     position: relative;
-    top: 109vh;
 }
 
 .section_5_1{
@@ -331,3 +336,5 @@ footer{
     основные цвета
     background-color: #15171d, #101219, #f9a766 #fe7773 (оранжевый);
 */
+
+/* видео на фон хедера и затемнить */
