@@ -79,6 +79,19 @@ h1{
     background-color: white;
     margin: 0px 10px 0px 10px;
 }
+#myBtn2:hover{
+    transition: 0.2s;
+    background-color: #f9a766;
+}
+#myBtn2:active{
+    background-color: white;
+}
+#myBtn2{
+    transition: 0.2s;
+    width: 400px;
+    background-color: white;
+    margin: 0px 10px 0px 10px;
+}
 #myBtn:hover{
     transition: 0.2s;
     background-color: #f9a766;

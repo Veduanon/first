@@ -16,6 +16,7 @@
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
 
+ // Sign in
  function signIn()
  {
     em=document.getElementById('email');
@@ -25,7 +26,6 @@
     password = ps.value;
     firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
-    // Signed in
     var user = userCredential.user;
     document.getElementById('myBtn').onclick = function() {
       window.location.href = 'adminpanel.html';
@@ -34,10 +34,21 @@
   .catch((error) => {
     var errorCode = error.code;
     var errorMessage = error.message;
-    alert(errorMessage);
+    alert("Incorrect email or password")
   });
  }
- // reset passwords
- document.getElementById('resetPassword').onclick = function() {
-   window.location.href = 'passwordReset.html';
-  };
+
+  // registration
+  const registration = () =>{
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((res)=>{
+    alert("User created", res.user)
+
+  })
+  .catch((err)=>{
+    alert(err.message)
+  })
+}
