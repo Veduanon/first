@@ -194,8 +194,7 @@ a:hover{
         margin: 0px 37px 0px 37px;
     }
 }
-<<<<<<< HEAD
-=======
+
 
 .resetblock{
     width: 500px;
@@ -204,9 +203,20 @@ a:hover{
     background-color: white;
     border-radius: 10px;
     border: 2px solid #f9a766;
-    display: block;
-    /* display: none; */
+    display: none;
 }
+.block{
+    display: block;
+}
+
+#close_x{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .text1{
     width: 100%;
     height: 20%;
@@ -233,4 +243,4 @@ a:hover{
     border-radius: 10px;
     border: 2px solid #f9a766;
 }
->>>>>>> 078799736cf43c7230713d9153ec9bcd1fa4312f
+
