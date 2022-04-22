@@ -20,6 +20,10 @@ a {
     text-decoration: none;
 }
 
+button{
+    cursor: pointer;
+}
+
 body{
     background-color: #101219;
 }
@@ -30,14 +34,18 @@ body{
     margin: 0 auto;
 }
 
+
+
 .home{
     background-color: #15171d;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 }
 
 .header_nav{
     height: 9vh;
     width: 100%;
-    /* background-color: blue; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +65,13 @@ body{
 
 .nav_ul li{
     margin: 0 20px;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    top: 9vh;
 }
 
 .header_content{
@@ -100,6 +115,8 @@ body{
     width: 100%;
     height: auto;
     background-color: #15171d;
+    position: relative;
+    top: 109vh;
 }
 
 .section_1_1{
@@ -124,7 +141,7 @@ body{
 }
 
 .square_2:hover{
-    border-bottom: 1px solid #f9a766;
+    border-bottom: 1px solid #fe7773;
 }
 
 .squares_2{
@@ -149,6 +166,12 @@ body{
 }
 .num6{
     grid-area: num6;
+}
+
+.section_2{
+    background-color: #101219;
+    position: relative;
+    top: 109vh;
 }
 
 .section_2_1{
@@ -200,6 +223,8 @@ body{
 }
 
 .section_3{
+    position: relative;
+    top: 109vh;
     background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
 }
 
@@ -207,6 +232,12 @@ body{
     height: auto;
     width: 100%;
     padding: 60px;
+}
+
+.section_4{
+    background-color: #101219;
+    position: relative;
+    top: 109vh;
 }
 
 .section_4_1{
@@ -254,7 +285,7 @@ body{
 
 .section_4_1 form textarea{
     background-color: #15171d;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
     padding: 20px;
     outline: none;
     min-height: 200px;
@@ -263,8 +294,17 @@ body{
     overflow: hidden;
 }
 
+.section_4_button{
+    width: 150px;
+    height: 60px;
+    background-color: #15171d;
+    margin-bottom: 90px;
+}
+
 footer{
     background-color: #15171d;
+    position: relative;
+    top: 109vh;
 }
 
 .section_5_1{
@@ -284,8 +324,10 @@ footer{
     background-color: #15171d;
 }
 
+
+
 /*  
     основные размеры font-size 16px
     основные цвета
-    background-color: #15171d, #101219, #f9a766 (оранжевый);
+    background-color: #15171d, #101219, #f9a766 #fe7773 (оранжевый);
 */
