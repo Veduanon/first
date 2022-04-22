@@ -52,3 +52,8 @@
     alert(err.message)
   })
 }
+$(function(){
+  $('.click').click(function(){
+      $('.test_click').toggleClass('views');
+  });
+});
