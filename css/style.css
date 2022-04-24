@@ -74,7 +74,7 @@ header{
     position: fixed;
     width: 100%;
     z-index: 0;
-    top: 9vh;
+    top: 70px;
     height: calc(100vh - 70px);
 }
 
@@ -327,6 +327,32 @@ footer{
     margin: 0;
     border: 2px solid #f9a766;
     background-color: #15171d;
+}
+
+.video{
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.video_media{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.blackout{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 
