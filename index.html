@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css"/>
 </head>
 
 <body>
@@ -30,16 +32,13 @@
                     <a href="#section_1">
                         <li>Услуги</li>
                     </a>
-                    <a href="">
-                        <li>Блог</li>
-                    </a>
-                    <a href="#section_2_1">
+                    <a href="#section_2">
                         <li>О компаний</li>
                     </a>
-                    <a href="">
+                    <a href="#section_5">
                         <li>Отзывы</li>
                     </a>
-                    <a href="#section_4_1">
+                    <a href="#section_4">
                         <li>Контакты</li>
                     </a>
                 </ul>
@@ -47,12 +46,8 @@
         </div>
     </nav>
 
-    <div class="video">
-        <video src="source/Pexels Videos 2216413.mp4" autoplay muted loop class="video_media">
-        </video>
-    </div>
     <div class="blackout"></div>
-
+     
     <header>    
         <div class="container">
             <div class="header_content">
@@ -66,13 +61,17 @@
                      и маркетинговых услуг
                 </div>
                 <div class="squares">
-                    <a href="#"><div class="square">Что мы делаем</div></a>
+                    <a href="#section_1"><div class="square">Что мы делаем</div></a>
                     <a href="#"><div class="square">Наши проекты</div></a>
                 </div>
             </div>
         </div>
     </header>
-    
+
+    <div class="video">
+        <video src="source/Pexels Videos 2216413.mp4" autoplay muted loop class="video_media">
+        </video>
+    </div>
 
     <div class="section_1" id="section_1">
         <div class="container">
@@ -80,21 +79,60 @@
                 <h2>Наши услуги</h2>
 
                 <div class="squares_2">
-                    <div class="square_2 num1"></div>
-                    <div class="square_2 num2"></div>
-                    <div class="square_2 num3"></div>
-                    <div class="square_2 num4"></div>
-                    <div class="square_2 num5"></div>
-                    <div class="square_2 num6"></div>
+                    <div class="square_2 num1">
+                        <h2>Баннерные Конструкций</h2>
+                        <span>
+                            Чтобы привлекать взгляд потенциальных клиентов издалека используют
+                            баннерные конструкции. 
+                            Их можно изготавливать любого формата.
+                        </span>
+                        
+                    </div>
+                    <div class="square_2 num2">
+                        <h2>Световой короб (лайтбокс)</h2>
+                        <span>
+                            Популярный способ заявить о своем бизнесе – установить лайтбокс.
+                        </span>
+                    </div>
+                    <div class="square_2 num3">
+                        <h2>Вывески, указатели, панель кронштейн</h2>
+                        <span>
+                            Для привлечения внимания прохожих и автомобилистов 
+                            на стены здания крепят вывески, указатели и панель-кронштейны.
+                        </span>
+                    </div>
+                    <div class="square_2 num4">
+                        <h2>Крышные установки</h2>
+                        <span>
+                            Для привлечения целевой аудитории используют крышные рекламные установки. 
+                            Их можно выполнять в виде лайтбоксов, вывесок, объемных букв.
+                        </span>
+                    </div>
+                    <div class="square_2 num5">
+                        <h2>Оформление транспорта</h2>
+                        <span>
+                            Чтобы продвигать товары и услуги на 
+                            рынке можно воспользоваться одним из популярных
+                            направлений – рекламой на транспорте.</span>
+                    </div>
+                    <div class="square_2 num6">
+                        <h2>Билборды</h2>
+                        <span>
+                            Эффективный способ заявить о своем бизнесе – установить рекламный билборд. 
+                            С его помощью в выбранной точке, можно получить 
+                            широких охват потенциальных клиентов.
+                        </span>
+                    </div>
+                    <!-- как сделать эффект для блоков как на том сайте -->
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div class="section_2">
+    <div class="section_2" id="section_2">
         <div class="container">
-            <div class="section_2_1" id="section_2_1">
+            <div class="section_2_1">
                 <div class="section_2_1_1">
                     <img src="source/джуны.jfif" alt="">
                 </div>
@@ -115,8 +153,6 @@
                         <div class="square_3"><i class="fas fa-chart-line"></i></div>
                     </div>
 
-                    <!-- <input type="" name="" id=""> -->
-
                 </div>
             </div>
         </div>
@@ -126,16 +162,18 @@
         <div class="container">
             <div class="section_3_1">
                 <h2>Ищете Агентство графического дизайна, которое дает результаты?</h2>
-                Давайте сегодня поговорим о вашем логотипе,
-                 брендинге или проекте веб-разработки! Свяжитесь с нами
-                  для получения бесплатной консультации.
+                <span>
+                    Давайте сегодня поговорим о вашем логотипе,
+                    брендинге или проекте веб-разработки! Свяжитесь с нами
+                     для получения бесплатной консультации.
+                </span>
             </div>
         </div>
     </div>
 
-    <div class="section_4">
+    <div class="section_4" id="section_4">
         <div class="container">
-            <div class="section_4_1" id="section_4_1">
+            <div class="section_4_1" >
                 <h2>контакты</h2>
                 <h3>Связаться с Нами</h3>
 
@@ -148,38 +186,58 @@
                     <textarea name="" id="" cols="170" rows="10" placeholder="Сообщение"></textarea>
                     <button type="submit" class="section_4_button" form="data">Отправить</button>                    
                 </form>
+            </div>
+        </div>
+    </div>
 
+    <div class="section_5" id="section_5">
+        <div class="container">
+            <div class="section_5_1">
+                <h2>Отзывы</h2>
+                <div class="squares_4">
+                    <div class="square_4"></div>
+                    <div class="square_4"></div>
+                    <div class="square_4"></div>
+                    <!-- slick слайдер -->
+                    <!-- как сделать -->
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
         <div class="container">
-            <div class="section_5">
-                <div class="section_5_1">
-                    <div class="square footer_square">
-                        напишите email
+            <div class="section_6">
+                <div class="section_6_1">
+                    <div class="square footer_square_1">
                         <i class="fas fa-envelope"></i>
+                        Напишите
+                        <span>inkdesign@mail.ru</span>
                     </div>
-                    <div class="square footer_square">
-                        адрес
+                    <div class="square footer_square_1">
                         <i class="fas fa-map-marker-alt"></i>
+                        Адрес
+                        <span>Москва, м. Тульская, 2-й Павелецкий проезд, 5С1</span>
+                        
                     </div>
                     <div class="square footer_square">
-                        номер
                         <i class="fas fa-phone-alt"></i>
+                        Номер
+                        <span>+7 952 535 41 11</span>
+                        
                     </div>
                     
                 </div>
 
-                <div>
+                <div class="section_6_2">
                     2022 DIMASH Design
                 </div>
-                
             </div>
         </div>
     </footer>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
 </body>

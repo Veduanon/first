@@ -67,7 +67,7 @@ body{
 }
 
 .nav_ul li{
-    margin: 0 20px;
+    margin: 0 30px;
 }
 
 header{
@@ -111,7 +111,7 @@ header{
     height: 200px;
     margin: 10px 10px;
     padding: 20px 40px;
-    border: 2px solid #f9a766    ;
+    border: 2px solid #f9a766;
 }
 
 .section_1{
@@ -133,18 +133,6 @@ header{
     margin: 40px 0 20px 0;
     font-size: 30px;
     font-weight: 500;
-}
-
-.square_2{
-    max-width: 350px;
-    height: 450px;
-    margin: 20px 15px 0 15px;
-    padding: 20px 40px;
-    background-color: #101219;
-}
-
-.square_2:hover{
-    border-bottom: 1px solid #fe7773;
 }
 
 .squares_2{
@@ -172,6 +160,29 @@ header{
     grid-area: num6;
 }
 
+.square_2{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    max-width: 350px;
+    height: 450px;
+    margin: 20px 15px 0 15px;
+    padding: 20px 40px;
+    background-color: #101219;
+}
+
+.square_2 h2{
+    font-size: 25px;
+}
+
+.squares_2 span{
+    font-size: 16px;
+}
+
+.square_2:hover{
+    border-bottom: 1px solid #fe7773;
+}
+
 .section_2{
     background-color: #101219;
     position: relative;
@@ -180,6 +191,7 @@ header{
 
 .section_2_1{
     display: flex;
+    padding: 50px 0;
 }
 
 .section_2_1_1 img{
@@ -214,7 +226,6 @@ header{
     display: flex;
 }
 
-
 .square_3{
     width: 250px;
     height: 150px;
@@ -227,15 +238,59 @@ header{
     font-size: 30px;
 }
 
+.section_5{
+    width: 100%;
+    height: 55vh;
+    background-color: #15171d;
+    position: relative;
+    z-index: 0;
+}
+
+.section_5_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section_5_1 h2{
+    padding: 30px;
+    font-size: 30px;
+}
+
+.squares_4{
+    display: flex;
+}
+
+.square_4{
+    width: 300px;
+    height: 280px;
+    margin: 0 20px;
+    padding: 20px 40px;
+    border: 2px solid #f9a766;
+}
+
 .section_3{
     position: relative;
-    background: radial-gradient(circle farthest-corner at 100px 50px, #5a5a5a, #352A3B);
+    height: auto;
+    overflow: hidden;
+    background-blend-mode: soft-light;
+    background: url(../source/slider-1.jpg) #12141c no-repeat fixed center/cover;
+}
+
+.section_3_1 h2{
+    padding: 0 0 10px 0;
+    font-size: 28px;
+}
+
+.section_3_1 span{
+    font-size: 16px;
 }
 
 .section_3_1{
     height: auto;
     width: 100%;
-    padding: 60px;
+    padding: 100px 60px 100px 60px;
 }
 
 .section_4{
@@ -285,7 +340,7 @@ header{
 }
 
 .section_4_1 form div input:focus{
-    border-bottom: 2px solid #f9a766;
+    border-bottom: 1px solid #f9a766;
 }
 
 .section_4_1 form textarea{
@@ -308,25 +363,55 @@ header{
 }
 
 footer{
-    background-color: #15171d;
+    background-color: #101219;
     position: relative;
 }
 
-.section_5_1{
+.section_6_1{
     display: flex;
     padding: 40px 0;
 }
 
-.section_5 div{
+.section_6 div{
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
 }
 
+.section_6_1 div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.section_6_1 div i{
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
+.section_6_1 div span{
+    font-size: 16px;
+    padding-top: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section_6_2{
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .footer_square{
     margin: 0;
-    border: 2px solid #f9a766;
-    background-color: #15171d;
+    border: 1px solid #f9a766;
+    background-color: #101219; 
+}
+
+.footer_square_1{
+    margin: 0;
+    border: 1px solid #f9a766;
+    background-color: #101219; 
+    border-right: none;
 }
 
 .video{
@@ -355,6 +440,19 @@ footer{
     top: 0;
 }
 
+@media (max-width:1300px){
+    .container{
+        max-width: 970px;
+    }
+    
+
+}
+
+@media (max-width:992px){
+    .container{
+        max-width: 750px;
+    }
+}
 
 
 /*  
@@ -363,4 +461,4 @@ footer{
     background-color: #15171d, #101219, #f9a766 #fe7773 (оранжевый);
 */
 
-/* видео на фон хедера и затемнить */
+/* сделать слайдер */

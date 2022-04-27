@@ -5,3 +5,4 @@ $('a[href*="#"]').click(function() {
     }, 400);
     return false;
 });
+
