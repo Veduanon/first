@@ -4,68 +4,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdminPanel</title>
-    <link rel="stylesheet" href="css/admin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Admin</title>
 </head>
 <body>
-
-    <div class="display">
-        <div class="section1">
-            <div class="menu">
-                <div class="logo">
-                    <img src="../source/Vanamo_Logo.png" alt="">
-                </div>
-                <div class="nav-menu">
-                    <div class="nav-block1">
-                        <button>Главная</button>
-                        <button>Услуги</button>
-                        <button>О компании</button>
-                        <button>Контакты</button>
-                    </div>
-                    
-                </div>
+    <div class="sidebar">
+        <div class="logocontent">
+            <div class="logo">
+                <i class="fab fa-slack"></i>
+                <div class="logo_name">Veduanon</div>
             </div>
+            <i class="fas fa-bars" id="btn"></i>
         </div>
-        <div class="section2">
-            <div class="nav">
-            </div>
-            <div class="content">
-                <div class="container">
-                    <span>Статьи</span>
-                    <div class="conblock">
-                        <div class="header">
-                            <span>Заголовок</span>
-                        </div>
-                        <div class="redactcontent">
-                            <div class="name">
-                                <span>efefef</span>
-                                
-                            </div>
-                            <div class="redact">
-                                <div class="sec1">
-                                    <span><a href="newstate.html">Редактировать</a></span>
-                                </div>
-                                <div class="sec2">
-                                    <span>Удалить</span>
-                                </div>
-                                <input id="file" type="file" multiple accept="image/*">
-                                <input id="text1" type="text">
-                                <input id="text2" type="text">
-                                <button onclick="writeNewsData()"></button>
-                                <h3 id="issuesList"></h3>
-                            </div>
-                        </div>
+        <ul class="nav_list">
+            <li>
+                <i id="search" class="fas fa-search"></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-home"></i>
+                    <span class="links_name">Главная</span>
+                </a>
+                <span class="tooltip">Главная</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-newspaper"></i>
+                    <span class="links_name">Статьи</span>
+                </a>
+                <span class="tooltip">Статьи</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-building"></i>
+                    <span class="links_name">Компания</span>
+                </a>
+                <span class="tooltip">Компания</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-phone"></i>
+                    <span class="links_name">Контакты</span>
+                </a>
+                <span class="tooltip">Контакты</span>
+            </li>
+        </ul>
+        <div class="profile_content">
+            <div class="profile">
+                <div class="profile_details">
+                    <img src="../source/47859a9a-18ec-4ac6-bf3c-89316910a7d7.jfif" alt="">
+                    <div class="name_job">
+                        <div class="name">Dimash</div>
+                        <div class="job">Back Ender</div>
                     </div>
                 </div>
+                <i class="fas fa-sign-out-alt" id="log_out"></i>
             </div>
         </div>
     </div>
-
-
+    <div class="home_content">
+        <div class="container">
+            <div class="section1">
+                <div class="c1"></div>
+                <div class="c2"></div>
+                <div class="c3"></div>
+                <div class="c4"></div>
+                <div class="c5"></div>
+                <div class="c6"></div>
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="js/nav.js"></script>
+    <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>

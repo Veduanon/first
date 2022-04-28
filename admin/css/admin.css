@@ -242,31 +242,9 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    /* grid-template-areas: "c1 c2 c3"
-                         "c4 c5 c6"; */
 }
-/* .c1{
-    grid-area: c1;
-}
-.c2{
-    grid-area: c2;
-}
-.c3{
-    grid-area: c3;
-}
-.c4{
-    grid-area: c4;
-}
-.c5{
-    grid-area: c5;
-}
-.c6{
-    grid-area: c6;
-} */
-
 .section1 div{
     background-color: rgb(226, 226, 226);
     border-radius: 10px;
-    /* margin-top: 10px; */
-    /* margin: 10px; */
+
 }
