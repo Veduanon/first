@@ -37,6 +37,18 @@
     alert("Incorrect email or password")
   });
  }
+ // reset password
+ function sendEmail(){
+  
+  const email=document.getElementById('typeEmail').value;
+  firebase.auth().sendPasswordResetEmail(email)
+  
+  .then((userCredential)=>{
+    alert('email sent!')
+  }).catch((error)=>{
+    alert("error!")
+  });
+}
 
   // registration
   const registration = () =>{
@@ -52,8 +64,7 @@
     alert(err.message)
   })
 }
-// modal window
-
+// open modal window
 $(function() {
      $('#Modal').click(function() {
        $('.resetblock').toggleClass('block');
