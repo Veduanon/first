@@ -20,6 +20,7 @@ body{
     background-color: #11101d;
     padding: 6px 14px;
     transition: all 0.5s ease;
+    z-index: 999;
 }
 .active{
     width: 240px;
@@ -89,14 +90,17 @@ body{
     opacity: 0;
     pointer-events: none;
     display: block;
+    z-index: 9999;
 }
 .active ul li .tooltip{
     display: none;
+    z-index: 9999;
 }
 .sidebar ul li:hover .tooltip{
     top: 50%;
     transition: all 0.5s ease;
     opacity: 1;
+    z-index: 9999;
 }
 .sidebar ul li input{
     position: absolute;
@@ -234,6 +238,8 @@ body{
 .container{
     width: 1200px;
     height: 100%;
+    display: flex;
+    align-items: center;
 }
 .section1{
     gap: 20px;
@@ -244,7 +250,7 @@ body{
     grid-template-rows: repeat(2, 1fr);
 }
 .section1 div{
-    background-color: rgb(226, 226, 226);
+    background-color: rgb(246, 246, 246);
     border-radius: 10px;
 
 }

@@ -3,72 +3,300 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+    text-decoration: none;
 }
-.display{
-    height: 100vh;
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: #11101d;
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+    z-index: 999;
+}
+.active{
+    width: 240px;
+}
+.sidebar .logocontent .logo{
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.active .logocontent .logo{
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logocontent .logo i{
+    font: 28px;
+    margin-right: 5px;
+}
+.logocontent .logo .logo_name{
+    font-size: 20px;
+    font-weight: 500;
+}
+.sidebar #btn{
+    color: #fff;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+}
+.active #btn{
+    left: 90%;
+}
+.sidebar ul{
+    margin-top: 20px;
+}
+.sidebar ul li{
+    list-style: none;
+    height: 50px;
+    width: 100%;
+    position: relative;
+    margin: 0 5px;
+    line-height: 50px;
+}
+.sidebar ul li .tooltip{
+    position: absolute;
+    left: 122px;
+    top: 0%;
+    transform: translate(-50% , -50%);
+    height: 35px;
+    width: 122px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    line-height: 35px;
+    text-align: center;
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    z-index: 9999;
+}
+.active ul li .tooltip{
+    display: none;
+    z-index: 9999;
+}
+.sidebar ul li:hover .tooltip{
+    top: 50%;
+    transition: all 0.5s ease;
+    opacity: 1;
+    z-index: 9999;
+}
+.sidebar ul li input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: #1d1b31;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+.sidebar ul li #search{
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    font-size: 21px;
+    transition: all 0.5s ease;
+}
+.sidebar ul li #search:hover{
+    background-color: #fff;
+    color: #1d1b31;
+}
+.sidebar ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.4s;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover{
+    background-color: #fff;
+    color: #11101d;
+    transition: 0.4s;
+}
+.sidebar ul li i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+.sidebar .links_name{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+.active .links_name{
+    opacity: 1;
+    pointer-events: auto;
+}
+.sidebar .profile_content{
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background-color: #1d1b31;
+}
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .profile_details img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.profile .profile_details .name_job{
+    margin-left: 10px;
+
+}
+.profile .profile_details .name{
+    font-size: 15px;
+    font-weight: 500;
+}
+.profile .profile_details .job{
+    font-size: 12px;
+
+}
+.profile #log_out{
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+.active .profile #log_out{
+    left: 88%;
+}
+.home_content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(244, 244, 244);
+}
+.home_content .text{
+    font-size: 25px;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 12px;
+}
+.active ~ .home_content{
+    width: calc(100% - 240px);
+    left: 240px;
+}
+.fa-slack{
+    font-size: 24px;
+}
+.container{
+    height: 100%;
+    width: 90%;
+}
+.section1{
+    height: 10%;
     width: 100%;
     display: flex;
-}
-
-
-
-.section1{
-    height: 100%;
-    width: 15%;
-}
-.menu{
-    height: 100vh;
-    width: 15vw;
-    background-color: #101828;
+    align-items: center;
 }
 .section2{
-    width: 85%;
-    height: 100%;
-}
-.nav{
     height: 15%;
     width: 100%;
-    background-color: #fafafa;
-    border-bottom: 3px solid #393cae;
+    display: flex;
+    align-items: center;
 }
-.content{
-    height: 85%;
+.section2 input{
     width: 100%;
-    background-color: #dcdee2; 
-    background-color: red;
+    height: 40px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid #11101d;
+    padding-left: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.section3{
+    height: 50%;
+    width: 100%;
+}
+.section3 img{
+    width: 300px;
+    height: 80%;
+    display: block;
+}
+.section3 input{
+    margin-top: 15px;
+}
+.section4{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.section4 button{
+    height: 50%;
+    width: 180px;
+    border-radius: 5px;
+    background-color: #11101d;
+    border: none;
+    color: white;
+    font-size: 120%;
+    transition: all 0.5s ease;
+}
+.section4 button:hover{
+    background-color: #fff;
+    color: #11101d;
+    border: 3px solid #11101d;
+}
+.section4 button:active{
+    background-color: #11101d;
+    color: #fff;
+    border: none;
+}
