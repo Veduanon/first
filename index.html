@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <!-- Add the new slick-theme.css if you want the default styling -->
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 
 <body>
-    <div class="hidden_block"></div>
+    <div class="modal">
+        <div class="modal_content"></div>
+    </div>
+    <div class="hidden_block" id="header"></div>
     
 
     <nav class="navigation">
@@ -27,9 +27,8 @@
                     <a href="index.html">Dimash</a>
                 </div>
                 
-        
                 <ul class="nav_ul">
-                    <a href="#">
+                    <a href="#header">
                         <li>Главная</li>
                     </a>
                     <a href="#section_1">
@@ -41,9 +40,10 @@
                     <a href="#section_5">
                         <li>Отзывы</li>
                     </a>
-                    <a href="#section_4">
+                    <a href="#footer">
                         <li>Контакты</li>
                     </a>
+                    
                 </ul>
             </div>
         </div>
@@ -57,15 +57,18 @@
                 <h1 class="header_text_1">
                     Ink Design - Это Брендинговое Агентство и Студия Графического Дизайна
                 </h1>
-                <!-- <div class="header_text_1"></div> -->
                 <div class="header_text_2">
                     Мы помогаем бизнесу расти с помощью 
                     профессионального дизайна логотипов, фирменного стиля, веб-разработки
                      и маркетинговых услуг
                 </div>
                 <div class="squares">
-                    <a href="#section_1"><div class="square">Что мы делаем</div></a>
-                    <a href="#"><div class="square">Наши проекты</div></a>
+                    <a href="#section_1"><div class="square">
+                        Что мы делаем
+                    </div></a>
+                    <a href="#"><div class="square">
+                        Наши проекты
+                    </div></a>
                 </div>
             </div>
         </div>
@@ -127,9 +130,7 @@
                             широких охват потенциальных клиентов.
                         </span>
                     </div>
-                    <!-- как сделать эффект для блоков как на том сайте -->
                 </div>
-
             </div>
         </div>
     </div>
@@ -152,11 +153,26 @@
                     </div>
 
                     <div class="squares_3">
-                        <div class="square_3"><i class="fas fa-layer-group"></i></div>
-                        <div class="square_3"><i class="fas fa-award"></i></div>
-                        <div class="square_3"><i class="fas fa-chart-line"></i></div>
+                        <div class="square_3">
+                            
+                            <i class="fas fa-layer-group"></i>
+                            <span>5 Лет</span>
+                            <div>На рынке рекламных услуг</div>
+                            
+                        </div>
+                        <div class="square_3">
+                            <i class="fas fa-award"></i>
+                            <span>100+</span>
+                            <div>Выполненных проектов</div>
+                            
+                        </div>
+                        <div class="square_3">
+                            <i class="fas fa-chart-line"></i>
+                            <span>20%</span>
+                            <div>Увеличение оборота за год</div>
+                            
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -175,19 +191,18 @@
         </div>
     </div>
 
-    <div class="section_4" id="section_4">
+    <div class="section_4">
         <div class="container">
             <div class="section_4_1" >
-                <h2>контакты</h2>
                 <h3>Связаться с Нами</h3>
 
-                <form action="" method="" id="data">
+                <form action="telegram.php" method="POST" id="data">
                     <div>
-                        <input type="text" placeholder="Имя">
-                        <input type="email" placeholder="Email">
-                        <input type="text" placeholder="Тема">
+                        <input type="text" placeholder="Имя" name="user_name">
+                        <input type="email" placeholder="Email" name="user_email">
+                        <input type="text" placeholder="Тема" name="user_theme">
                     </div>
-                    <textarea name="" id="" cols="170" rows="10" placeholder="Сообщение"></textarea>
+                    <textarea name="user_message" id="" cols="170" rows="10" placeholder="Сообщение"></textarea>
                     <button type="submit" class="section_4_button" form="data">Отправить</button>                    
                 </form>
             </div>
@@ -198,44 +213,125 @@
         <div class="container">
             <div class="section_5_1">
                 <h2>Отзывы</h2>
-                <div class="slider">
-                    <div class="slide">dfas</div>
-                    <div class="slide">w</div>
-                    <div class="slide">e</div>
-                    <div class="slide">r</div>
-                    <div class="slide">t</div>
-                    <div class="slide">y</div>
-                    <!-- slick слайдер
-                    swiper слайдер
-                    как сделать -->
+
+                <div class="slider_wrapper">
+                    <div class="slider">
+                        <div class="slide">
+                            <div>
+                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3>Someone</h3>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div>
+                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3>ShisuiZH</h3>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div>
+                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3>Veduanon</h3>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div>
+                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3>Anonim</h3>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div>
+                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3>Meirjan</h3>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                                Lorem ipsum dolor sit amet.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <footer>
+    <footer id="footer">
         <div class="container">
             <div class="section_6">
                 <div class="section_6_1">
                     <div class="square footer_square_1">
                         <i class="fas fa-envelope"></i>
                         Напишите
-                        <span>inkdesign@mail.ru</span>
+                        <span><a href="">inkdesign@mail.ru</a></span>
+                        <span class="section_6_span1">
+                            <a href="https://instagram.com/naruzhnaya_r eklama_astana_kz?igshid=YmMyMTA2M2Y=">
+                                <span class="section_6_span2">inst:</span>
+                                naruzhnaya_reklama_astana_kz
+                            </a>
+                        </span>
                     </div>
                     <div class="square footer_square_1">
                         <i class="fas fa-map-marker-alt"></i>
                         Адрес
                         <span>Москва, м. Тульская, 2-й Павелецкий проезд, 5С1</span>
-                        
                     </div>
                     <div class="square footer_square">
-                        <i class="fas fa-phone-alt"></i>
+                        <i class="fa-solid fa-phone"></i>
                         Номер
-                        <span>+7 952 535 41 11</span>
-                        
-                    </div>
-                    
+                        <span>
+                            
+                            <a href=" https://wa.me/87072012494">
+                                <span class="section_6_span2">
+                                    <!-- <i class="fa-brands fa-whatsapp"></i> -->
+                                    whatsapp:
+                                </span>
+                                8 707 201 24 94
+                            </a>
+                        </span>
+                    </div> 
                 </div>
 
                 <div class="section_6_2">
@@ -245,35 +341,10 @@
         </div>
     </footer>
 
-
-        <!-- <div class="container">
-            <div class="slider">
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-                <div class="slide">
-                    <div class="text_1">Hello World</div>
-                </div>
-            </div>
-        </div> -->
-
-
     
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1950b4b0b7.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 </html>

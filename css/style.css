@@ -24,6 +24,20 @@ body{
     background-color: #101219;
 }
 
+::-webkit-scrollbar{
+    width: 3px;
+    background-color: #101219;
+}
+
+::-webkit-scrollbar{
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(45deg, #f9a766, #fe7773);
+    border-radius: 15px;
+}
+
 .container{
     height: 100%;
     max-width: 1200px;
@@ -63,11 +77,20 @@ body{
     list-style: none;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 }
 
-.nav_ul li{
+.nav_ul a li{
     margin: 0 30px;
+    transition: 0.1s;
+    white-space: nowrap;
+}
+
+.nav_ul a li:hover{
+    /* transition: 0.5s; */
+    color: #f9a766;
+    text-shadow: 0px 0px 6px #f9a8669e;
 }
 
 header{
@@ -113,7 +136,21 @@ header{
     height: 200px;
     padding: 20px 40px;
     border: 2px solid #f9a766;
+    border-image: linear-gradient(35deg, #f9a766, #fe7773);
+    border-image-slice: 1;
+    font-size: 25px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    display: none; 
 }
+
+/*
+display none
+для квадратов
+прописан
+тут
+ */
 
 .section_1{
     width: 100%;
@@ -139,36 +176,19 @@ header{
 .squares_2{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "num1 num2 num3" "num4 num5 num6";
+    grid-template-rows: repeat(auto, 1fr);
     margin-bottom: 70px;
     gap: 30px;
     margin-top: 20px;
 }
-.num1{
-    grid-area: num1;
-}
-.num2{
-    grid-area: num2;
-}
-.num3{
-    grid-area: num3;
-}
-.num4{
-    grid-area: num4;
-}
-.num5{
-    grid-area: num5;
-}
-.num6{
-    grid-area: num6;
-}
 
 .square_2{
     display: flex;
-    justify-content: end;
+    justify-content: start;
     flex-direction: column;
-    height: 450px;
-    padding: 20px 40px;
+    /* height: 450px; */
+    height: auto;
+    padding: 40px 40px;
     background-color: #101219;
 }
 
@@ -182,6 +202,8 @@ header{
 
 .square_2:hover{
     border-bottom: 1px solid #fe7773;
+    border-image: linear-gradient(90deg, #f9a766, #fe7773);
+    border-image-slice: 1;
 }
 
 .section_2{
@@ -192,7 +214,7 @@ header{
 
 .section_2_1{
     display: flex;
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 .section_2_1_1 img{
@@ -227,17 +249,29 @@ header{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
+    padding: 15px 0 0 21px;
 }
 
 .square_3{
-    height: 150px;
+    /* height: 150px; */
     margin: 0 10px 0 10px;
-    padding: 20px 40px;
-    border: 2px solid #f9a766;
+    padding: 0;
+    /* border: 2px solid #f9a766;
+    border-image: linear-gradient(65deg, #f9a766, #fe7773);
+    border-image-slice: 1; */
 }
 
 .squares_3 i {
+    font-size: 35px;
+    padding: 0 10px 6px 0;
+}
+
+.square_3 span {
     font-size: 30px;
+}
+
+.square_3 div{
+    font-size: 16px;
 }
 
 .section_5{
@@ -323,6 +357,7 @@ header{
 
 .section_4_1 h3{
     font-size: 30px;
+    padding-top: 35px;
     padding-bottom: 40px;
 }
 
@@ -331,7 +366,6 @@ header{
     gap: 15px;
     grid-template-columns: repeat(3, 1fr);
 }
-
 
 .section_4_1 form div input{
     height: 50px;
@@ -344,6 +378,8 @@ header{
 
 .section_4_1 form div input:focus{
     border-bottom: 1px solid #f9a766;
+    border-image: linear-gradient(65deg, #f9a766, #fe7773);
+    border-image-slice: 1;
 }
 
 .section_4_1 form textarea{
@@ -359,10 +395,17 @@ header{
 }
 
 .section_4_button{
-    width: 150px;
-    height: 60px;
+    color: #8b8a8a;
+    width: 140px;
+    height: 52px;
     background-color: #15171d;
-    margin-bottom: 90px;
+    margin-bottom: 60px;
+    transition: 0.1s;
+}
+
+.section_4_button:hover{
+    color: #f9a766;
+    text-shadow: 0px 0px 6px #f9a8669e;
 }
 
 footer{
@@ -395,10 +438,27 @@ footer{
 }
 
 .section_6_1 div span{
+    text-align: center;
     font-size: 16px;
     padding-top: 14px;
     color: rgba(255, 255, 255, 0.8);
 }
+
+.section_6_span1{
+    font-size: 16px;
+    padding-top: 3px !important;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.section_6_span2{
+    display: block;
+    padding-top: 2px !important;
+}
+
+.section_6_1 div span a{
+    color: rgba(255, 255, 255, 0.8);
+}
+
 
 .section_6_2{
     font-size: 16px;
@@ -409,6 +469,8 @@ footer{
     margin: 0;
     border: 1px solid #f9a766;
     background-color: #101219; 
+    border-image: linear-gradient(85deg, #f9a766, #fe7773);
+    border-image-slice: 1;
 }
 
 .footer_square_1{
@@ -444,53 +506,9 @@ footer{
     top: 0;
 }
 
-@media (max-width:1300px){
-    .container{
-        max-width: 970px;
-    }
-    .section_4_1 form textarea{
-        min-width: 970px;
-        max-width: 970px;
-    }
-    .section_4_button{
-        width: 130px;
-        height: 50px;
-    }
-
+.slider_wrapper{
+    padding: 5px;
 }
-
-@media (max-width:992px){
-    .container{
-        max-width: 750px;
-    }
-    .section_4_1 form textarea{
-        min-width: 750px;
-        max-width: 750px;
-    }
-    .section_4_button{
-        width: 120px;
-        height: 45px;
-    }
-}
-
-
-/*  
-    основные размеры font-size 16px
-    основные цвета
-    background-color: #15171d, #101219, #f9a766 #fe7773 (оранжевый);
-*/
-
-/* сделать слайдер */
-
-/* сделать калькулятор цены */
-
-/* секция 2 сделать отступ */
-
-/* добавить ватцап инст в навигацию */
-
-/* при навидений в навигаций ховер или тип того */
-
-/* поменять стиль скроллбара */
 
 .slider{
     background-color: #15171d;
@@ -505,24 +523,306 @@ footer{
     margin: 0 5px 5px 5px;
 }
 
-.slick-dots li button:before {
-    font-family: 'slick';
-    font-size: 6px;
-    line-height: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    content: '•';
+.slide div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    opacity: .25;
-    color: white;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+}
+
+.slide div h3{
+    padding: 6px 0 15px 0;
+}
+
+.slide div img{
+    margin-top: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100px;
 }
 
 .slick-dots li.slick-active button:before {
     opacity: .75;
     color: white;
+}
+
+@media (max-width:1300px){
+    .container{
+        max-width: 970px;
+    }
+
+    .section_4_1 form textarea{
+        min-width: 970px;
+        max-width: 970px;
+    }
+
+    .section_4_button{
+        width: 130px;
+        height: 50px;
+    }
+
+}
+
+@media (max-width:992px){
+    .container{
+        max-width: 750px;
+    }
+
+    .header_text_1{
+        font-size: 35px;
+    }
+
+    .header_text_2{
+        font-size: 20px;
+    }
+
+    .square{
+        font-size: 22px;
+    }
+    
+    .section_4_1 form textarea{
+        min-width: 750px;
+        max-width: 750px;
+    }
+    
+    .section_4_button{
+        width: 120px;
+        height: 45px;
+    }
+}
+
+@media (max-width:768px){
+    .container{
+        max-width: 600px;
+    }
+
+    .header_nav{
+        height: 50px;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .nav_ul a li{
+        font-size: 16px;
+        justify-content: space-between;
+    }
+
+    .section_1 h2{
+        font-size: 28px;
+        margin: 30px 0 20px 0;
+    }
+
+    .squares_2{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .square{
+        font-size: 20px;
+    }
+    
+    .square_2{
+        padding: 15px 30px;
+    }
+
+    .square_2 h2{
+        font-size: 22px;
+    }
+
+    .section_2_1_1 img{
+        height: 300px;
+        width: 250px;
+    }
+    
+    .section_4_1 form textarea{
+        min-width: 600px;
+        max-width: 600px;
+    }
+
+    .section_4_1 h3, .section_5_1 h2{
+        font-size: 28px;
+    }
+
+    .section_4_button{
+        width: 120px;
+        height: 45px;
+    }
+
+    .section_6_1{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer_square_1{
+        border-right: 1px solid #f9a766;
+        margin: 0 10px;
+        height: auto;
+    }
+    
+    .footer_square{
+        margin: 0 10px;
+        height: auto;
+    }
+
+    .section_6_1 div span a, .section_6_1 div span{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 620px) {
+    .container{
+        max-width: none;
+    }
+
+    .section_4_button{
+        display: table;
+    }
+
+    .nav_ul a li{
+        font-size: 14px;
+        margin: 0 28px;
+    }
+
+    .section_6_1 div{
+        padding: 10px 20px;
+    }
+
+    .section_2_1{
+        flex-direction: column;
+    }
+
+    .section_4_1 form div{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
+    }
+
+    .section_4_1 form textarea{
+        min-width: 400px;
+        max-width: 400px;
+    }
+
+    .section_4_1 h3, .section_5_1 h2{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 570px) {
+    .nav_ul a li{
+        margin: 0 24px;
+    }
+    .nav_ul{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 530px) {
+    .nav_ul a li{
+        margin: 0 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav_ul a li{
+        margin: 0 17px;
+    }
+
+    .squares_3{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        gap: 20px;
+        padding: 0 0 0 21px;
+    }
+
+    /* .square_3{
+        padding: 5px 0 0 0;
+    } */
+}
+
+@media (max-width: 440px) {
+    .nav_ul a li{
+        margin: 0 12px;
+    }
+
+    .section_4_1 form textarea{
+        min-width: 360px;
+        max-width: 360px;
+    }
+
+    .squares_2{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .nav_ul a li{
+        margin: 0 8px;
+    }
+
+    .section_4_1 form textarea{
+        min-width: 310px;
+        max-width: 310px;
+    }
+}
+
+@media (max-width:350px) {
+    .section_4_1 form textarea{
+        min-width: 300px;
+        max-width: 300px;
+    }
+    
+    .header_text_1{
+        font-size: 30px;
+    }
+
+    .header_text_2{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:300px) {
+    .section_4_1 form textarea{
+        min-width: 275px;
+        max-width: 275px;
+    }
+}
+
+
+/*  
+    основные размеры font-size 16px
+    основные цвета
+    background-color: #15171d, #101219, #f9a766 #fe7773 (оранжевый);
+*/
+
+/* сделать слайдер сделано */
+/* секция 2 сделать отступ сделано*/
+/* при навидений в навигаций ховер или тип того сделано*/
+/* поменять стиль скроллбара сделано*/
+/* сделать полностью адаптивным сделано*/
+/* добавить ватцап инст сделал*/
+
+/* сделать меню бургер */
+/* сделать калькулятор цены потом(через модальное окно)*/
+/* для мобилки сделать одинаковый контейнер (выровнять) */
+/* изменить вид секций наши услуги */
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #00000080;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content{
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
 }
