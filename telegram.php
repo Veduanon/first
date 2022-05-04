@@ -5,14 +5,14 @@
 
 $name = $_POST['user_name'];
 $email = $_POST['user_email'];
-$theme = $_POST['user_theme'];
+$number = $_POST['user_number'];
 $message = $_POST['user_message'];
 $token = "5222133279:AAFpjNhsMuDOEVEqR3k39PskNhL66oU6plw";
 $chat_id = "-709660835";
 $arr = array(
   'Имя пользователя: ' => $name,
   'Email: ' => $email,
-  'Тема: ' => $theme,
+  'Номер: ' => $number,
   'Сообщение: ' => $message
 );
 
