@@ -4,55 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>auth</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="auth">
-        <div class="square">
-            <div class="text">
-                <h1>Авторизация</h1>
-            </div>
+    <div class="display">
+        <div class="container">
+            <div class="square">
+                <div class="text">
+                    <span>Авторизация</span>
+                </div>
                 <div class="mail">
                     <input type="email"  placeholder="Email" id="email" required="required">
                 </div>
                 <div class="pass">
                     <input id="password" type="password" placeholder="Password" required="required">
                 </div>
-
                 <div class="buttons">
-                    <div class="buttons1">
+                    <div class="button1">
                         <button type="submit" id="myBtn" onclick="signIn()">Вход</button>
                     </div>
+                    <div class="button2">
+                        <button type="submit" id="myBtn2" onclick="registration()">Регистрация</button>
+                    </div>
                 </div>
-                <button type="submit" id="myBtn2" onclick="registration()">Регистрация</button>
                 <div class="reset">
                     <span id="Modal"><a href="#">Забыли пароль?</a></span>
                 </div>
-         </div> 
-               
-        <div class="resetblock">
-            <div id="close_x">X</div>
-            <div class="text1">
-                <p>Reset the password</p>
             </div>
-            <div class="resetmail">
-                <input id="typeEmail" type="email" placeholder="Email"/>
+
+
+
+            <div class="resetblock">
+                <div class="resetsection">
+                    <div class="resetcontainer">
+                        <div class="resetclose">
+                            <a href=""><span>X</span></a>
+                        </div>
+                        <div class="text1">
+                            <h1>Восстановление пароля</h1>
+                        </div>
+                        <div class="resetpass">
+                            <input type="Email" placeholder="type your email">
+                        </div>
+                        <div class="resetbutton">
+                            <button>Send</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="resetbutton">
-                <button onclick="sendEmail()">Send</button>
+
+
+
+            <div class="registrblock">
+                <div class="registrsection">
+                    <div class="registrcontainer">
+                        <div class="registrclose">
+                            <a href=""><span>X</span></a>
+                        </div>
+                        <div class="text2">
+                            <h1>Регистрация</h1>
+                            
+                        </div>
+                        <div class="registrpass">
+                            <input type="Email" placeholder="type your email">
+                        </div>
+                        <div class="registrbutton">
+                            <button>Send</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
     </div>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
  <!--для расботы с авторизацией -->
     <script src="js/script.js"></script>
-
 </body>
 </html>

@@ -20,7 +20,7 @@ body{
     background-color: #11101d;
     padding: 6px 14px;
     transition: all 0.5s ease;
-    z-index: 999;
+   
 }
 .active{
     width: 240px;
@@ -235,22 +235,146 @@ body{
 .fa-slack{
     font-size: 24px;
 }
-.container{
-    width: 1200px;
+.container1{
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    /* display: none; */
+}
+.section1_1{
+    width: 50%;
+    height: 70px;
+    font-size: 14px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #11101da6;
+    background-color: rgb(246, 246, 246);
+    padding-left: 10px;
+}
+.text1_1{
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
 }
-.section1{
-    gap: 20px;
-    width: 100%;
-    height: 60%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+.redact1_1{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.section1 div{
+.section1_2{
+    width: 50%;
+    height: 70px;
+    font-size: 14px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #11101da6;
     background-color: rgb(246, 246, 246);
-    border-radius: 10px;
+    padding-left: 10px;
+}
+.text1_2{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.redact1_2{
+    width: 20%;
+    height: 100%;
+}
+.redact1_2_1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.home_content i{
+    height: 50px;
+    width: 50px;
+    color: black;
+    font-size: 22px;
+    margin-top: 25px;
+    margin-left: 30px;
+}
+
+
+
+
+.section1_3{
+    width: 50%;
+    height: 70px;
+    font-size: 14px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #11101da6;
+    background-color: rgb(246, 246, 246);
+    padding-left: 10px;
+}
+.text1_3{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.redact1_3{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.redact1_3_1{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    /* display: block; */
+}
+.container3{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    /* display: block; */
+}
+.container4{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    /* display: block; */
+}
+.container5{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    /* display: block; */
+}
+.container6{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    /* display: block; */
 }

@@ -1,246 +1,347 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
     font-family: 'Rubik', sans-serif;
     outline: none;
     text-decoration: none;
 }
-
-html{
-    background-color: #101219;
-}
-.auth{
-    height: 100vh;
+.display{
     width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #101219;
+
+}
+.container{
+    width: 32%;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-
 }
 .square{
-    width: 540px;
-    height: 350px;
-    background-color: #15171d;
-    border-radius: 10px;
+    width: 100%;
+    height: 47%;
+    border-radius: 12px;
     border: 2px solid #f9a766;
-}
-.square input{
-    margin-bottom: 10px;
-    border-radius: 8px;
-    border: none;
-    height: 40px;
-    width: 400px;
-}
-.square button{
-    margin-bottom: 10px;
-    height: 40px;
-    width: 100px;
-    border-radius: 8px;
-    border: none;
-}
-h1{
-    color: rgb(255, 255, 255);
-    font-size: 130%;
+    background-color: #15171d;
 }
 .text{
-    text-align: center;
-    height: 100px;
+    height: 20%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 22px;
+    color: white;
 }
 .mail{
-    margin: 0px 10px 0px 10px;
-    height: 60px;
+    height: 15%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.mail input{
+    height: 90%;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
 }
 .pass{
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 10px 0px 10px;
-}
-#password{
-    padding: 10px;
-}
-#email{
-    padding: 10px;
-}
-
-
-
-#myBtn{
-    transition: 0.2s;
-    width: 400px;
-    background-color: white;
-    margin: 0px 10px 0px 10px;
-}
-#myBtn2:hover{
-    transition: 0.2s;
-    background-color: #f9a766;
-}
-#myBtn2:active{
-    background-color: white;
-}
-#myBtn2{
-    transition: 0.2s;
-    width: 400px;
-    background-color: white;
-    margin: 0px 10px 0px 10px;
-}
-#myBtn:hover{
-    transition: 0.2s;
-    background-color: #f9a766;
-}
-#myBtn:active{
-    background-color: white;
-}
-#resetPassword{
-    transition: 0.2s;
-}
-
-#resetPassword:hover{
-    transition: 0.2s;
-
-}
-
-
-.buttons{
-    height: auto;
-    display: flex;
-}
-.buttons1{
-    height: 50px;
+    margin-top: 5px;
+    height: 15%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.pass input{
+    height: 90%;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+.buttons{
+    height: 30%;
+    width: 100%;
+}
+.button1{
+    margin-top: 5px;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button1 button{
+    height: 90%;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    transition: all 0.2s;
+}
+.button1 button:hover{
+    background-color: #f9a766; 
+}
+.button1 button:active{
+    background-color: white;
+}
+.button2{
+    margin-top: 5px;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button2 button{
+    height: 90%;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    transition: all 0.2s;
+}
+.button2 button:hover{
+    background-color: #f9a766; 
+}
+.button2 button:active{
+    background-color: white;
 }
 .reset{
+    margin-top: 5px;
+    height: 10%;
     width: 100%;
-    height: 20px;
-    text-align: center;
-}
-
-span{
-    font-size: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 a{
+    font-size: 12px;
     color: #f9a766;
-    transition: 0.2s;
+    transition: all 0.2s;
 }
 a:hover{
     color: white;
-    transition: 0.2s;
 }
-
-@media(max-width: 620px){
-    .square{
-        width: 440px;
+@media(max-width: 768px){
+    a{
+        font-size: 8px;
     }
-    .mail{
-        margin: 0px 50px 0px 50px;
-    }
-    .pass{
-        margin: 0px 50px 0px 50px;
-    }
-    #myBtn{
-        margin: 0px 50px 0px 50px;
-    }
-}
-@media(max-width: 522px){
-    .square{
-        width: 380px;
-    }
-    .mail{
-        margin: 0px 60px 0px 60px;
-    }
-    .pass{
-        margin: 0px 60px 0px 60px;
-    }
-    #myBtn{
-        margin: 0px 60px 0px 60px;
-    }
-}
-@media(max-width: 382px){
-    .square{
-        width: 320px;
-    }
-    .mail{
-        margin: 0px 70px 0px 70px;
-    }
-    .pass{
-        margin: 0px 70px 0px 70px;
-    }
-    #myBtn{
-        margin: 0px 70px 0px 70px;
+    .text span{
+        font-size: 18px;
     }
 }
 @media(max-width: 320px){
-    .square{
-        width: 250px;
+    a{
+        font-size: 4px;
     }
-    .mail{
-        margin: 0px 65px 0px 65px;
-    }
-    .pass{
-        margin: 0px 65px 0px 65px;
-    }
-    #myBtn{
-        margin: 0px 37px 0px 37px;
+    .text span{
+        font-size: 12px;
     }
 }
-
+@media(max-height: 560px){
+   .buttons{
+       display: flex;
+       height: 30%;
+   }
+   .button1{
+    width: 50%;
+    margin-left: 17px;
+   }
+   .button2{
+    width: 50%;
+    margin-right: 17px;
+   }
+   .reset{
+       align-items: flex-start;
+   }
+}
 
 .resetblock{
-    width: 500px;
-    height: 300px;
-    position: absolute;
-    background-color: white;
-    border-radius: 10px;
-    border: 2px solid #f9a766;
-    display: none;
-}
-.block{
+    /* display: none; */
     display: block;
-}
-
-#close_x{
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-weight: 600;
-    cursor: pointer;
+    width: 450px;
+    height: 350px;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+.resetsection{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.resetcontainer{
+    height: 100%;
+    width: 90%;
+}
+.resetclose{
+    height: 5%;
+    width: 100%;
+    text-align: end;
+}
+.resetclose a span{
+    font-size: 22px;
+    transition:0.2s;
+    color: #f9a766;
 }
 
+.resetclose a span:hover{
+    color: black;
+    transition:0.2s;
+}
 .text1{
+    height: 15%;
     width: 100%;
-    height: 20%;
+    border-bottom: 2px solid #e8e8e8;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.text1 p{
-   font-size: 150%;
+.text1 h1{
+    font-size: 22px;
+    color: #15171d;
 }
 
-.resetmail{
-    height: 35%;
+.resetpass{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.resetpass input{
+    width: 80%;
+    height: 50%;
+    border-radius: 5px;
+    border: 2px solid #8d8d8d;
+    padding-left: 10px;
+    background-color: rgb(243, 243, 243);
+}
+
+.resetbutton{
+    height: 40%;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
+    justify-content: end;
+    align-items: flex-end;
 }
-.resetblock input{
-    padding: 5px;
-    width: 400px;
-    height: 50px;
-    border-radius: 10px;
+.resetbutton button{
+    height: 40%;
+    width: 35%;
+    font-size: 22px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f9a766;
+    transition: all 0.2s ;
+}
+
+.resetbutton button:hover{
+    background-color: white; 
     border: 2px solid #f9a766;
 }
+.resetbutton button:active{
+    background-color: #f9a766;
+}
 
+
+.registrblock{
+    display: none;
+    /* display: block; */
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+.registrsection{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+.registrcontainer{
+    height: 100%;
+    width: 90%;
+}
+.registrclose{
+    height: 5%;
+    width: 100%;
+    text-align: end;
+}
+.registrclose a span{
+    font-size: 22px;
+    transition:0.2s;
+    color: #f9a766;
+}
+
+.registrclose a span:hover{
+    color: black;
+    transition:0.2s;
+}
+
+
+.text2{
+    height: 15%;
+    width: 100%;
+    border-bottom: 2px solid #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+}
+.text2 h1{
+    font-size: 22px;
+    color: #15171d;
+}
+
+
+.registrpass{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+.registrpass input{
+    width: 80%;
+    height: 50%;
+    border-radius: 5px;
+    border: 2px solid #8d8d8d;
+    padding-left: 10px;
+    background-color: rgb(243, 243, 243);
+}
+
+.registrbutton{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.registrbutton button{
+    height: 40%;
+    width: 35%;
+    font-size: 22px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f9a766;
+    transition: all 0.2s ;
+}
+
+.registrbutton button:hover{
+    background-color: white; 
+    border: 2px solid #f9a766;
+}
+.registrbutton button:active{
+    background-color: #f9a766;
+}
