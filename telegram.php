@@ -13,7 +13,7 @@ $arr = array(
   'Имя пользователя: ' => $name,
   'Email: ' => $email,
   'Номер: ' => $number,
-  'Сообщение: ' => $message
+  'Сообщение: ' => $message,
 );
 
 foreach($arr as $key => $value) {

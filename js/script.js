@@ -57,3 +57,22 @@ $(function(){
       $('.modal').toggleClass('none');
   });
 });
+
+$(function(){
+  $('.button_2_1').click(function(){
+      $('.nav_ul_2').toggleClass('none_2');
+  });
+});
+
+$(function(){
+  $('.nav_ul_a').click(function(){
+      $('.nav_ul_2').toggleClass('none_2');
+  });
+});
+
+$(window).on('load', function() {
+  $preloader = $('.preloader'),
+  $loader = $preloader.find('.preloader');
+  $loader.fadeOut();
+  $preloader.delay(2000).fadeOut('slow');
+});
