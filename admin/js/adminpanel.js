@@ -747,7 +747,7 @@ function Contact3GetUrlfromRealtimDB(){
 //                                                          portfolio
 function uploadPhotoSlider(url) {
   ref = firebase.storage().ref();
-  file1 = document.querySelector("#primer").files[0];
+  file1 = document.querySelector("#portoflios").files[0];
   name1 = +new Date() + "-" + file1.name;
   const metadata = {
     contentType: file1.type
@@ -769,22 +769,15 @@ function uploadPhotoSlider(url) {
 }
 
 function PortfolioSaveURLtoRealtimDB(URL){
-  firebase.database().ref("news/Contact").update({
+  firebase.database().ref("news/Portfolio").update({
     PhotoURL1: URL
   });
 };
-function PortlofioGetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      IconContact3.src = snapshot.val().PhotoURL1;
-    }
-  })
-}
 function readSlider(){
   firebase.database().ref("news/Portfolio").get().then((snapshot) => {
     if (snapshot.exists()) {
       const data = snapshot.val();
-      $('.slider_2').slick('slickAdd',`<div>${data.header_1}</div>`);      
+      $('.slider_2').slick('slickAdd',`<img src="${data.PhotoURL1}"</img>`);      
     }
   })
   console.log(1)
