@@ -71,7 +71,9 @@ body{
 }
 
 .logo{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
     margin-left: 25px;
     font-size: 30px;
@@ -234,16 +236,20 @@ header{
     padding: 0;
 }
 
-.squares_3 i {
-    font-size: 35px;
+.squares_3 div img {
+    fill: white;
+    max-width: 56px;
+    max-height: 78px;
     padding: 0 10px 6px 0;
 }
 
-.square_3 span {
+.square_3 div span {
     font-size: 30px;
 }
 
 .square_3 div{
+    display: flex;
+    align-items: center;
     font-size: 16px;
 }
 
@@ -1024,7 +1030,6 @@ footer{
     padding: 0 0 30px 0;
     font-size: 30px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -1049,6 +1054,9 @@ footer{
 }
 
 .slide_2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: #15171d;
