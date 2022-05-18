@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 
-<body>
+<body onload="readSlider(),readDataContact2(), readDataContact3(),readDataContact1(), Contact3GetUrlfromRealtimDB(), Contact2GetUrlfromRealtimDB(), Contact1GetUrlfromRealtimDB(), readDataAttraction(), readDataMain(), readDataServis(), LogoGetUrlfromRealtimDB(), readDataNavbar(), readDataAboutcomp(), OkompGetUrlfromRealtimDB(), Icon1GetUrlfromRealtimDB(), Icon2GetUrlfromRealtimDB(), Icon3GetUrlfromRealtimDB(), readDataReview(), ReviewGetUrlfromRealtimDB()">
     <div class="preloader">
         <div class="preloader_content">
             <div class="circle">
@@ -66,7 +66,8 @@
         <div class="container">
             <div class="navigation_nav">
                 <div class="logo">
-                    <a href="index.html">Dimash</a>
+                    <img id="loggo" style="width: 50px; height: 50px;">
+                    <a id="nameSite" href="index.html"></a>
                 </div>
 
                 <div class="navigation_burger">
@@ -135,13 +136,11 @@
     <header>    
         <div class="container">
             <div class="header_content">
-                <h1 class="header_text_1">
-                    Ink Design - Это Брендинговое Агентство и Студия Графического Дизайна
+                <h1 id="header1" class="header_text_1">
+                    
                 </h1>
-                <div class="header_text_2">
-                    Мы помогаем бизнесу расти с помощью 
-                    профессионального дизайна логотипов, фирменного стиля, веб-разработки
-                     и маркетинговых услуг
+                <div id="textarea" class="header_text_2">
+                    
                 </div>
             </div>
         </div>
@@ -156,47 +155,31 @@
         <div class="container">
             <div class="section_1_1">
                 <h2>Наши услуги</h2>
-
+                
                 <div class="squares_2">
                     <div class="square_2">
                         <div>
-                            <h2>Широкоформатная и интерьерная печать</h2>
-                            <span>
-                                Чтобы привлекать взгляд потенциальных клиентов издалека используют
-                                баннерные конструкции. 
-                                Их можно изготавливать любого формата.
+                            <h2 id="header_servis1"></h2>
+                            <span id="text_servis1">
+                                
                             </span>
                         </div>
                         
-                        <button class="button">Посчитать цену</button>
+                        <button class="button"></button>
                     </div>
                     <div class="square_2">
                         <div>
-                            <h2>Световой короб (лайтбокс)</h2>
-                            <span>
-                                Популярный способ заявить о своем бизнесе – установить лайтбокс.
+                            <h2 id="header_servis2"></h2>
+                            <span id="text_servis2">
+                                
                             </span>
                         </div>
-
-                        <button class="button_test">Посчитать цену</button>
                     </div>
                     <div class="square_2">
                         <div>
-                            <h2>Вывески, указатели, панель кронштейн</h2>
-                            <span>
-                                Для привлечения внимания прохожих и автомобилистов 
-                                на стены здания крепят вывески, указатели и панель-кронштейны.
-                            </span>
-                        </div>
-
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
-                    <div class="square_2">
-                        <div>
-                            <h2>Крышные установки</h2>
-                            <span>
-                                Для привлечения целевой аудитории используют крышные рекламные установки. 
-                                Их можно выполнять в виде лайтбоксов, вывесок, объемных букв.
+                            <h2 id="header_servis4"></h2>
+                            <span id="text_servis4">
+                                
                             </span>
                         </div>
                         
@@ -205,11 +188,9 @@
                     </div>
                     <div class="square_2">
                         <div>
-                            <h2>Оформление транспорта</h2>
-                            <span>
-                                Чтобы продвигать товары и услуги на 
-                                рынке можно воспользоваться одним из популярных
-                                направлений – рекламой на транспорте.
+                            <h2 id="header_servis5"></h2>
+                            <span id="text_servis5">
+                                
                             </span>
                         </div>
                         
@@ -217,11 +198,9 @@
                     </div>
                     <div class="square_2">
                         <div>
-                            <h2>Билборды</h2>
-                            <span>
-                                Эффективный способ заявить о своем бизнесе – установить рекламный билборд. 
-                                С его помощью в выбранной точке, можно получить 
-                                широких охват потенциальных клиентов.
+                            <h2 id="header_servis6"></h2>
+                            <span id="text_servis6">
+                                
                             </span>
                         </div>
 
@@ -236,18 +215,17 @@
         <div class="container">
             <div class="section_7_1">
                 <h2>Портфолио</h2>
-
-                <div class="slider_wrapper_2">
+                <div id="sliderPortfolio" class="slider_wrapper_2">
                     <div class="slider_2">
                          <div class="slide_2">
                             <div>
-                                <img src="" alt="">
+                                <img id="portfolio1" src="" alt="">
                             </div>
                         </div>
                 
                         <div class="slide_2">
                             <div>
-                                <img src="" alt="">
+                                <img src="source/battle-net-brands.svg" alt="">
                             </div>
                         </div>
                 
@@ -286,34 +264,30 @@
         <div class="container">
             <div class="section_2_1">
                 <div class="section_2_1_1">
-                    <img src="source/logo.png" alt="">
+                    <img id="logo_okomp" src="source/logo.png" alt="">
                 </div>
 
                 <div class="section_2_1_2">
                     <div class="section_2_1_2_text">
-                        <h2>О компании</h2>
-                        Рекламная компания DIMASH DESIGN занимается производством широкого спектра 
-                        рекламной продукции: от наружной рекламы(вывески, штендеры, 
-                        растяжки и т.д.) до полиграфической продукции 
-                        (визитки, плакаты, каталоги и т.д.), 
-                        также мы разработаем для вас фирменный стиль и сделаем веб-сайт.
+                        <h2 id="header_company"></h2>
+                        <h3 id="textarea_company"></h3>
                     </div>
 
                     <div class="squares_3">
                         <div class="square_3">
-                            <i class="fas fa-layer-group"></i>
-                            <span>5 Лет</span>
-                            <div>На рынке рекламных услуг</div>
+                            <img id="aboutcomp_icon1" alt="">
+                            <span id="indexHeader_aboutcomp1"></span>
+                            <div id="indexText_aboutcomp1"></div>
                         </div>
                         <div class="square_3">
-                            <i class="fas fa-award"></i>
-                            <span>100+</span>
-                            <div>Выполненных проектов</div>
+                            <img id="aboutcomp_icon2" alt="">
+                            <span id="indexHeader_aboutcomp2"></span>
+                            <div id="indexText_aboutcomp2"></div>
                         </div>
                         <div class="square_3">
-                            <i class="fas fa-chart-line"></i>
-                            <span>20%</span>
-                            <div>Увеличение оборота за год</div>
+                            <img id="aboutcomp_icon3" alt="">
+                            <span id="indexHeader_aboutcomp3"></span>
+                            <div id="indexText_aboutcomp3"></div>
                         </div>
                     </div>
                 </div>
@@ -324,11 +298,8 @@
     <div class="section_3">
         <div class="container">
             <div class="section_3_1">
-                <h2>Ищете Агентство графического дизайна, которое дает результаты?</h2>
-                <span>
-                    Давайте сегодня поговорим о вашем логотипе,
-                    брендинге или проекте веб-разработки! Свяжитесь с нами
-                     для получения бесплатной консультации.
+                <h2 id="indexHeader_attraction"></h2>
+                <span id="indexText_attraction">
                 </span>
             </div>
         </div>
@@ -361,32 +332,16 @@
                     <div class="slider">
                         <div class="slide">
                             <div>
-                                <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
-                                <h3>Someone</h3>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
+                                <img id="photoReview" src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
+                                <h3></h3>
+                                <h4></h4>
                             </div>
                         </div>
                         <div class="slide">
                             <div>
                                 <img src="source/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head.png" alt="">
-                                <h3>ShisuiZH</h3>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, porro.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
-                                Lorem ipsum dolor sit amet.
+                                <h3 id="indexHeader_review"></h3>
+                                <h4 id="indexText_review"></h4>
                             </div>
                         </div>
                         <div class="slide">
@@ -446,32 +401,23 @@
             <div class="section_6">
                 <div class="section_6_1">
                     <div class="square footer_square_1">
-                        <i class="fas fa-envelope"></i>
-                        Напишите
-                        <span><a href="">inkdesign@mail.ru</a></span>
-                        <span class="section_6_span1">
-                            <a href="https://instagram.com/naruzhnaya_reklama_astana.kz?igshid=YmMyMTA2M2Y=">
-                                <span class="section_6_span2">inst:</span>
-                                naruzhnaya_reklama_astana.kz
-                            </a>
-                        </span>
+                        <h3 id="indexHeader_contact1"></h3>
+                        <img id="IconContact1" alt="" style="height: 50px; width: 50px;">
+                        <span id="indexText_contact1" class="section_6_span1"></span>
+                        
+                        <span id="indexText_contact1_2" class="section_6_span1"></span>
                     </div>
                     <div class="square footer_square_1">
-                        <i class="fas fa-map-marker-alt"></i>
-                        Адрес
-                        <span class="section_6_span3">Москва, м. Тульская, 2-й Павелецкий проезд, 5С1</span>
+                        <img id="IconContact2" alt="" style="height: 50px; width: 50px;">
+                        <h3 id="indexHeader_contact2"></h3>
+                        <span id="indexText_contact2" class="section_6_span3"></span>
                     </div>
                     <div class="square footer_square">
-                        <i class="fa-solid fa-phone"></i>
-                        Номер
-                        <span>
-                            <a href=" https://wa.me/87072012494">
-                                <span class="section_6_span2">
-                                    whatsapp:
-                                </span>
-                                8 707 201 24 94
-                            </a>
-                        </span>
+                        <h3 id="indexHeader_contact3"></h3>
+                        <img id="IconContact3" alt="" style="height: 50px; width: 50px;">
+                        <span id="indexText_contact3"></span>
+                        <span id="indexText_contact3_1" class="section_6_span1"></span>
+
                     </div> 
                 </div>
 
@@ -481,12 +427,16 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
 
-    <div class="phone-button"><a href="tel:+77072012494" title="Обратный звонок"><i class="fa fa-phone-alt"></i></a></div>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>   
+    <script src="admin/js/adminpanel.js"></script>
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/1950b4b0b7.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
 </body>
 </html>

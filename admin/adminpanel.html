@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="../slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../slick/slick-theme.css"/>
     <title>Admin</title>
 </head>
-<body>
+<body onload="adminProfile()">
     <div class="sidebar">
         <div class="logocontent">
             <div class="logo">
@@ -77,7 +79,7 @@
                 </a>
                 <span class="tooltip">Контакты</span>
             </li>
-
+            
             <li>
                 <a href="#">
                     <i class="fas fa-calculator"></i>
@@ -90,37 +92,38 @@
         <div class="profile_content">
             <div class="profile">
                 <div class="profile_details">
-                    <img src="../source/47859a9a-18ec-4ac6-bf3c-89316910a7d7.jfif" alt="">
                     <div class="name_job">
-                        <div class="name">Dimash</div>
-                        <div class="job">Back Ender</div>
+                        <div id="name" class="name"></div>
+                        <div id="job" class="job"></div>
                     </div>
                 </div>
                 <i class="fas fa-sign-out-alt" id="log_out"></i>
             </div>
         </div>
     </div>
-
-
-
-
-        <div class="home_content">
-            <div class="container0">
-                <div class="menublock">
-                    <h2>Меню</h2>
+    
+    
+    
+    
+    <div class="home_content">
+        <div class="container0">
+            <div class="menublock">
+                <h2>Меню</h2>
+            </div>
+            <div class="content0">
+                <div class="textname8">
+                    <h4>Название</h4>
+                    <h4 class="text10">Текст</h4>
                 </div>
-                <div class="content0">
-                    <div class="textname8">
-                        <h4>Название</h4>
-                        <h4 class="text10">Текст</h4>
-                    </div>
-                    <div class="icon1">
-                        <p>Логотип</p>
-                        <input type="file">
-                    </div>
-                    <div class="zagolovok0">
-                        <p>Название сайта</p>
-                        <input type="text" placeholder="Введите название...">
+                <div class="icon1">
+                    <p>Логотип</p>
+                    <h4 id="LogoProglab"></h4>
+                    <input id="upLogo" type="file">
+                    <button onclick="uploadLogo()">Загрузить</button>
+                </div>
+                <div class="zagolovok0">
+                    <p>Название сайта</p>
+                        <input id="editNameite" type="text" placeholder="Введите название...">
                     </div>
                     <div class="menu1 menu">
                         <p>1</p>
@@ -144,17 +147,17 @@
                     </div>
                 </div>
                 <div class="con0btn">
-                    <button>Сохранить</button>
+                    <button onclick="writeDataNavbar()">Сохранить</button>
                 </div>
             </div>
+            
+            
+            
             
 
 
 
-
-
-
-
+            
 
             <div class="container1 active1">
                 <h2 class="glavblock">Главная</h2>
@@ -163,23 +166,34 @@
                         <h4>Название</h4>
                         <h4 class="text1">Текст</h4>
                     </div>
-                    <div class="zagolovok1 sty">
-                        <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                    <form name="main" action="">
+                        <div class="zagolovok1 sty">
+                            <p>Заголовок</p>
+                            <input id="header_admin" name="header" type="text" value="Ink Design - Это Брендинговое Агентство и Студия Графического Дизайна">
+                        </div>
+                        <div class="opisanie">
+                            <p>Описание</p>
+                            <textarea name="" id="text" cols="148" rows="8" >
+Мы помогаем бизнесу расти с помощью 
+профессионального дизайна логотипов, фирменного стиля, веб-разработки
+и маркетинговых услуг
+</textarea>
+                            </div>
+                        </form>
                     </div>
-                    <div class="opisanie">
-                        <p>Описание</p>
-                        <textarea name="" id="" cols="148" rows="8" placeholder="Введите описание..."></textarea>
+                    <h2 class="fon">Фон</h2>
+                    <div class="glavvideo">
+                        <h5>Видео</h5>
+                        <h4 id="BackgroundProglab"></h4>
+                        <input id="imagee" type="file">
+                        <button onclick="uploadImage()">Загрузить</button>
                     </div>
-                </div>
-                <h2 class="fon">Фон</h2>
-                <div class="glavvideo">
-                    <h5>Видео</h5>
-                    <input type="file">
-                    <button>Загрузить</button>
-                </div>
-                <div class="btn">
-                    <button>Сохранить</button>
+                    <div class="btn">
+                        <button onclick="writeDataMain()">Сохранить</button>
+                        <input type="file" id="portoflios">
+                        <input id="primer" type="text">
+                        <button onclick="writeSlider()">UpLOAD</button>
+                        <div class="alert">Your message has been sent</div>
                 </div>
             </div>
 
@@ -192,11 +206,14 @@
                     </div>
                     <div class="zagolovok2 sty">
                         <p>Заголовок</p>                      
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis1" type="text" value="Широкоформатная и интерьерная печать">
                     </div>
                     <div class="opisanie1 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="147" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_Servis1" cols="147" rows="8">Чтобы привлекать взгляд потенциальных клиентов издалека используют
+баннерные конструкции.
+Их можно изготавливать любого формата.
+                        </textarea>
                     </div>
                
                 </div>
@@ -207,11 +224,11 @@
                     </div>
                     <div class="zagolovok3 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis2" type="text" value="СВЕТОВОЙ КОРОБ (ЛАЙТБОКС)">
                     </div>
                     <div class="opisanie2 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="149" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea id="text_Servis2" cols="149" rows="8" >Популярный способ заявить о своем бизнесе – установить лайтбокс</textarea>
                     </div>
                 </div>
                 <div class="content4 style">
@@ -221,11 +238,11 @@
                     </div>
                     <div class="zagolovok4 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis3" type="text" value="ВЫВЕСКИ, УКАЗАТЕЛИ, ПАНЕЛЬ КРОНШТЕЙН">
                     </div>
                     <div class="opisanie3 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="149" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_Servis3" cols="149" rows="8" >Для привлечения внимания прохожих и автомобилистов на стены здания крепят вывески, указатели и панель-кронштейны.</textarea>
                     </div>
                 </div>
                 <div class="content5 style">
@@ -235,11 +252,11 @@
                     </div>
                     <div class="zagolovok5 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis4" type="text" value="КРЫШНЫЕ УСТАНОВКИ">
                     </div>
                     <div class="opisanie4 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="149" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_Servis4" cols="149" rows="8">Для привлечения целевой аудитории используют крышные рекламные установки. Их можно выполнять в виде лайтбоксов, вывесок, объемных букв.</textarea>
                     </div>
                 </div>
                 <div class="content6 style">
@@ -249,11 +266,11 @@
                     </div>
                     <div class="zagolovok6 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis5" type="text" value="ОФОРМЛЕНИЕ ТРАНСПОРТА">
                     </div>
                     <div class="opisanie5 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="149" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_Servis5" cols="149" rows="8">Чтобы продвигать товары и услуги на рынке можно воспользоваться одним из популярных направлений – рекламой на транспорте.</textarea>
                     </div>
                 </div>
                 <div class="content7 style">
@@ -263,15 +280,15 @@
                     </div>
                     <div class="zagolovok7 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_Servis6" type="text" value="БИЛБОРДЫ">
                     </div>
                     <div class="opisanie6 ustyle">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="149" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_Servis6" cols="149" rows="8">Эффективный способ заявить о своем бизнесе – установить рекламный билборд. С его помощью в выбранной точке, можно получить широких охват потенциальных клиентов</textarea>
                     </div>
                 </div>
                 <div class="con2btn">
-                    <button>Сохранить</button>
+                    <button onclick="writeDataServis()">Сохранить</button>
                 </div>
             </div>
 
@@ -283,8 +300,9 @@
                 <div class="content8">
                     <div class="text8">
                         <p>Картинка</p>
-                        <input type="file">
-                        <button>Загрузить</button>
+                        <h4 id="OcompProglab"></h4>
+                        <input type="file" id="okomp_file">
+                        <button onclick="uploadImageAndIcons()">Загрузить</button>
                     </div>
                 </div>
                 <div class="content9 style">
@@ -294,11 +312,11 @@
                     </div>
                     <div class="zagolovok8 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_company" type="text" placeholder="Введите заголовок... ">
                     </div>
                     <div class="opisanie7">
                         <p>Описание</p>
-                        <textarea name="" id="" cols="147" rows="8" placeholder="Введите описание..."></textarea>
+                        <textarea name="" id="text_company" cols="147" rows="8" placeholder="Введите описание..."></textarea>
                     </div>
                 </div>
                 <div class="content10 style">
@@ -308,15 +326,17 @@
                     </div>
                     <div class="icon1">
                         <p>Иконка 1</p>
-                        <input type="file">
+                        <input id="uploadIcon1_company" type="file">
+                        <button onclick="uploadIcons1()">Загрузить</button>
+                        <h3 id="progress_icon1"></h3>
                     </div>
                     <div class="zagolovok9 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_aboutcomp1" type="text" placeholder="Введите заголовок...">
                     </div>
                     <div class="opisanie8 st">
                         <p>Описание</p>
-                        <input type="text"placeholder="Введите описание...">
+                        <input id="text_aboutcomp1" type="text"placeholder="Введите описание...">
                     </div>
                 </div>
                 <div class="content11 style">
@@ -326,15 +346,17 @@
                     </div>
                     <div class="icon2">
                         <p>Иконка 2</p>
-                        <input type="file">
+                        <input id="uploadIcon2_company" type="file">
+                        <button onclick="uploadIcons2()">Загрузить</button>
+                        <h3 id="progress_icon2"></h3>
                     </div>
                     <div class="zagolovok10 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_aboutcomp2" type="text" placeholder="Введите заголовок...">
                     </div>
                     <div class="opisanie9 st">
                         <p>Описание</p>
-                        <input type="text" placeholder="Введите описание...">
+                        <input id="text_aboutcomp2" type="text" placeholder="Введите описание...">
                     </div>
                 </div>
                 <div class="content12 style">
@@ -344,19 +366,21 @@
                     </div>
                     <div class="icon3">
                         <p>Иконка 3</p>
-                        <input type="file">
+                        <input id="uploadIcon3_company" type="file">
+                        <button onclick="uploadIcons3()">Загрузить</button>
+                        <h3 id="progress_icon3"></h3>
                     </div>
                     <div class="zagolovok11 sty">
                         <p>Заголовок</p>
-                        <input type="text" placeholder="Введите заголовок...">
+                        <input id="header_aboutcomp3" type="text" placeholder="Введите заголовок...">
                     </div>
                     <div class="opisanie10 st">
                         <p>Описание</p>
-                        <input type="text" placeholder="Введите описание...">
+                        <input id="text_aboutcomp3" type="text" placeholder="Введите описание...">
                     </div>
                 </div>
                 <div class="con3btn">
-                    <button>Сохранить</button>
+                    <button onclick="writeDataAboutcomp()">Сохранить</button>
                 </div>
             </div>
             <div class="container4">
@@ -369,16 +393,16 @@
                         </div>
                         <div class="zagolovok12 sty">
                             <p>Заголовок</p>
-                            <input type="text" placeholder="Введите заголовок...">
+                            <input id="header_attract" type="text" placeholder="Введите заголовок...">
                         </div>
                         <div class="opisanie11">
                             <p>Описание</p>
-                            <textarea name="" id="" cols="147" rows="8" placeholder="Введите описание..."></textarea>
+                            <textarea name="" id="text_attract" cols="147" rows="8" placeholder="Введите описание..."></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="con4btn">
-                    <button>Сохранить</button>
+                    <button onclick="writeDataAttraction()">Сохранить</button>
                 </div>
             </div>
             <div class="container5">
@@ -391,19 +415,21 @@
                         </div>
                         <div class="icon4">
                             <p>Фотография</p>
-                            <input type="file">
+                            <input id="photo_review" type="file">
+                            <button onclick="uploadReview()">Загрузить</button>
+                            <h3 id="progress_review"></h3>
                         </div>
                         <div class="zagolovok13 sty">
                             <p>Имя</p>
-                            <input type="text" placeholder="Введите имя...">
+                            <input id="name_review" type="text" placeholder="Введите имя...">
                         </div>
                         <div class="opisanie12">
                             <p>Коментарий</p>
-                            <textarea name="" id="" cols="149" rows="3" placeholder="Введите комантарии..."></textarea>
+                            <textarea name="" id="comment_review" cols="149" rows="3" placeholder="Введите комантарии..."></textarea>
                         </div>
                     </div>
                     <div class="con5btn">
-                        <button>Сохранить</button>
+                        <button onclick="writeDataReview()">Сохранить</button>
                     </div>
                 </div>
             </div>
@@ -417,15 +443,18 @@
                         </div>
                         <div class="icon5">
                             <p>Иконка 1</p>
-                            <input type="file">
+                            <input id="icon_contact1" type="file">
+                            <button onclick="uploadIconContact1()">Загрузить</button>
                         </div>
                         <div class="zagolovok14 sty">
                             <p>Заголовок</p>
-                            <input type="text" placeholder="Введите заголовок...">
+                            <input id="header_contact1" type="text" placeholder="Введите заголовок...">
                         </div>
                         <div class="opisanie13 st">
-                            <p>Описание</p>
-                            <input type="text" placeholder="Введите описание...">
+                            <p>Описание 1</p>
+                            <input id="text_contact1" type="text" placeholder="Введите описание...">
+                            <p>Описание 2</p>
+                            <input id="text_contactAdditional1" type="text" placeholder="Введите описание...">
                         </div>
                     </div>
                     <div class="content16 style">
@@ -435,15 +464,16 @@
                         </div>
                         <div class="icon6">
                             <p>Иконка 2</p>
-                            <input type="file">
+                            <input id="icon_contact2" type="file">
+                            <button onclick="uploadIconContact2()">Загрузить</button>
                         </div>
                         <div class="zagolovok15 sty">
                             <p>Заголовок</p>
-                            <input type="text" placeholder="Введите заголовок...">
+                            <input id="header_contact2" type="text" placeholder="Введите заголовок...">
                         </div>
                         <div class="opisanie14 st">
                             <p>Описание</p>
-                            <input type="text" placeholder="Введите описание...">
+                            <input id="text_contact2" type="text" placeholder="Введите описание...">
                         </div>
                     </div>
                     <div class="content17 style">
@@ -453,31 +483,34 @@
                         </div>
                         <div class="icon7">
                             <p>Иконка 3</p>
-                            <input type="file">
+                            <input id="icon_contact3" type="file">
+                            <button onclick="uploadIconContact3()">Загрузить</button>
                         </div>
                         <div class="zagolovok16 sty">
                             <p>Заголовок</p>
-                            <input type="text" placeholder="Введите заголовок...">
+                            <input id="header_contact3" type="text" placeholder="Введите заголовок...">
                         </div>
                         <div class="opisanie15 st">
-                            <p>Описание</p>
-                            <input type="text" placeholder="Введите описание...">
+                            <p>Описание 1</p>
+                            <input id="text_contact3" type="text" placeholder="Введите описание...">
+                            <p>Описание 2</p>
+                            <input id="text_contactAdditional2" type="text" placeholder="Введите описание...">
                         </div>
                     </div>
                     <div class="con6btn">
-                        <button>Сохранить</button>
+                        <button onclick="writeDataContact()">Сохранить</button>
                     </div>
                 </div>
             </div>
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="js/nav.js"></script>
-    <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="js/script3.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../slick/slick.min.js"></script>   
+    <script src="js/adminpanel.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
 </body>
 </html>
