@@ -446,7 +446,7 @@ function readDataAttraction(){
   });
 }
 function writeDataAttraction() {
-
+  
   header=document.getElementById('header_attract');
   header=header.value;
 
@@ -769,8 +769,9 @@ function uploadPhotoSlider(url) {
 }
 
 function PortfolioSaveURLtoRealtimDB(URL){
+  
   firebase.database().ref("news/Portfolio").update({
-    PhotoURL1: URL
+    PhotoURL: URL
   });
 };
 function readSlider(){
