@@ -66,13 +66,13 @@ function uploadLogo(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
   .then(downloadURL => {
     console.log(downloadURL);
     LogoSaveURLtoRealtimDB(downloadURL)
+    alert("Uploaded")
   });
 
   task.on('state-changed', (snapshot)=>{
@@ -462,77 +462,6 @@ function writeDataAttraction() {
   });
   alert("Updated!")
 }
-//                                               review block
-function uploadReview(url) {
-  ref = firebase.storage().ref();
-  file1 = document.querySelector("#photo_review").files[0];
-  name1 = +new Date() + "-" + file1.name;
-  const metadata = {
-    contentType: file1.type
-  };
-  const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
-  console.log(name1)
-  task
-  .then(snapshot => snapshot.ref.getDownloadURL())
-  .then(downloadURL => {
-    console.log(downloadURL);
-    ReviewSaveURLtoRealtimDB(downloadURL)
-  });
-
-  task.on('state-changed', (snapshot)=>{
-    var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
-  })
-}
-
-function ReviewSaveURLtoRealtimDB(URL){
-  firebase.database().ref("news/Review").update({
-      PhotoURL: URL
-  });
-};
-function ReviewGetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Review").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      photoReview.src = snapshot.val().PhotoURL;
-      }
-    })
-  }
-  function readDataReview(){
-    firebase.database().ref("news/Review").get().then((snapshot) => {
-      if (snapshot.exists()) {
-        const data = snapshot.val();
-        document.getElementById("indexHeader_review").innerHTML += `
-        ${data.name}
-        `
-        document.getElementById("indexText_review").innerHTML += `
-        ${data.comment}
-        `
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
-  }
-  function writeDataReview() {
-  
-    header=document.getElementById('name_review');
-    header=header.value;
-  
-  
-    text=document.getElementById('comment_review');
-    text=text.value;
-  
-  
-    firebase.database().ref("news/Review").update({
-      name: header,
-      comment: text
-  
-    });
-    alert("Updated!")
-  }
-
 // contacts block
 function writeDataContact() {
 
@@ -745,7 +674,7 @@ function Contact3GetUrlfromRealtimDB(){
   })
 }
 //                                                          portfolio
-function uploadPhotoSlider(url) {
+function uploadPhotoSlider() {
   ref = firebase.storage().ref();
   file1 = document.querySelector("#portoflios").files[0];
   name1 = +new Date() + "-" + file1.name;
@@ -770,16 +699,125 @@ function uploadPhotoSlider(url) {
 
 function PortfolioSaveURLtoRealtimDB(URL){
   
-  firebase.database().ref("news/Portfolio").update({
+  firebase.database().ref("news/Portfolio").push({
     PhotoURL: URL
   });
 };
+
+
+
 function readSlider(){
-  firebase.database().ref("news/Portfolio").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      $('.slider_2').slick('slickAdd',`<img src="${data.PhotoURL1}"</img>`);      
-    }
+  firebase.database().ref("news/Portfolio").once('value', (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+      var childKey = childSnapshot.key;
+      if (snapshot.exists()) {
+        var starCountRef = firebase.database().ref('news/Portfolio/' + childKey );
+        starCountRef.on('value', (snapshot) => {
+          const data = snapshot.val();
+          var ele = `
+          <div class="slide_2">
+              <div>
+                  <img style="width:100%; height:100%;" src="${data.PhotoURL}" alt="">
+              </div>
+          </div> `
+          $('.slider_2').slick('slickAdd', ele);
+        });
+      }else {
+        console.log("No data available");
+      }
+    });
+  });
+}
+function deleteSlide(){
+  firebase.database().ref("news/Portfolio/").once('value', (snapshot) => {
+    var mas = []
+    snapshot.forEach((childSnapshot) => {
+      var childKey = childSnapshot.key
+      mas=[childKey]
+    })
+    firebase.database().ref("news/Portfolio/").child(mas[0]).remove()
+    $('.slider_2').slick('slickRemove', 0);
+    alert('Deleted!')
   })
-  console.log(1)
+}
+
+//                                               review block
+function uploadReview(url) {
+  ref = firebase.storage().ref();
+  file1 = document.querySelector("#photo_review").files[0];
+  name1 = +new Date() + "-" + file1.name;
+  const metadata = {
+    contentType: file1.type
+  };
+  const task = ref.child(name1).put(file1, metadata);
+  alert("Uploaded")
+  console.log(name1)
+  task
+  .then(snapshot => snapshot.ref.getDownloadURL())
+  .then(downloadURL => {
+    console.log(downloadURL);
+    ReviewSaveURLtoRealtimDB(downloadURL)
+  });
+
+  header=document.getElementById('name_review');
+  header=header.value;
+
+
+  text=document.getElementById('comment_review');
+  text=text.value;
+
+  task.on('state-changed', (snapshot)=>{
+    var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
+    progress_review.innerHTML = "Upload "+ progess +"%";
+  })
+}
+
+function ReviewSaveURLtoRealtimDB(URL){
+  firebase.database().ref("news/Review").push({
+      name: header,
+      comment: text,
+      PhotoURL: URL
+  });
+};
+
+function writeDataReview() {
+
+  header=document.getElementById('name_review');
+  header=header.value;
+
+
+  text=document.getElementById('comment_review');
+  text=text.value;
+
+
+  firebase.database().ref("news/Review").push({
+    name: header,
+    comment: text
+
+  });
+  alert("Updated!")
+}
+function readSliderReview(){
+  firebase.database().ref("news/Review").once('value', (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+      var childKey = childSnapshot.key;
+      if (snapshot.exists()) {
+        var starCountRef = firebase.database().ref('news/Review/' + childKey );
+        starCountRef.on('value', (snapshot) => {
+          const data = snapshot.val();
+          var ele = `
+          <div class="slide">
+                            <div>
+                                <img src="${data.PhotoURL}" alt="">
+                                <h3>${data.name}</h3>
+                                <h4>${data.comment}</h4>
+                            </div>
+                        </div>`
+          $('.slider').slick('slickAdd',ele);
+        });
+      }else {
+        console.log("No data available");
+      }
+    });
+  });
 }

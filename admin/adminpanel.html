@@ -192,6 +192,7 @@
                         <button onclick="writeDataMain()">Сохранить</button>
                         <input type="file" id="portoflios">
                         <button onclick="uploadPhotoSlider()">UpLOAD</button>
+                        <button onclick="deleteSlide()">Удалить</button>
                         <div class="alert">Your message has been sent</div>
                 </div>
             </div>
@@ -416,8 +417,6 @@
                         <div class="icon4">
                             <p>Фотография</p>
                             <input id="photo_review" type="file">
-                            <button onclick="uploadReview()">Загрузить</button>
-                            <h3 id="progress_review"></h3>
                         </div>
                         <div class="zagolovok13 sty">
                             <p>Имя</p>
@@ -429,7 +428,8 @@
                         </div>
                     </div>
                     <div class="con5btn">
-                        <button onclick="writeDataReview()">Сохранить</button>
+                        <button onclick="uploadReview()">Сохранить</button>
+                        <h3 id="progress_review"></h3>
                     </div>
                 </div>
             </div>
