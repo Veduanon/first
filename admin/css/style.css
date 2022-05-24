@@ -6,23 +6,24 @@
     outline: none;
     text-decoration: none;
 }
+
 .display{
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     background-color: #101219;
-
 }
 .container{
     width: 32%;
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .square{
     width: 100%;
-    height: 47%;
+    height: 40%;
     border-radius: 12px;
     border: 2px solid #f9a766;
     background-color: #15171d;
@@ -35,6 +36,7 @@
     justify-content: center;
     font-size: 22px;
     color: white;
+    margin-top: 10px;
 }
 .mail{
     height: 15%;
@@ -42,6 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 }
 .mail input{
     height: 90%;
@@ -51,7 +54,6 @@
     padding: 10px;
 }
 .pass{
-    margin-top: 5px;
     height: 15%;
     width: 100%;
     display: flex;
@@ -59,19 +61,20 @@
     align-items: center;
 }
 .pass input{
-    height: 90%;
+    height:90%;
     width: 80%;
     border-radius: 5px;
     border: none;
     padding: 10px;
 }
 .buttons{
-    height: 30%;
+    height: 15%;
     width: 100%;
+    margin-top: 15px;
 }
 .button1{
     margin-top: 5px;
-    height: 50%;
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -91,35 +94,21 @@
 .button1 button:active{
     background-color: white;
 }
-.button2{
-    margin-top: 5px;
-    height: 50%;
+.texts{
     width: 100%;
+    height: 20%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 5px;
 }
-.button2 button{
-    height: 90%;
-    width: 80%;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    transition: all 0.2s;
-}
-.button2 button:hover{
-    background-color: #f9a766; 
-}
-.button2 button:active{
-    background-color: white;
+.registration{
+    width: auto;
+    height: 10%;
+    margin-left: 150px;
 }
 .reset{
-    margin-top: 5px;
     height: 10%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: auto;
 }
 a{
     font-size: 12px;
@@ -164,11 +153,11 @@ a:hover{
 }
 
 .resetblock{
-    /* display: none; */
-    display: block;
+    display: none;
+    /* display: block; */
     position: absolute;
     width: 450px;
-    height: 350px;
+    height: 250px;
     justify-content: center;
     background-color: #fff;
     border-radius: 5px;
@@ -210,6 +199,7 @@ a:hover{
 .text1 h1{
     font-size: 22px;
     color: #15171d;
+    margin-bottom: 15px;
 }
 
 .resetpass{
@@ -217,27 +207,29 @@ a:hover{
     height: 100px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .resetpass input{
     width: 80%;
-    height: 50%;
+    height: 40%;
     border-radius: 5px;
     border: 2px solid #8d8d8d;
     padding-left: 10px;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(236, 236, 236);
 }
 
 .resetbutton{
     height: 40%;
     width: 100%;
     display: flex;
-    justify-content: end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 .resetbutton button{
-    height: 40%;
-    width: 35%;
-    font-size: 22px;
+    height: 40px;
+    width: 25%;
+    font-size: 16px;
     border-radius: 5px;
     border: none;
     background-color: #f9a766;
@@ -256,9 +248,9 @@ a:hover{
 .registrblock{
     display: none;
     /* display: block; */
-    position: absolute;
     width: 450px;
-    height: 350px;
+    position: absolute;
+    height:320px;
     justify-content: center;
     background-color: #fff;
     border-radius: 5px;
@@ -279,26 +271,27 @@ a:hover{
     width: 100%;
     text-align: end;
 }
-.registrclose a span{
+.registrclose span{
     font-size: 22px;
     transition:0.2s;
     color: #f9a766;
+    cursor: pointer;
 }
 
-.registrclose a span:hover{
+.registrclose span:hover{
     color: black;
     transition:0.2s;
 }
 
 
 .text2{
-    height: 15%;
+    height: 20%;
     width: 100%;
     border-bottom: 2px solid #e8e8e8;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 0px;
+    padding-bottom: 15px;
 }
 .text2 h1{
     font-size: 22px;
@@ -309,29 +302,32 @@ a:hover{
 .registrpass{
     width: 100%;
     height: 100px;
-    display: flex;
-    align-items: center;
+    text-align: center;
 }
 .registrpass input{
     width: 80%;
-    height: 50%;
+    height: 40%;
     border-radius: 5px;
     border: 2px solid #8d8d8d;
     padding-left: 10px;
-    background-color: rgb(243, 243, 243);
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(236, 236, 236);
+    margin-top: 10px;
+
 }
 
 .registrbutton{
     height: 40%;
     width: 100%;
     display: flex;
-    justify-content: end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
 }
 .registrbutton button{
-    height: 40%;
-    width: 35%;
-    font-size: 22px;
+    height: 30%;
+    width: 25%;
+    font-size: 16px;
     border-radius: 5px;
     border: none;
     background-color: #f9a766;
@@ -344,4 +340,12 @@ a:hover{
 }
 .registrbutton button:active{
     background-color: #f9a766;
+}
+
+
+.active{
+    display: block;
+}
+.off{
+    display: none;
 }

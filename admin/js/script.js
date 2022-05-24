@@ -76,3 +76,28 @@ $(function() {
       $('.resetblock').toggleClass('block');
   });
 });
+
+$(function(){
+  $('#Modal').click(function(){
+    $('.resetblock').removeClass('off');
+    $('.resetblock').addClass('active');
+  });
+});
+$(function(){
+  $('.x1').click(function(){
+      $('.resetblock').removeClass('active');
+      $('.resetblock').addClass('off');
+  });
+});
+$(function(){
+  $('.modal').click(function(){
+    $('.registrblock').removeClass('off');
+    $('.registrblock').addClass('active');
+  });
+});
+$(function(){
+  $('.x1').click(function(){
+      $('.registrblock').removeClass('active');
+      $('.registrblock').addClass('off');
+  });
+});

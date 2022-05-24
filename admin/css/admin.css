@@ -135,6 +135,7 @@ body{
     transition: 0.4s;
     border-radius: 12px;
     white-space: nowrap;
+    margin-top: 5px;
 }
 .sidebar ul li a:hover{
     background-color: #fff;
@@ -869,46 +870,7 @@ body{
     width: 100%;
     margin-top: 5px;
 }
-.textname12{
-    height: 10%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom:2px solid  rgb(236, 236, 236);
-    padding: 20px 0 20px 10px;
-}
-.text14{
-    margin-left: 100px;
-}
 
-.opisanie12{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 75px;
-    padding-left: 10px;
-}
-.opisanie12 textarea{
-    padding-left: 5px;
-    padding-top: 5px;
-    resize: none;
-    margin-left: 82px;
-    outline: none;
-    border-radius: 5px;
-    background-color: rgb(246, 246, 246);
-    border: 1px solid rgb(236, 236, 236);
-}
-.icon4{
-    display: flex;
-    width: 100%;
-    height: 50px;
-    align-items: center;
-    border-bottom: 2px solid  rgb(236, 236, 236);
-    padding-left: 10px;
-}
-.icon4 p{
-    margin-right: 85px;
-}
 .con5btn{
     height: 130px;
     width: 100%;
@@ -1221,4 +1183,127 @@ body{
 .con0btn button:active{
     background-color: #11101d;
     color: #fff;
+}
+.content1{
+    margin-top: 15px;
+}
+.content2{
+    margin-top: 0px;
+}                          
+.container7{
+    padding-top: 15px;
+    width: 90%;
+    height: 100%;
+    position: absolute;
+}
+.portblock{
+    margin: 20px 0 5px 0;
+}
+.con18{
+    display: flex;
+}
+.con18 input{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.content18{
+    margin-top: 15px;
+    border: 2px solid #11101d;
+    width: 250px;
+    height: 300px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.content18 i{
+    font-size: 22px;
+
+}
+.con7btn{
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.con7btn button{
+    height: 50px;
+    width: 150px;
+    background-color: #11101d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ;
+    margin: 0;
+}
+.con7btn button:hover{
+    background-color: #fff;
+    color: #11101d;
+    border: 2px solid #11101d;
+}
+.con7btn button:active{
+    background-color: #11101d;
+    color: #fff;
+}
+.con14{
+    display: block;
+}
+.con14 input{
+    margin-top: 15px;
+    margin-left: 5px;
+}
+.content14{
+    margin-top: 15px;
+    border: 2px solid #11101d;
+    width: 250px;
+    height: 300px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+}
+.content14 i{
+    font-size: 22px;
+
+}
+.con5btn{
+    height: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.con5btn button{
+    height: 50px;
+    width: 150px;
+    background-color: #11101d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.2s ;
+    margin: 0;
+}
+.con5btn button:hover{
+    background-color: #fff;
+    color: #11101d;
+    border: 2px solid #11101d;
+}
+.con5btn button:active{
+    background-color: #11101d;
+    color: #fff;
+}
+.inps input{
+    display: block;
+}
+.inpst input{
+    width: 220px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(236, 236, 236);
+    outline: none;
+    padding-left: 5px;
 }
