@@ -71,7 +71,9 @@ body{
 }
 
 .logo{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     max-width: 100%;
     margin-left: 25px;
     font-size: 30px;
@@ -93,7 +95,7 @@ body{
 
 .nav_ul li a:hover{
     color: rgba(0, 255, 170, 0.55);
-    text-shadow: 0px 0px 6px rgba(0, 255, 170, 0.45);
+    text-shadow: 0px 0px 3px rgba(0, 255, 170, 0.45);
 }
 
 header{
@@ -195,8 +197,8 @@ header{
 }
 
 .section_2_1_1 img{
-    height: 300px;
-    width: 250px;
+    max-height: 300px;
+    max-width: 260px;
     padding: 10px 0;
 }
 
@@ -234,16 +236,20 @@ header{
     padding: 0;
 }
 
-.squares_3 i {
-    font-size: 35px;
+.squares_3 div img {
+    fill: white;
+    max-width: 56px;
+    max-height: 78px;
     padding: 0 10px 6px 0;
 }
 
-.square_3 span {
+.square_3 div span {
     font-size: 30px;
 }
 
 .square_3 div{
+    display: flex;
+    align-items: center;
     font-size: 16px;
 }
 
@@ -497,8 +503,8 @@ footer{
 
 .slide div img{
     margin-top: 10px;
-    height: 50px;
-    width: 50px;
+    max-height: 50px;
+    max-width: 50px;
     border-radius: 100px;
 }
 
@@ -788,6 +794,12 @@ footer{
         grid-template-columns: repeat(1, 1fr);
         gap: 12px;
     }
+
+    .square_2{
+        border-bottom: 1px solid rgba(0, 255, 170, 0.7);
+        border-image: linear-gradient(90deg, rgba(0,255,170,0.7) 15%, rgba(150,255,170,0.75) 100%);
+        border-image-slice: 1;
+    }
 }
 
 @media (max-width: 400px) {
@@ -860,6 +872,15 @@ footer{
     padding: 2px 8px 6px 8px;
 }
 
+.button_test{
+    background-color: #101219;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    align-self: center;
+    padding: 2px 8px 6px 8px;
+}
+
 .button_x{
     font-size: 24px;
     color: rgba(0, 0, 0, 0.6);
@@ -896,14 +917,13 @@ footer{
 }
 
 .modal_form span input{
-    align-self: flex-end;
-    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .modal_form div{
     display: flex;
     position: relative;
-    top: 55%;
+    top: 30%;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.7);
     white-space: nowrap;
@@ -1010,7 +1030,6 @@ footer{
     padding: 0 0 30px 0;
     font-size: 30px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -1030,19 +1049,19 @@ footer{
 .slide_2 {
     height: 350px !important;
     width: 100vw;
-    background-color: #101219;
     margin: 0 5px 5px 5px;
 }
 
 .slide_2 div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    background-color: #15171d;
 }
 
 .slide_2 img{
-    width: 100%;
-    height: 100%;
+    pointer-events: none;
 }
 
 .phone-button {

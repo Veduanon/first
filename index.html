@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,700;1,300;1,500&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+</head>
+
+<body onload="readDataContact2(), readDataContact3(),readDataContact1(), Contact3GetUrlfromRealtimDB(), Contact2GetUrlfromRealtimDB(), Contact1GetUrlfromRealtimDB(), readDataAttraction(), readDataMain(), readDataServis(), LogoGetUrlfromRealtimDB(), readDataNavbar(), readDataAboutcomp(), OkompGetUrlfromRealtimDB(), Icon1GetUrlfromRealtimDB(), Icon2GetUrlfromRealtimDB(), Icon3GetUrlfromRealtimDB(), readSliderReview(),readSlider()">
+    <div class="preloader">
+        <div class="preloader_content">
+            <div class="circle">
+              <div class="inner"></div>
+            </div>
+            <div class="circle">
+                <div class="inner"></div>
+            </div>
+            <div class="circle">
+                <div class="inner"></div>
+            </div>
+            <div class="circle">
+                <div class="inner"></div>
+            </div>
+            <div class="circle">
+                <div class="inner"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal none">
+        <div class="modal_content">
+            <div class="button_x">x</div>
+            <h2>КАЛЬКУЛЯТОР</h2>
+
+            <form class="modal_form" action="">
+                <input class="number_1" type="text" placeholder="кв/м для баннера">
+                <input class="number_1" type="text" placeholder="кв/м для пленки">
+                <span>
+                    <input id="tab_1" type="radio" name="tabs"> плотность 340гр-кв/м баннера(1500тг)<br>
+                    <label for="tab_1"></label>
+                    <input id="tab_2" type="radio" name="tabs"> плотность 400гр-кв/м баннера(1700тг)<br>
+                    <label for="tab_2"></label>
+                    <input id="tab_3" type="radio" name="tabs"> плотность 440гр-кв/м баннера(2000тг)<br><br>
+                    <label for="tab_3"></label>
+
+                    <input id="tab_4" type="radio" name="tabs_1"> Широкоформатная пленка(2000тг)<br>
+                    <label for="tab_4"></label>
+                    <input id="tab_5" type="radio" name="tabs_1"> Интерьерная пленка(2500тг)<br>
+                    <label for="tab_5"></label>
+                </span>
+
+                <div>Предположительная стоймость:<input type="text" disabled placeholder="100тг"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="hidden_block" id="header"></div>
+
+    <nav class="navigation">
+        <div class="container">
+            <div class="navigation_nav">
+                <div class="logo">
+                    <img id="loggo" style="width: 50px; height: 50px;">
+                    <a id="nameSite" href="index.html"></a>
+                </div>
+
+                <div class="navigation_burger">
+                    <span class="button_2"><i class="fa-solid fa-bars button_2_1"></i></span>
+                    
+                    <ul class="nav_ul_2">
+                        <li>
+                            <a class="nav_ul_a" href="#header">Главная</a>
+                        </li>
+                        
+                        <li>
+                            <a class="nav_ul_a" href="#section_1">Услуги</a>
+                        </li>
+
+                        <li>
+                            <a class="nav_ul_a" href="#section_7">Портфолио</a>
+                        </li>
+
+                        <li>
+                            <a class="nav_ul_a" href="#section_2">О компаний</a>
+                        </li>
+                        
+                        <li>
+                            <a class="nav_ul_a" href="#section_5">Отзывы</a>
+                        </li>
+                        
+                        <li>
+                            <a class="nav_ul_a" href="#footer">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="navigation_menu">
+                    <ul class="nav_ul">
+                        <li>
+                            <a href="#header">Главная</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#section_1">Услуги</a>
+                        </li>
+
+                        <li>
+                            <a href="#section_7">Портфолио</a>
+                        </li>
+
+                        <li>
+                            <a href="#section_2">О компаний</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#section_5">Отзывы</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#footer">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="blackout"></div>
+     
+    <header>    
+        <div class="container">
+            <div class="header_content">
+                <h1 id="header1" class="header_text_1">
+                    
+                </h1>
+                <div id="textarea" class="header_text_2">
+                    
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="video">
+        <video src="source/Pexels Videos 2216413.mp4" autoplay muted loop class="video_media">
+        </video>
+    </div>
+
+    <div class="section_1" id="section_1">
+        <div class="container">
+            <div class="section_1_1">
+                <h2>Наши услуги</h2>
+                
+                <div class="squares_2">
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis1"></h2>
+                            <span id="text_servis1"></span>
+                        </div>
+                        
+                        <button class="button">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis2"></h2>
+                            <span id="text_servis2"></span>
+                        </div>
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis3"></h2>
+                            <span id="text_servis3"></span>
+                        </div>
+                        
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis4"></h2>
+                            <span id="text_servis4">
+                                
+                            </span>
+                        </div>
+                        
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis5"></h2>
+                            <span id="text_servis5">
+                                
+                            </span>
+                        </div>
+                        
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis6"></h2>
+                            <span id="text_servis6">
+                                
+                            </span>
+                        </div>
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_7" id="section_7">
+        <div class="container">
+            <div class="section_7_1">
+                <h2>Портфолио</h2>
+                <div id="sliderMain" class="slider_wrapper_2">
+                    <div class="slider_2">
+                    </div>
+                </div>
+
+                <div class="none_place"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_2" id="section_2">
+        <div class="container">
+            <div class="section_2_1">
+                <div class="section_2_1_1">
+                    <img id="logo_okomp" src="source/logo.png" alt="">
+                </div>
+
+                <div class="section_2_1_2">
+                    <div class="section_2_1_2_text">
+                        <h2 id="header_company"></h2>
+                        <p id="textarea_company"></p>
+                    </div>
+
+                    <div class="squares_3">
+                        <div class="square_3">
+                            <div>
+                                <img id="aboutcomp_icon1" alt="">
+                                <span id="indexHeader_aboutcomp1"></span>
+                            </div>
+                            
+                            <div id="indexText_aboutcomp1"></div>
+                        </div>
+                        <div class="square_3">
+                            <div>
+                                <img id="aboutcomp_icon2" alt="">
+                                <span id="indexHeader_aboutcomp2"></span>
+                            </div>
+                            
+                            <div id="indexText_aboutcomp2"></div>
+                        </div>
+                        <div class="square_3">
+                            <div>
+                                <img id="aboutcomp_icon3" alt="">
+                                <span id="indexHeader_aboutcomp3"></span>
+                            </div>
+                            
+                            <div id="indexText_aboutcomp3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_3">
+        <div class="container">
+            <div class="section_3_1">
+                <h2 id="indexHeader_attraction"></h2>
+                <span id="indexText_attraction">
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_4">
+        <div class="container">
+            <div class="section_4_1" >
+                <h3>Связаться с Нами</h3>
+
+                <form action="telegram.php" method="POST" id="data">
+                    <div>
+                        <input type="text" placeholder="Имя" name="user_name">
+                        <input type="email" placeholder="Email" name="user_email">
+                        <input type="text" placeholder="Номер" name="user_number">
+                    </div>
+                    <textarea name="user_message" id="" cols="170" rows="10" placeholder="Сообщение"></textarea>
+                    <button type="submit" class="section_4_button" form="data">Отправить</button>                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_5" id="section_5">
+        <div class="container">
+            <div class="section_5_1">
+                <h2>Отзывы</h2>
+
+                <div class="slider_wrapper">
+                    <div class="slider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="section_6">
+                <div class="section_6_1">
+                    <div class="square footer_square_1">
+                        <h3 id="indexHeader_contact1"></h3>
+                        <img id="IconContact1" alt="" style="height: 50px; width: 50px;">
+                        <span id="indexText_contact1" class="section_6_span1"></span>
+                        <a href="https://instagram.com/naruzhnaya_reklama_astana.kz?igshid=YmMyMTA2M2Y=">
+                            <span id="indexText_contact1_2" class="section_6_span1"></span>
+                        </a>
+                    </div>
+                    <div class="square footer_square_1">
+                        <img id="IconContact2" alt="" style="height: 50px; width: 50px;">
+                        <h3 id="indexHeader_contact2"></h3>
+                        <span id="indexText_contact2" class="section_6_span3"></span>
+                    </div>
+                    <div class="square footer_square">
+                        <h3 id="indexHeader_contact3"></h3>
+                        <img id="IconContact3" alt="" style="height: 50px; width: 50px;">
+                        <a href=" https://wa.me/87072012494">
+                            <span id="indexText_contact3"></span>
+                            <span id="indexText_contact3_1" class="section_6_span1"></span>
+                        </a>
+                    </div> 
+                </div>
+
+                <div class="section_6_2">
+                    2022 DIMASH Design
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="phone-button"><a href="tel:+77072012494" title="Обратный звонок"><i class="fa fa-phone-alt"></i></a></div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>   
+    <script src="admin/js/adminpanel.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/1950b4b0b7.js" crossorigin="anonymous"></script>
+</body>
+</html>
