@@ -78,7 +78,10 @@ body{
     margin-left: 25px;
     font-size: 30px;
 }
-
+#loggo1{
+    max-height: 50px;
+    border: red;
+}
 .nav_ul{
     list-style: none;
     display: flex;

@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 
-<body onload="readDataContact2(), readDataContact3(),readDataContact1(), Contact3GetUrlfromRealtimDB(), Contact2GetUrlfromRealtimDB(), Contact1GetUrlfromRealtimDB(), readDataAttraction(), readDataMain(), readDataServis(), LogoGetUrlfromRealtimDB(), readDataNavbar(), readDataAboutcomp(), OkompGetUrlfromRealtimDB(), Icon1GetUrlfromRealtimDB(), Icon2GetUrlfromRealtimDB(), Icon3GetUrlfromRealtimDB(), readSliderReview(),readSlider()">
+<body onload="gener()">
     <div class="preloader">
         <div class="preloader_content">
             <div class="circle">
@@ -67,7 +67,7 @@
         <div class="container">
             <div class="navigation_nav">
                 <div class="logo">
-                    <img id="loggo" style="width: 50px; height: 50px;">
+                    <img id="loggo1">
                     <a id="nameSite" href="index.html"></a>
                 </div>
 
@@ -324,24 +324,33 @@
         <div class="container">
             <div class="section_6">
                 <div class="section_6_1">
-                    <div class="square footer_square_1">
+                    <div id="square footer_square_1" class="square footer_square_1">
                         <h3 id="indexHeader_contact1"></h3>
                         <img id="IconContact1" alt="" style="height: 50px; width: 50px;">
-                        <span id="indexText_contact1" class="section_6_span1"></span>
-                        <a href="https://instagram.com/naruzhnaya_reklama_astana.kz?igshid=YmMyMTA2M2Y=">
+                        <a id="makeHref1">
+                            <span id="indexText_contact1" class="section_6_span1"></span>
+                        </a>
+                        <a id="makeHref4">
                             <span id="indexText_contact1_2" class="section_6_span1"></span>
                         </a>
                     </div>
                     <div class="square footer_square_1">
                         <img id="IconContact2" alt="" style="height: 50px; width: 50px;">
                         <h3 id="indexHeader_contact2"></h3>
-                        <span id="indexText_contact2" class="section_6_span3"></span>
+                        <a id="makeHref2">
+                            <span id="indexText_contact2" class="section_6_span3"></span>
+                        </a>
+                        <a id="makeHref5">
+                            <span id="indexText_contact2_1" class="section_6_span3"></span>
+                        </a>
                     </div>
                     <div class="square footer_square">
                         <h3 id="indexHeader_contact3"></h3>
                         <img id="IconContact3" alt="" style="height: 50px; width: 50px;">
-                        <a href=" https://wa.me/87072012494">
+                        <a id="makeHref3">
                             <span id="indexText_contact3"></span>
+                        </a>
+                        <a id="makeHref6">
                             <span id="indexText_contact3_1" class="section_6_span1"></span>
                         </a>
                     </div> 
@@ -356,16 +365,16 @@
 
     <div class="phone-button"><a href="tel:+77072012494" title="Обратный звонок"><i class="fa fa-phone-alt"></i></a></div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>   
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="admin/js/adminpanel.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>   
     <script src="https://kit.fontawesome.com/1950b4b0b7.js" crossorigin="anonymous"></script>
 </body>
 </html>
