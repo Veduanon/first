@@ -214,10 +214,12 @@ header{
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    width: 100%;
 }
 
 .section_2_1_2_text{
     padding: 30px;
+    align-self: flex-start;
 }
 
 .section_2_1_2_text h2{
@@ -923,10 +925,9 @@ footer{
 .modal_form div{
     display: flex;
     position: relative;
-    top: 30%;
+    top: 22%;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.7);
-    white-space: nowrap;
 }
 
 .modal_form div input{
@@ -954,13 +955,6 @@ footer{
     z-index: 1000000;
     background-color: #12141c;
 }
-
-/* .preloader_content{
-    background: linear-gradient(90deg, #00b377, #00d68f);
-    box-shadow: inset 0px 0px 90px rgba(0, 0, 0, 0.5);
-    margin: 0px;
-    padding: 0px;
-} */
 
 .preloader_content{
     width: 100px;
