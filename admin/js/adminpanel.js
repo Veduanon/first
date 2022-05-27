@@ -1,21 +1,227 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDE6cFF7klfN0XeUsLT6wstMQzfnG5uxTY",
-    authDomain: "vnfdin-b8954.firebaseapp.com",
-    databaseURL: "https://vnfdin-b8954-default-rtdb.firebaseio.com",
-    projectId: "vnfdin-b8954",
-    storageBucket: "vnfdin-b8954.appspot.com",
-    messagingSenderId: "1084761966152",
-    appId: "1:1084761966152:web:e6fddc1644ab9c841afa7d",
-    measurementId: "G-VWPRTXX3KG"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const database = firebase.database();
-  var firebaseRef = firebase.database().ref();
-  const storageRef = firebase.storage().ref();
+  apiKey: "AIzaSyDE6cFF7klfN0XeUsLT6wstMQzfnG5uxTY",
+  authDomain: "vnfdin-b8954.firebaseapp.com",
+  projectId: "vnfdin-b8954",
+  storageBucket: "vnfdin-b8954.appspot.com",
+  messagingSenderId: "1084761966152",
+  appId: "1:1084761966152:web:e6fddc1644ab9c841afa7d",
+  measurementId: "G-VWPRTXX3KG"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+var storage = firebase.storage();
 
+// general
+function gener(){
+  firebase.database().ref("news/main").get().then((snapshot) => {
+      const data = snapshot.val();
+      document.getElementById("nameSite").innerHTML += `
+            ${data.name_Site}
+            `
+      document.getElementById("header1").innerHTML += `
+        ${data.header}
+        `
+        document.getElementById("textarea").innerHTML += `
+        ${data.text}
+        `
+  });
+  firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
+    if (snapshot.exists()) {
+      loggo1.src = snapshot.val().LogoUrl;
+      }
+    });
+
+    firebase.database().ref("news/service").get().then((snapshot) => {
+        const data = snapshot.val();
+        
+          document.getElementById("header_servis1").innerHTML += `
+          ${data.header1}
+          `
+          document.getElementById("text_servis1").innerHTML += `
+          ${data.text1}
+          `
+        document.getElementById("header_servis2").innerHTML += `
+          ${data.header2}
+          `
+          document.getElementById("text_servis2").innerHTML += `
+          ${data.text2}
+          `
+        document.getElementById("header_servis3").innerHTML += `
+          ${data.header3}
+          `
+          document.getElementById("text_servis3").innerHTML += `
+          ${data.text3}
+          `
+        document.getElementById("header_servis4").innerHTML += `
+          ${data.header4}
+          `
+          document.getElementById("text_servis4").innerHTML += `
+          ${data.text4}
+          `
+        document.getElementById("header_servis5").innerHTML += `
+          ${data.header5}
+          `
+          document.getElementById("text_servis5").innerHTML += `
+          ${data.text5}
+          `
+        document.getElementById("header_servis6").innerHTML += `
+          ${data.header6}
+          `
+          document.getElementById("text_servis6").innerHTML += `
+          ${data.text6}
+          `
+    })
+        firebase.database().ref("news/Aboutcompany/logo_aboutcompany").get().then((snapshot) => {
+            logo_okomp.src = snapshot.val().LogoUrl;
+          })
+
+          firebase.database().ref("news/Portfolio").once('value', (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+              var childKey = childSnapshot.key;
+                var starCountRef = firebase.database().ref('news/Portfolio/' + childKey );
+                starCountRef.on('value', (snapshot) => {
+                  const data = snapshot.val();
+                  var ele = `
+                  <div id=slide_2 class="slide_2">
+                      <div>
+                          <img style="width:100%; height:100%;" src="${data.PhotoURL}" alt="">
+                      </div>
+                  </div> `
+                  $('.slider_2').slick('slickAdd', ele);
+                });
+            })
+          });
+          
+          firebase.database().ref("news/Contact").get().then((snapshot) => {
+            const data = snapshot.val();
+            document.getElementById("indexHeader_contact1").innerHTML += `
+            ${data.header_1}
+            `
+            document.getElementById("indexText_contact1").innerHTML += `
+            ${data.text_1}
+            `
+            document.getElementById("indexText_contact1_2").innerHTML += `
+            ${data.text_Dopolnenie1}
+            `
+            document.getElementById("indexHeader_contact2").innerHTML += `
+            ${data.header_2}
+            `
+            document.getElementById("indexText_contact2").innerHTML += `
+            ${data.text_2}
+            `
+            document.getElementById("indexText_contact2_1").innerHTML += `
+            ${data.text_Dopolnenie2}
+            `
+            indexText_contact2_1
+              document.getElementById("indexHeader_contact3").innerHTML += `
+              ${data.header_3}
+              `
+              document.getElementById("indexText_contact3").innerHTML += `
+              ${data.text_3}
+              `
+              document.getElementById("indexText_contact3_1").innerHTML += `
+              ${data.text_Dopolnenie3}
+              `
+                if(data.boolean1=="true"){
+                  document.getElementById("makeHref1").setAttribute("href", data.text_Ssilka1)
+                }if (data.boolean2=="true") {
+                  
+                  document.getElementById("makeHref2").setAttribute("href", data.text_Ssilka2)
+                }if(data.boolean3=="true"){
+                  document.getElementById("makeHref3").setAttribute("href", data.text_Ssilka3)
+                }
+                if(data.boolean4=="true"){
+                  document.getElementById("makeHref4").setAttribute("href", data.text_Ssilka4)
+                }if (data.boolean5=="true") {
+                  
+                  document.getElementById("makeHref5").setAttribute("href", data.text_Ssilka5)
+                }if(data.boolean6=="true"){
+                  document.getElementById("makeHref6").setAttribute("href", data.text_Ssilka6)
+                }
+              });
+            firebase.database().ref("news/Contact").once('value', (snapshot) => {
+              var mas = []
+              snapshot.forEach(snapshot => {
+                var dataa = snapshot.val();
+                mas=[dataa]
+                
+              });
+              
+              IconContact1.src = snapshot.val().IconURL1+mas[0];
+              IconContact2.src = snapshot.val().IconURL2+mas[1];
+              IconContact3.src = snapshot.val().IconURL3+mas[2];
+            })
+            
+            firebase.database().ref("news/Aboutcompany").get().then((snapshot) => {
+              if (snapshot.exists()) {
+                const data = snapshot.val();
+                document.getElementById("header_company").innerHTML += `
+                ${data.title}
+                `
+                document.getElementById("textarea_company").innerHTML += `
+                ${data.text}
+                `
+                document.getElementById("indexHeader_aboutcomp1").innerHTML += `
+                ${data.title1}
+                `
+                document.getElementById("indexText_aboutcomp1").innerHTML += `
+                ${data.text1}
+                `
+                document.getElementById("indexHeader_aboutcomp2").innerHTML += `
+                ${data.title2}
+                `
+                document.getElementById("indexText_aboutcomp2").innerHTML += `
+                ${data.text2}
+                `
+                document.getElementById("indexHeader_aboutcomp3").innerHTML += `
+                ${data.title3}
+                `
+                document.getElementById("indexText_aboutcomp3").innerHTML += `
+                ${data.text3}
+                `
+              }
+            });
+            firebase.database().ref("news/Aboutcompany/ICONS").once('value', (snapshot) => {
+              var mas = []
+              snapshot.forEach(snapshot => {
+                var dataa = snapshot.val();
+                mas=[dataa]
+                
+              });
+              console.log(mas[0])
+              aboutcomp_icon1.src = snapshot.val().ICON1Url+mas[0];
+              aboutcomp_icon2.src = snapshot.val().ICON2Url+mas[1];
+              aboutcomp_icon3.src = snapshot.val().ICON3Url+mas[2];
+            })
+          
+          firebase.database().ref("news/Review").once('value', (snapshot) => {
+            snapshot.forEach((childSnapshot) => {
+              var childKey = childSnapshot.key;
+              try{
+              if (snapshot.exists()) {
+                var starCountRef = firebase.database().ref('news/Review/' + childKey );
+                starCountRef.on('value', (snapshot) => {
+                  const data = snapshot.val();
+                  var ele = `
+
+                  <div id="slide1" class="slide">
+                    <div>
+                        <img src="${data.PhotoURL}" alt="">
+                        <h3>${data.name}</h3>
+                        <p>${data.comment}</p>
+                    </div>
+                  </div>`
+                  $('.slider').slick('slickAdd',ele);
+                });
+              }
+            }catch(e){}
+          });
+          var element=document.querySelectorAll(".slick-track > slide");
+          if(!element){console.log('меня нет на страниц');} else {console.log('я присутствую');}
+          });
+          }
 // Get a admin's profile
-function adminProfile(){
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
       const email = user.email;
@@ -25,38 +231,30 @@ firebase.auth().onAuthStateChanged((user) => {
          `
   }
 });
-}
-
-// update Data
+// write Data main
 function writeDataMain(header, text) {
   header=document.getElementById('header_admin');
   text=document.getElementById('text'); 
   header=header.value;
   text=text.value;
-  firebase.database().ref("/news/main").update({
+  firebase.database().ref("news/main").update({
     header: header,
     text: text
   });
-  document.querySelector('.alert').style.display = 'block';
 }
-// Main
-function readDataMain(){
-  firebase.database().ref("news/main").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("header1").innerHTML += `
-        ${data.header}
-        `
-        document.getElementById("textarea").innerHTML += `
-        ${data.text}
-        `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
+firebase.database().ref("news/main").on('value', (sanpshot) => {
+
+  header = sanpshot.val().header;
+
+  text = sanpshot.val().text;
+
+  document.getElementById("header_admin").setAttribute("value", header)
+
+  
+  document.getElementById("text").innerHTML=text
+
+
+})
 // Upload logo
 function uploadLogo(url) {
   var ref = firebase.storage().ref();
@@ -73,6 +271,13 @@ function uploadLogo(url) {
     console.log(downloadURL);
     LogoSaveURLtoRealtimDB(downloadURL)
     alert("Uploaded")
+    firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
+      if (snapshot.exists()) {
+        var dataa = snapshot.val();
+        document.getElementById("noneLogo").innerHTML=
+        `<img style="max-width:50px;" src="${dataa.LogoUrl}">`
+        }
+      });
   });
 
   task.on('state-changed', (snapshot)=>{
@@ -86,111 +291,77 @@ function LogoSaveURLtoRealtimDB(URL){
     LogoUrl: URL
   })
 };
-function LogoGetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      loggo.src = snapshot.val().LogoUrl;
-      }
-    })
+firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
+  if (snapshot.exists()) {
+    LogoShow.src = snapshot.val().LogoUrl;
+    }
+  });
+function deleteLogo(){
+  firebase.database().ref("news/main/photo/logo").remove()
+  document.getElementById("noneLogo").innerHTML=''
   }
-
 // Service
+firebase.database().ref("news/service").on('value', (sanpshot) => {
+  header1 = sanpshot.val().header1;
+  header2 = sanpshot.val().header2;
+  header3 = sanpshot.val().header3;
+  header4 = sanpshot.val().header4;
+  header5 = sanpshot.val().header5;
+  header6 = sanpshot.val().header6;
 
+  text1 = sanpshot.val().text1;
+  text2 = sanpshot.val().text2;
+  text3 = sanpshot.val().text3;
+  text4 = sanpshot.val().text4;
+  text5 = sanpshot.val().text5;
+  text6 = sanpshot.val().text6;
+
+  document.getElementById("header_Servis1").setAttribute("value", header1)
+  document.getElementById("header_Servis2").setAttribute("value", header2)
+  document.getElementById("header_Servis3").setAttribute("value", header3)
+  document.getElementById("header_Servis4").setAttribute("value", header4)
+  document.getElementById("header_Servis5").setAttribute("value", header5)
+  document.getElementById("header_Servis6").setAttribute("value", header6)
+  
+  document.getElementById("text_Servis1").innerHTML=text1
+  document.getElementById("text_Servis2").innerHTML=text2
+  document.getElementById("text_Servis3").innerHTML=text3
+  document.getElementById("text_Servis4").innerHTML=text4
+  document.getElementById("text_Servis5").innerHTML=text5
+  document.getElementById("text_Servis6").innerHTML=text6
+
+})
 function writeDataServis() {
   hheader=document.getElementById('header_Servis1');
   ttext=document.getElementById('text_Servis1'); 
-  header1=hheader.value;
-  text1=ttext.value;
 
-  hheader=document.getElementById('header_Servis2');
-  ttext=document.getElementById('text_Servis2'); 
-  header2=hheader.value;
-  text2=ttext.value;
 
-  hheader=document.getElementById('header_Servis3');
-  ttext=document.getElementById('text_Servis3'); 
-  header3=hheader.value;
-  text3=ttext.value;
+  var header1 = document.getElementById("header_Servis1").value;
+  var text1 = document.getElementById("text_Servis1").value;
 
-  hheader=document.getElementById('header_Servis4');
-  ttext=document.getElementById('text_Servis4'); 
-  header4=hheader.value;
-  text4=ttext.value;
+  var header2 = document.getElementById("header_Servis2").value;
+  var text2 = document.getElementById("text_Servis2").value;
 
-  hheader=document.getElementById('header_Servis5');
-  ttext=document.getElementById('text_Servis5'); 
-  header5=hheader.value;
-  text5=ttext.value;
+  var header3 = document.getElementById("header_Servis3").value;
+  var text3 = document.getElementById("text_Servis3").value;
 
-  hheader=document.getElementById('header_Servis6');
-  ttext=document.getElementById('text_Servis6'); 
-  header6=hheader.value;
-  text6=ttext.value;
+  var header4 = document.getElementById("header_Servis4").value;
+  var text4 = document.getElementById("text_Servis4").value;
 
-  firebase.database().ref("news/service").update({
-    header_Servis1: header1,
-    text_Servis1: text1,
-    header_Servis2: header2,
-    text_Servis2: text2,
-    header_Servis3: header3,
-    text_Servis3: text3,
-    header_Servis4: header4,
-    text_Servis4: text4,
-    header_Servis5: header5,
-    text_Servis5: text5,
-    header_Servis6: header6,
-    text_Servis6: text6,
-  });
+  var header5 = document.getElementById("header_Servis5").value;
+  var text5 = document.getElementById("text_Servis5").value;
+  
+  var header6 = document.getElementById("header_Servis6").value;
+  var text6 = document.getElementById("text_Servis6").value;
+
+      var updates = { header1: header1, header2: header2, header3: header3, header4: header4, header5: header5, header6: header6 };
+      firebase.database().ref("news/service").update(updates);
+
+      var updates = { text1: text1, text2: text2, text3: text3, text4: text4, text5: text5, text6: text6 };
+      firebase.database().ref("news/service").update(updates);
   alert("Updated!")
 }
 
-function readDataServis(){
-  firebase.database().ref("news/service").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("header_servis1").innerHTML += `
-        ${data.header_Servis1}
-        `
-        document.getElementById("text_servis1").innerHTML += `
-        ${data.text_Servis1}
-        `
-      document.getElementById("header_servis2").innerHTML += `
-        ${data.header_Servis2}
-        `
-        document.getElementById("text_servis2").innerHTML += `
-        ${data.text_Servis2}
-        `
-      document.getElementById("header_servis3").innerHTML += `
-        ${data.header_Servis3}
-        `
-        document.getElementById("text_servis3").innerHTML += `
-        ${data.text_Servis3}
-        `
-      document.getElementById("header_servis4").innerHTML += `
-        ${data.header_Servis4}
-        `
-        document.getElementById("text_servis4").innerHTML += `
-        ${data.text_Servis4}
-        `
-      document.getElementById("header_servis5").innerHTML += `
-        ${data.header_Servis5}
-        `
-        document.getElementById("text_servis5").innerHTML += `
-        ${data.text_Servis5}
-        `
-      document.getElementById("header_servis6").innerHTML += `
-        ${data.header_Servis6}
-        `
-        document.getElementById("text_servis6").innerHTML += `
-        ${data.text_Servis6}
-        `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
 
 function writeDataNavbar() {
   name1=document.getElementById('editNameite');
@@ -202,20 +373,6 @@ function writeDataNavbar() {
   alert("Updated!")
 }
 
-function readDataNavbar(){
-  firebase.database().ref("news/main").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("nameSite").innerHTML += `
-        ${data.name_Site}
-        `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
 
 // About company: show/upload image, icons. Change text, headers
 function uploadImageAndIcons(url) {
@@ -246,81 +403,49 @@ function OkompSaveURLtoRealtimDB(URL){
       LogoUrl: URL
   });
 };
-function OkompGetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Aboutcompany/logo_aboutcompany").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      logo_okomp.src = snapshot.val().LogoUrl;
-      }
-    })
-  }
-  function writeDataAboutcomp() {
 
-    header=document.getElementById('header_company');
-    header=header.value;
-    hheader=document.getElementById('header_aboutcomp1');
-    hheader_1=hheader.value;
-    hheader=document.getElementById('header_aboutcomp2');
-    hheader_2=hheader.value;
-    hheader=document.getElementById('header_aboutcomp3');
-    hheader_3=hheader.value;
-  
-    text=document.getElementById('text_company');
-    text=text.value;
-    ttext=document.getElementById('text_aboutcomp1');
-    ttext_1=ttext.value;
-    ttext=document.getElementById('text_aboutcomp2');
-    ttext_2=ttext.value;
-    ttext=document.getElementById('text_aboutcomp3');
-    ttext_3=ttext.value;
-  
-    firebase.database().ref("news/Aboutcompany").update({
-      header: header,
-      text: text,
-      header_1: hheader_1,
-      text_1: ttext_1,
-      header_2: hheader_2,
-      text_2: ttext_2,
-      header_3: hheader_3,
-      text_3: ttext_3
+firebase.database().ref("news/Aboutcompany").on('value', (sanpshot) => {
 
-    });
-    alert("Updated!")
-  }
-  function readDataAboutcomp(){
-    firebase.database().ref("news/Aboutcompany").get().then((snapshot) => {
-      if (snapshot.exists()) {
-        const data = snapshot.val();
-        document.getElementById("header_company").innerHTML += `
-        ${data.header}
-        `
-        document.getElementById("textarea_company").innerHTML += `
-        ${data.text}
-        `
-        document.getElementById("indexHeader_aboutcomp1").innerHTML += `
-        ${data.header_1}
-        `
-        document.getElementById("indexText_aboutcomp1").innerHTML += `
-        ${data.text_1}
-        `
-        document.getElementById("indexHeader_aboutcomp2").innerHTML += `
-        ${data.header_2}
-        `
-        document.getElementById("indexText_aboutcomp2").innerHTML += `
-        ${data.text_2}
-        `
-        document.getElementById("indexHeader_aboutcomp3").innerHTML += `
-        ${data.header_3}
-        `
-        document.getElementById("indexText_aboutcomp3").innerHTML += `
-        ${data.text_3}
-        `
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
-  }
+      title = sanpshot.val().title;
+      title1 = sanpshot.val().title1;
+      title2 = sanpshot.val().title2;
+      title3 = sanpshot.val().title3;
+
+      text = sanpshot.val().text;
+      text1 = sanpshot.val().text1;
+      text2 = sanpshot.val().text2;
+      text3 = sanpshot.val().text3;
+      document.getElementById("header_company").setAttribute("value", title)
+      document.getElementById("header_aboutcomp1").setAttribute("value", title1)
+      document.getElementById("header_aboutcomp2").setAttribute("value", title2)
+      document.getElementById("header_aboutcomp3").setAttribute("value", title3)
+      
+      document.getElementById("text_company").innerHTML=text
+      document.getElementById("text_aboutcomp1").setAttribute("value", text1)
+      document.getElementById("text_aboutcomp2").setAttribute("value", text2)
+      document.getElementById("text_aboutcomp3").setAttribute("value", text3)
+  })
+function writeDataAboutcomp() {
+
+    var title = document.getElementById("header_company").value;
+    var text = document.getElementById("text_company").value;
+
+    var title1 = document.getElementById("header_aboutcomp1").value;
+    var text1 = document.getElementById("text_aboutcomp1").value;
+
+    var title2 = document.getElementById("header_aboutcomp2").value;
+    var text2 = document.getElementById("text_aboutcomp2").value;
+
+    var title3 = document.getElementById("header_aboutcomp3").value;
+    var text3 = document.getElementById("text_aboutcomp3").value;
+
+        var updates = { title: title, title1: title1, title2: title2, title3: title3 };
+        firebase.database().ref("news/Aboutcompany").update(updates);
+
+        var updates = { text: text, text1: text1, text2: text2, text3: text3 };
+        firebase.database().ref("news/Aboutcompany").update(updates);
+  };
+
   function uploadIcons1(url) {
     ref = firebase.storage().ref();
     file1 = document.querySelector("#uploadIcon1_company").files[0];
@@ -348,13 +473,8 @@ function OkompGetUrlfromRealtimDB(){
         ICON1Url: URL
     });
   };
-  function Icon1GetUrlfromRealtimDB(){ 
-    firebase.database().ref("news/Aboutcompany/ICONS").get().then((snapshot) => {
-      if (snapshot.exists()) {
-        aboutcomp_icon1.src = snapshot.val().ICON1Url;
-        }
-      })
-    }
+
+
   function uploadIcons2(url) {
     ref = firebase.storage().ref();
     file1 = document.querySelector("#uploadIcon2_company").files[0];
@@ -383,13 +503,7 @@ function OkompGetUrlfromRealtimDB(){
         ICON2Url: URL
     });
   };
-  function Icon2GetUrlfromRealtimDB(){ 
-    firebase.database().ref("news/Aboutcompany/ICONS").get().then((snapshot) => {
-      if (snapshot.exists()) {
-        aboutcomp_icon2.src = snapshot.val().ICON2Url;
-        }
-      })
-    }
+  
 
     function uploadIcons3(url) {
       ref = firebase.storage().ref();
@@ -419,32 +533,20 @@ function OkompGetUrlfromRealtimDB(){
           ICON3Url: URL
       });
     };
-    function Icon3GetUrlfromRealtimDB(){ 
-      firebase.database().ref("news/Aboutcompany/ICONS").get().then((snapshot) => {
-        if (snapshot.exists()) {
-          aboutcomp_icon3.src = snapshot.val().ICON3Url;
-          }
-        })
-      }
+
+// END!!! About company: show/upload image, icons. Change text, headers
 
 //                                                      attraction block
-function readDataAttraction(){
-  firebase.database().ref("news/Attraction").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("indexHeader_attraction").innerHTML += `
-      ${data.header}
-      `
-      document.getElementById("indexText_attraction").innerHTML += `
-      ${data.text}
-      `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
+firebase.database().ref("news/Attraction").on('value', (sanpshot) => {
+
+  header = sanpshot.val().header;
+
+  text = sanpshot.val().text;
+
+  document.getElementById("header_attract").setAttribute("value", header)
+
+  document.getElementById("text_attract").innerHTML=text
+})
 function writeDataAttraction() {
   
   header=document.getElementById('header_attract');
@@ -463,110 +565,76 @@ function writeDataAttraction() {
   alert("Updated!")
 }
 // contacts block
+firebase.database().ref("news/Contact").on('value', (sanpshot) => {
+
+  header_1 = sanpshot.val().header_1;
+  header_2 = sanpshot.val().header_2;
+  header_3 = sanpshot.val().header_3;
+
+  text_1 = sanpshot.val().text_1;
+  text_2 = sanpshot.val().text_2;
+  text_3 = sanpshot.val().text_3;
+  text_Dopolnenie1 = sanpshot.val().text_Dopolnenie1;
+  text_Dopolnenie2 = sanpshot.val().text_Dopolnenie2;
+  text_Dopolnenie3 = sanpshot.val().text_Dopolnenie3;
+
+  text_contactSsilka1 = sanpshot.val().text_Ssilka1;
+  text_contactSsilka2 = sanpshot.val().text_Ssilka2;
+  text_contactSsilka3 = sanpshot.val().text_Ssilka3;
+  text_contactSsilka4 = sanpshot.val().text_Ssilka4;
+  text_contactSsilka5 = sanpshot.val().text_Ssilka5;
+  text_contactSsilka6 = sanpshot.val().text_Ssilka6;
+
+  document.getElementById("header_contact1").setAttribute("value", header_1)
+  document.getElementById("header_contact2").setAttribute("value", header_2)
+  document.getElementById("header_contact3").setAttribute("value", header_3)
+  
+  document.getElementById("text_contact1").setAttribute("value", text_1)
+  document.getElementById("text_contact2").setAttribute("value", text_2)
+  document.getElementById("text_contact3").setAttribute("value", text_3)
+  document.getElementById("text_contactAdditional1").setAttribute("value", text_Dopolnenie1)
+  document.getElementById("text_contactAdditional2").setAttribute("value", text_Dopolnenie2)
+  document.getElementById("text_contactAdditional3").setAttribute("value", text_Dopolnenie3)
+  
+  
+  document.getElementById("text_contactSsilka1").setAttribute("value", text_contactSsilka1)
+  document.getElementById("text_contactSsilka2").setAttribute("value", text_contactSsilka2)
+  document.getElementById("text_contactSsilka3").setAttribute("value", text_contactSsilka3)
+  document.getElementById("text_contactSsilka4").setAttribute("value", text_contactSsilka4)
+  document.getElementById("text_contactSsilka5").setAttribute("value", text_contactSsilka5)
+  document.getElementById("text_contactSsilka6").setAttribute("value", text_contactSsilka6)
+})
 function writeDataContact() {
 
-  hheader=document.getElementById('header_contact1');
-  hheader_1=hheader.value;
-  hheader=document.getElementById('header_contact2');
-  hheader_2=hheader.value;
-  hheader=document.getElementById('header_contact3');
-  hheader_3=hheader.value;
 
-  ttext=document.getElementById('text_contact1');
-  ttext_1=ttext.value;
-
-  textAdd1=document.getElementById('text_contactAdditional1');
-  textDopolnenine1=textAdd1.value;
-
-  ttext=document.getElementById('text_contact2');
-  ttext_2=ttext.value;
-
-  ttext=document.getElementById('text_contact3');
-  ttext_3=ttext.value;
-
-  textAdd2=document.getElementById('text_contactAdditional2');
-  textDopolnenine2=textAdd2.value;
+  var header_1 = document.getElementById("header_contact1").value;
+  var text_1 = document.getElementById("text_contact1").value;
+  var text_Dopolnenie1 = document.getElementById("text_contactAdditional1").value;
+  var text_Ssilka1 = document.getElementById("text_contactSsilka1").value;
+  var text_Ssilka4 = document.getElementById("text_contactSsilka4").value;
+  
+  
+  var header_2 = document.getElementById("header_contact2").value;
+  var text_2 = document.getElementById("text_contact2").value;
+  var text_Dopolnenie2 = document.getElementById("text_contactAdditional2").value;
+  var text_Ssilka2 = document.getElementById("text_contactSsilka2").value;
+  var text_Ssilka5 = document.getElementById("text_contactSsilka5").value;
+  
+  var header_3 = document.getElementById("header_contact3").value;
+  var text_3 = document.getElementById("text_contact3").value;
+  var text_Dopolnenie3 = document.getElementById("text_contactAdditional3").value;
+  var text_Ssilka3 = document.getElementById("text_contactSsilka3").value;
+  var text_Ssilka6 = document.getElementById("text_contactSsilka6").value;
 
 
-  firebase.database().ref("news/Contact").update({
-    header_1: hheader_1,
+      var updates = { header_1: header_1, header_2: header_2, header_3: header_3};
+      firebase.database().ref("news/Contact").update(updates);
 
-    text_1: ttext_1,
-
-    text1_2: textDopolnenine1,
-
-    header_2: hheader_2,
-
-    text_2: ttext_2,
-
-    header_3: hheader_3,
-
-    text_3: ttext_3,
-
-    text3_3: textDopolnenine2
-
-  });
+      var updates = { text_1: text_1, text_2: text_2, text_3: text_3, text_Dopolnenie1: text_Dopolnenie1, text_Dopolnenie2:text_Dopolnenie2, text_Dopolnenie3:text_Dopolnenie3, text_Ssilka1:text_Ssilka1, text_Ssilka2:text_Ssilka2, text_Ssilka3:text_Ssilka3, text_Ssilka4:text_Ssilka4, text_Ssilka5:text_Ssilka5, text_Ssilka6:text_Ssilka6 };
+      firebase.database().ref("news/Contact").update(updates);
   alert("Updated!")
 }
 
-function readDataContact1(){
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("indexHeader_contact1").innerHTML += `
-      ${data.header_1}
-      `
-      document.getElementById("indexText_contact1").innerHTML += `
-      ${data.text_1}
-      `
-      document.getElementById("indexText_contact1_2").innerHTML += `
-      ${data.text1_2}
-      `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
-
-function readDataContact2(){
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("indexHeader_contact2").innerHTML += `
-      ${data.header_2}
-      `
-      document.getElementById("indexText_contact2").innerHTML += `
-      ${data.text_2}
-      `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
-function readDataContact3(){
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      const data = snapshot.val();
-      document.getElementById("indexHeader_contact3").innerHTML += `
-      ${data.header_3}
-      `
-      document.getElementById("indexText_contact3").innerHTML += `
-      ${data.text_3}
-      `
-      document.getElementById("indexText_contact3_1").innerHTML += `
-      ${data.text3_3}
-      `
-    } else {
-      console.log("No data available");
-    }
-  }).catch((error) => {
-    console.error(error);
-  });
-}
 
 function uploadIconContact1(url) {
   ref = firebase.storage().ref();
@@ -596,13 +664,7 @@ function Contact1SaveURLtoRealtimDB(URL){
     IconURL1: URL
   });
 };
-function Contact1GetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      IconContact1.src = snapshot.val().IconURL1;
-    }
-  })
-}
+
 function uploadIconContact2(url) {
   ref = firebase.storage().ref();
   file1 = document.querySelector("#icon_contact2").files[0];
@@ -631,13 +693,7 @@ function Contact2SaveURLtoRealtimDB(URL){
     IconURL2: URL
   });
 };
-function Contact2GetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      IconContact2.src = snapshot.val().IconURL2;
-    }
-  })
-}
+
 function uploadIconContact3(url) {
   ref = firebase.storage().ref();
   file1 = document.querySelector("#icon_contact3").files[0];
@@ -666,13 +722,7 @@ function Contact3SaveURLtoRealtimDB(URL){
     IconURL3: URL
   });
 };
-function Contact3GetUrlfromRealtimDB(){ 
-  firebase.database().ref("news/Contact").get().then((snapshot) => {
-    if (snapshot.exists()) {
-      IconContact3.src = snapshot.val().IconURL3;
-    }
-  })
-}
+
 //                                                          portfolio
 function uploadPhotoSlider() {
   ref = firebase.storage().ref();
@@ -696,7 +746,6 @@ function uploadPhotoSlider() {
     progress_review.innerHTML = "Upload "+ progess +"%";
   })
 }
-
 function PortfolioSaveURLtoRealtimDB(URL){
   
   firebase.database().ref("news/Portfolio").push({
@@ -704,42 +753,6 @@ function PortfolioSaveURLtoRealtimDB(URL){
   });
 };
 
-
-
-function readSlider(){
-  firebase.database().ref("news/Portfolio").once('value', (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      var childKey = childSnapshot.key;
-      if (snapshot.exists()) {
-        var starCountRef = firebase.database().ref('news/Portfolio/' + childKey );
-        starCountRef.on('value', (snapshot) => {
-          const data = snapshot.val();
-          var ele = `
-          <div class="slide_2">
-              <div>
-                  <img style="width:100%; height:100%;" src="${data.PhotoURL}" alt="">
-              </div>
-          </div> `
-          $('.slider_2').slick('slickAdd', ele);
-        });
-      }else {
-        console.log("No data available");
-      }
-    });
-  });
-}
-function deleteSlide(){
-  firebase.database().ref("news/Portfolio/").once('value', (snapshot) => {
-    var mas = []
-    snapshot.forEach((childSnapshot) => {
-      var childKey = childSnapshot.key
-      mas=[childKey]
-    })
-    firebase.database().ref("news/Portfolio/").child(mas[0]).remove()
-    $('.slider_2').slick('slickRemove', 0);
-    alert('Deleted!')
-  })
-}
 
 //                                               review block
 function uploadReview(url) {
@@ -758,14 +771,14 @@ function uploadReview(url) {
     console.log(downloadURL);
     ReviewSaveURLtoRealtimDB(downloadURL)
   });
-
+  
   header=document.getElementById('name_review');
   header=header.value;
-
-
+  
+  
   text=document.getElementById('comment_review');
   text=text.value;
-
+  
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
     progress_review.innerHTML = "Upload "+ progess +"%";
@@ -774,50 +787,142 @@ function uploadReview(url) {
 
 function ReviewSaveURLtoRealtimDB(URL){
   firebase.database().ref("news/Review").push({
-      name: header,
-      comment: text,
-      PhotoURL: URL
+    name: header,
+    comment: text,
+    PhotoURL: URL
   });
 };
 
 function writeDataReview() {
-
+  
   header=document.getElementById('name_review');
   header=header.value;
-
-
+  
+  
   text=document.getElementById('comment_review');
   text=text.value;
-
-
+  
+  
   firebase.database().ref("news/Review").push({
     name: header,
     comment: text
-
+    
   });
   alert("Updated!")
 }
-function readSliderReview(){
-  firebase.database().ref("news/Review").once('value', (snapshot) => {
-    snapshot.forEach((childSnapshot) => {
-      var childKey = childSnapshot.key;
-      if (snapshot.exists()) {
-        var starCountRef = firebase.database().ref('news/Review/' + childKey );
-        starCountRef.on('value', (snapshot) => {
-          const data = snapshot.val();
-          var ele = `
-          <div class="slide">
-                            <div>
-                                <img src="${data.PhotoURL}" alt="">
-                                <h3>${data.name}</h3>
-                                <h4>${data.comment}</h4>
-                            </div>
-                        </div>`
-          $('.slider').slick('slickAdd',ele);
-        });
-      }else {
-        console.log("No data available");
-      }
-    });
-  });
+
+  firebase.database().ref("news/Portfolio").once('value', (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    var childKey = childSnapshot.key;
+    var starCountRef = firebase.database().ref('news/Portfolio/' + childKey );
+    starCountRef.on('value', (snapshot) => {
+      const dataa = snapshot.val();
+      document.getElementById("slider").innerHTML += `
+      <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
+      <img onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
+      
+      `
+    })
+  })
+});
+
+firebase.database().ref("news/Review").once('value', (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    var childKey = childSnapshot.key;
+    var starCountRef = firebase.database().ref('news/Review/' + childKey );
+    starCountRef.on('value', (snapshot) => {
+      const dataa = snapshot.val();
+      var ele =`
+      <div style="border:3px solid">
+      <div id="sliderRev">
+        <p> ${dataa.name}</p>
+        <p> ${dataa.comment} </p>
+      </div>
+      <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
+      <img onclick="deleteSlideReview('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
+      </div>
+      `
+      document.getElementById("sliderReview").insertAdjacentHTML("beforeend", ele);
+    })
+  })
+})
+
+
+function deleteSlide(key) {
+
+  firebase.database().ref('news/Portfolio/' + key).remove();
+  alert("Deleted")
 }
+function deleteSlideReview(key) {
+  firebase.database().ref('news/Review/' + key).remove();
+  alert("Deleted")
+}
+
+
+var c1 = document.querySelector('#checkbox1');
+var c2 = document.querySelector('#checkbox2');
+var c3 = document.querySelector('#checkbox3');
+var c4 = document.querySelector('#checkbox4');
+var c5 = document.querySelector('#checkbox5');
+var c6 = document.querySelector('#checkbox6');
+c1.onclick = function() {
+  if (c1.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean1:"true"
+    });
+    
+ }
+ else(firebase.database().ref("news/Contact/boolean1").remove())
+}
+c2.onclick = function() {
+  if (c2.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean2:"true"
+    });
+ }
+ else(firebase.database().ref("news/Contact/boolean2").remove())
+
+}
+c3.onclick = function() {
+  if (c3.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean3:"true"
+    });
+ }
+ else(firebase.database().ref("news/Contact/boolean3").remove())
+
+}
+c4.onclick = function() {
+  if (c4.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean4:"true"
+    });
+ }
+ else(firebase.database().ref("news/Contact/boolean4").remove())
+}
+c5.onclick = function() {
+  if (c5.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean5:"true"
+    });
+ }
+ else(firebase.database().ref("news/Contact/boolean5").remove())
+
+}
+c6.onclick = function() {
+  if (c6.checked) {
+    firebase.database().ref("news/Contact").update({
+      boolean6:"true"
+    });
+ }
+ else(firebase.database().ref("news/Contact/boolean6").remove())
+
+}
+firebase.database().ref("news/Contact").once('value', (snapshot) => {
+  const data = snapshot.val();
+  for(let i = (0+1); i<=6; i++){
+    if(data['boolean' + i] == "true"){
+      document.getElementById("checkbox"+i).checked = true;
+    }
+  }
+})
