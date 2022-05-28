@@ -865,10 +865,14 @@ body{
 .content14{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 5px;
-    height: 35%;
-    padding:0 10px 0 10px ;
-    width: 100%;
-    margin-top: 5px;
+    height: 300px;
+    padding:0 10px 10px 0px;
+    width: 20%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    margin-top: 15px;
+    border: 2px solid #11101d;
 }
 
 .con5btn{
@@ -1100,6 +1104,11 @@ body{
     margin: 10px 0 10px 38px;
     background-color: rgb(246, 246, 246);
     border: 1px solid rgb(236, 236, 236);
+    border-radius: 5px;
+    padding-left: 5px;
+}
+#sliderReview{
+    width: 350px;
 }
 #sliderReview p{
     margin: 5px 0 0 10px;
@@ -1291,22 +1300,13 @@ body{
 }
 .con14{
     display: block;
+    width: 100%;
 }
 .con14 input{
     margin-top: 15px;
     margin-left: 5px;
 }
-.content14{
-    margin-top: 15px;
-    border: 2px solid #11101d;
-    width: 250px;
-    height: 300px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
-}
+
 .content14 i{
     font-size: 22px;
 
