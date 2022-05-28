@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 </head>
 
-<body onload="readDataContact2(), readDataContact3(),readDataContact1(), Contact3GetUrlfromRealtimDB(), Contact2GetUrlfromRealtimDB(), Contact1GetUrlfromRealtimDB(), readDataAttraction(), readDataMain(), readDataServis(), LogoGetUrlfromRealtimDB(), readDataNavbar(), readDataAboutcomp(), OkompGetUrlfromRealtimDB(), Icon1GetUrlfromRealtimDB(), Icon2GetUrlfromRealtimDB(), Icon3GetUrlfromRealtimDB(), readSliderReview(),readSlider()">
+<body onload="gener()">
     <div class="preloader">
         <div class="preloader_content">
             <div class="circle">
@@ -40,23 +40,23 @@
             <h2>КАЛЬКУЛЯТОР</h2>
 
             <form class="modal_form" action="">
-                <input class="number_1" type="text" placeholder="кв/м для баннера">
-                <input class="number_1" type="text" placeholder="кв/м для пленки">
+                <input class="number_1" type="text" placeholder="кв/м для баннера" id="num1">
+                <input class="number_1" type="text" placeholder="кв/м для пленки" id="num2">
                 <span>
-                    <input id="tab_1" type="radio" name="tabs"> плотность 340гр-кв/м баннера(1500тг)<br>
+                    <input id="tab_1" type="radio" name="tabs" onclick="op=1500" class="tabs"> плотность 340гр-кв/м баннера(1500тг)<br>
                     <label for="tab_1"></label>
-                    <input id="tab_2" type="radio" name="tabs"> плотность 400гр-кв/м баннера(1700тг)<br>
+                    <input id="tab_2" type="radio" name="tabs" onclick="op=1700" class="tabs"> плотность 400гр-кв/м баннера(1700тг)<br>
                     <label for="tab_2"></label>
-                    <input id="tab_3" type="radio" name="tabs"> плотность 440гр-кв/м баннера(2000тг)<br><br>
+                    <input id="tab_3" type="radio" name="tabs" onclick="op=2000" class="tabs"> плотность 440гр-кв/м баннера(2000тг)<br><br>
                     <label for="tab_3"></label>
 
-                    <input id="tab_4" type="radio" name="tabs_1"> Широкоформатная пленка(2000тг)<br>
+                    <input id="tab_4" type="radio" name="tabs_1" onclick="op2=2000" class="tabs2"> Широкоформатная пленка(2000тг)<br>
                     <label for="tab_4"></label>
-                    <input id="tab_5" type="radio" name="tabs_1"> Интерьерная пленка(2500тг)<br>
+                    <input id="tab_5" type="radio" name="tabs_1" onclick="op2=2500" class="tabs2"> Интерьерная пленка(2500тг)<br>
                     <label for="tab_5"></label>
                 </span>
 
-                <div>Предположительная стоймость:<input type="text" disabled placeholder="100тг"></div>
+                <div>Предположительная стоймость:<input type="text" disabled placeholder="NaNтг" class="result"></div>
             </form>
         </div>
     </div>
@@ -67,7 +67,7 @@
         <div class="container">
             <div class="navigation_nav">
                 <div class="logo">
-                    <img id="loggo" style="width: 50px; height: 50px;">
+                    <img id="loggo1">
                     <a id="nameSite" href="index.html"></a>
                 </div>
 
@@ -324,24 +324,30 @@
         <div class="container">
             <div class="section_6">
                 <div class="section_6_1">
-                    <div class="square footer_square_1">
-                        <h3 id="indexHeader_contact1"></h3>
+                    <div id="square footer_square_1" class="square footer_square_1">
                         <img id="IconContact1" alt="" style="height: 50px; width: 50px;">
-                        <span id="indexText_contact1" class="section_6_span1"></span>
-                        <a href="https://instagram.com/naruzhnaya_reklama_astana.kz?igshid=YmMyMTA2M2Y=">
+                        <p id="indexHeader_contact1"></p>
+                        <a id="makeHref1">
+                            <span id="indexText_contact1" class="section_6_span1"></span>
+                        </a>
+                        <a id="makeHref4">
                             <span id="indexText_contact1_2" class="section_6_span1"></span>
                         </a>
                     </div>
                     <div class="square footer_square_1">
                         <img id="IconContact2" alt="" style="height: 50px; width: 50px;">
-                        <h3 id="indexHeader_contact2"></h3>
-                        <span id="indexText_contact2" class="section_6_span3"></span>
+                        <p id="indexHeader_contact2"></p>
+                        <a id="makeHref2">
+                            <span id="indexText_contact2" class="section_6_span3"></span>
+                        </a>
                     </div>
                     <div class="square footer_square">
-                        <h3 id="indexHeader_contact3"></h3>
                         <img id="IconContact3" alt="" style="height: 50px; width: 50px;">
-                        <a href=" https://wa.me/87072012494">
+                        <p id="indexHeader_contact3"></p>
+                        <a id="makeHref3">
                             <span id="indexText_contact3"></span>
+                        </a>
+                        <a id="makeHref6">
                             <span id="indexText_contact3_1" class="section_6_span1"></span>
                         </a>
                     </div> 
@@ -356,16 +362,16 @@
 
     <div class="phone-button"><a href="tel:+77072012494" title="Обратный звонок"><i class="fa fa-phone-alt"></i></a></div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>   
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
     <script src="admin/js/adminpanel.js"></script>
     <script src="js/script.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>   
     <script src="https://kit.fontawesome.com/1950b4b0b7.js" crossorigin="anonymous"></script>
 </body>
 </html>

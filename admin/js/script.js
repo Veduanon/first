@@ -15,7 +15,8 @@
  };
  // Initialize Firebase
  firebase.initializeApp(firebaseConfig);
-
+ var storage = firebase.storage();
+ 
  // Sign in
  function signIn()
  {
