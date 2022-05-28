@@ -16,14 +16,16 @@ function gener(){
   firebase.database().ref("news/main").get().then((snapshot) => {
       const data = snapshot.val();
       document.getElementById("nameSite").innerHTML += `
-            ${data.name_Site}
-            `
-      document.getElementById("header1").innerHTML += `
-        ${data.header}
-        `
-        document.getElementById("textarea").innerHTML += `
-        ${data.text}
-        `
+      ${data.name_Site}
+      `
+      document.querySelector(".header_content").innerHTML+=`
+      <h1 id="header1" class="header_text_1">
+      ${data.header}     
+      </h1>
+      <div id="textarea" class="header_text_2">
+      ${data.text}     
+      </div>
+      `
   });
   firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
     if (snapshot.exists()) {
@@ -33,43 +35,84 @@ function gener(){
 
     firebase.database().ref("news/service").get().then((snapshot) => {
         const data = snapshot.val();
-        
-          document.getElementById("header_servis1").innerHTML += `
-          ${data.header1}
-          `
-          document.getElementById("text_servis1").innerHTML += `
-          ${data.text1}
-          `
-        document.getElementById("header_servis2").innerHTML += `
-          ${data.header2}
-          `
-          document.getElementById("text_servis2").innerHTML += `
-          ${data.text2}
-          `
-        document.getElementById("header_servis3").innerHTML += `
-          ${data.header3}
-          `
-          document.getElementById("text_servis3").innerHTML += `
-          ${data.text3}
-          `
-        document.getElementById("header_servis4").innerHTML += `
-          ${data.header4}
-          `
-          document.getElementById("text_servis4").innerHTML += `
-          ${data.text4}
-          `
-        document.getElementById("header_servis5").innerHTML += `
-          ${data.header5}
-          `
-          document.getElementById("text_servis5").innerHTML += `
-          ${data.text5}
-          `
-        document.getElementById("header_servis6").innerHTML += `
-          ${data.header6}
-          `
-          document.getElementById("text_servis6").innerHTML += `
-          ${data.text6}
-          `
+        document.querySelector(".squares_2").innerHTML+=`
+        <div class="square_2">
+                        <div>
+                            <h2 id="header_servis1">
+                            ${data.header1}
+                            </h2>
+                            <span id="text_servis1">
+                            ${data.text1}
+                            </span>
+                        </div>
+                        
+                        <button class="button">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis2">
+                            ${data.header2}
+                            </h2>
+                            <span id="text_servis2">
+                            ${data.text2}
+                            </span>
+                        </div>
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis3">
+                            ${data.header3}
+                            </h2>
+                            <span id="text_servis3">
+                            ${data.text3}
+                            </span>
+                        </div>
+                        
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis4">
+                            ${data.header4}
+                            </h2>
+                            <span id="text_servis4">
+                            ${data.text4}
+                            </span>
+                        </div>
+                        
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis5">
+                            ${data.header5}
+                            </h2>
+                            <span id="text_servis5">
+                            ${data.text5}
+                            </span>
+                        </div>
+                        
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+                    <div class="square_2">
+                        <div>
+                            <h2 id="header_servis6">
+                            ${data.header6}
+                            </h2>
+                            <span id="text_servis6">
+                            ${data.text6}
+                            </span>
+                        </div>
+
+                        <button class="button_test">Посчитать цену</button>
+                    </div>
+        `
     })
         firebase.database().ref("news/Aboutcompany/logo_aboutcompany").get().then((snapshot) => {
             logo_okomp.src = snapshot.val().LogoUrl;
@@ -94,64 +137,62 @@ function gener(){
           
           firebase.database().ref("news/Contact").get().then((snapshot) => {
             const data = snapshot.val();
-            document.getElementById("indexHeader_contact1").innerHTML += `
-            ${data.header_1}
+            document.querySelector(".section_6").innerHTML+=`
+            <div class="section_6_1">
+                    <div id="square footer_square_1" class="square footer_square_1">
+                        <h3 id="indexHeader_contact1">${data.header_1}</h3>
+                        <img id="IconContact1" src="${data.IconURL1}" alt="" style="height: 50px; width: 50px;">
+                        <a id="makeHref1">
+                            <span id="indexText_contact1" class="section_6_span1">${data.text_1}</span>
+                        </a>
+                        <a id="makeHref4">
+                            <span id="indexText_contact1_2" class="section_6_span1">${data.text_Dopolnenie1}</span>
+                        </a>
+                    </div>
+                    <div class="square footer_square_1">
+                        <img id="IconContact2" src="${data.IconURL2}" alt="" style="height: 50px; width: 50px;">
+                        <h3 id="indexHeader_contact2">${data.header_2}</h3>
+                        <a id="makeHref2">
+                            <span id="indexText_contact2" class="section_6_span3">${data.text_2}</span>
+                        </a>
+                        <a id="makeHref5">
+                            <span id="indexText_contact2_1" class="section_6_span3">${data.text_Dopolnenie2}</span>
+                        </a>
+                    </div>
+                    <div class="square footer_square">
+                        <h3 id="indexHeader_contact3">${data.header_3}</h3>
+                        <img id="IconContact3" src="${data.IconURL3}" alt="" style="height: 50px; width: 50px;">
+                        <a id="makeHref3">
+                            <span id="indexText_contact3">${data.text_3}</span>
+                        </a>
+                        <a id="makeHref6">
+                            <span id="indexText_contact3_1" class="section_6_span1">${data.text_Dopolnenie3}</span>
+                        </a>
+                    </div> 
+                </div>
             `
-            document.getElementById("indexText_contact1").innerHTML += `
-            ${data.text_1}
-            `
-            document.getElementById("indexText_contact1_2").innerHTML += `
-            ${data.text_Dopolnenie1}
-            `
-            document.getElementById("indexHeader_contact2").innerHTML += `
-            ${data.header_2}
-            `
-            document.getElementById("indexText_contact2").innerHTML += `
-            ${data.text_2}
-            `
-            document.getElementById("indexText_contact2_1").innerHTML += `
-            ${data.text_Dopolnenie2}
-            `
-            indexText_contact2_1
-              document.getElementById("indexHeader_contact3").innerHTML += `
-              ${data.header_3}
-              `
-              document.getElementById("indexText_contact3").innerHTML += `
-              ${data.text_3}
-              `
-              document.getElementById("indexText_contact3_1").innerHTML += `
-              ${data.text_Dopolnenie3}
-              `
-                if(data.boolean1=="true"){
-                  document.getElementById("makeHref1").setAttribute("href", data.text_Ssilka1)
-                }if (data.boolean2=="true") {
-                  
-                  document.getElementById("makeHref2").setAttribute("href", data.text_Ssilka2)
-                }if(data.boolean3=="true"){
-                  document.getElementById("makeHref3").setAttribute("href", data.text_Ssilka3)
+            
+              for(let i = (0+1); i<=6; i++){
+                if(data["boolean"+i]=="true"){
+                  document.getElementById("makeHref"+i).setAttribute("href", data["text_Ssilka"+i])
                 }
-                if(data.boolean4=="true"){
-                  document.getElementById("makeHref4").setAttribute("href", data.text_Ssilka4)
-                }if (data.boolean5=="true") {
-                  
-                  document.getElementById("makeHref5").setAttribute("href", data.text_Ssilka5)
-                }if(data.boolean6=="true"){
-                  document.getElementById("makeHref6").setAttribute("href", data.text_Ssilka6)
-                }
-              });
-            firebase.database().ref("news/Contact").once('value', (snapshot) => {
-              var mas = []
-              snapshot.forEach(snapshot => {
-                var dataa = snapshot.val();
-                mas=[dataa]
-                
+              }
+               
               });
               
-              IconContact1.src = snapshot.val().IconURL1+mas[0];
-              IconContact2.src = snapshot.val().IconURL2+mas[1];
-              IconContact3.src = snapshot.val().IconURL3+mas[2];
-            })
-            
+              firebase.database().ref("news/Aboutcompany").get().then((snapshot) => {
+                if (snapshot.exists()) {
+                  const data = snapshot.val();
+                  document.querySelector(".section_3").innerHTML+=`
+                  <div class="container">
+                  <div class="section_3_1">
+                  <h2 id="indexHeader_attraction">${data.header}</h2>
+                  <span id="indexText_attraction">${data.text}</span>
+                  </div>
+                  </div>
+            `
+                }
+                })
             firebase.database().ref("news/Aboutcompany").get().then((snapshot) => {
               if (snapshot.exists()) {
                 const data = snapshot.val();
@@ -216,10 +257,8 @@ function gener(){
               }
             }catch(e){}
           });
-          var element=document.querySelectorAll(".slick-track > slide");
-          if(!element){console.log('меня нет на страниц');} else {console.log('я присутствую');}
           });
-          }
+        }
 // Get a admin's profile
 
 firebase.auth().onAuthStateChanged((user) => {
