@@ -201,9 +201,6 @@
                     <div id="bttn" class="btn">
                         <button onclick="writeDataMain()">Сохранить</button>         
                 </div>
-                <div id="slider">
-                    
-                </div>
             </div>
 
             <div class="container2">
@@ -416,15 +413,16 @@
                     <h2>Отзывы</h2>
                     
                     <div class="con14">
-                        <div class="content14 style">
-                            <i class="fas fa-trash"></i>
-                        </div>                       
-                        <div class="icon4">
-                            <p>Фотография</p>
-                            <input id="photo_review" type="file">
+                        <div id="sliderReview">
+                            
                         </div>
-                        <div class="Otblock2">
-                            <div class="zagolovok13 sty">
+                    </div>                       
+                    <div class="icon4">
+                        <p>Фотография</p>
+                        <input id="photo_review" type="file">
+                    </div>
+                    <div class="Otblock2">
+                        <div class="zagolovok13 sty">
                                 <p>Имя</p>
                                 <input id="name_review" type="text" placeholder="Введите имя...">
                             </div>
@@ -432,15 +430,11 @@
                                 <p>Коментарий</p>
                                 <textarea name="" id="comment_review" cols="149" rows="3" placeholder="Введите комантарии..."></textarea>
                             </div>
-                        </div>
-                        <div id="sliderReview">
-                            <p>Слайдер</p>
-                        </div>          
+                        </div>        
                     </div>
                     <div class="con5btn">
                         <button onclick="uploadReview()">Сохранить</button>
                         <h3 id="progress_review"></h3>
-                        <button onclick="">Удалить</button>
                     </div>
                 </div>
             </div>
@@ -531,14 +525,11 @@
                 <div class="portblock">
                         <h2>Портфолио</h2>
                         <div class="con18">
-                            <div class="content18 style">
-                                <i class="fas fa-trash"></i>
-                            </div>
+                            <div id="slider"></div>
                             <input type="file" id="portoflios">
                         </div>
                         <div class="con7btn">
-                            <button onclick="uploadPhotoSlider()">UpLOAD</button>
-                            <button>Сохранить</button>
+                            <button onclick="uploadPhotoSlider()">Сохранить</button>
                         </div>
                 </div>
             </div>

@@ -857,10 +857,15 @@ function writeDataReview() {
     starCountRef.on('value', (snapshot) => {
       const dataa = snapshot.val();
       document.getElementById("slider").innerHTML += `
+      <div style="display: flex; align-items: flex-end; border: 2px solid #11101d;">
       <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
-      <img onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
-      
-      `
+      </div>
+      <div style="display: flex;
+      flex-direction: row;
+      justify-content: flex-end;"">
+        <img onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
+      </div>
+        `
     })
   })
 });
@@ -871,7 +876,7 @@ firebase.database().ref("news/Review").once('value', (snapshot) => {
     var starCountRef = firebase.database().ref('news/Review/' + childKey );
     starCountRef.on('value', (snapshot) => {
       const dataa = snapshot.val();
-      var ele =`
+      document.getElementById("sliderReview").innerHTML +=`
       <div style="border:3px solid">
       <div id="sliderRev">
         <p> ${dataa.name}</p>
@@ -881,7 +886,6 @@ firebase.database().ref("news/Review").once('value', (snapshot) => {
       <img onclick="deleteSlideReview('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
       </div>
       `
-      document.getElementById("sliderReview").insertAdjacentHTML("beforeend", ele);
     })
   })
 })
