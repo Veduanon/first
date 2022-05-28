@@ -935,6 +935,7 @@ c3.onclick = function() {
  else(firebase.database().ref("news/Contact/boolean3").remove())
 
 }
+
 c4.onclick = function() {
   if (c4.checked) {
     firebase.database().ref("news/Contact").update({
