@@ -21,6 +21,7 @@ $(function(){
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 
@@ -35,6 +36,7 @@ $(function(){
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 $(function(){
@@ -48,6 +50,7 @@ $(function(){
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 
@@ -65,6 +68,7 @@ $(function(){
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 
@@ -82,6 +86,7 @@ $(function(){
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 
@@ -99,6 +104,7 @@ $(function(){
         $('.container4').addClass('off2');
         $('.container6').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 $(function(){
@@ -112,6 +118,7 @@ $(function(){
         $('.container4').addClass('off2');
         $('.container5').addClass('off2');
         $('.container7').addClass('off2');
+        $('.container8').addClass('off2');
     });
 });
 $(function(){
@@ -125,5 +132,20 @@ $(function(){
         $('.container4').addClass('off2');
         $('.container5').addClass('off2');
         $('.container6').addClass('off2');
+        $('.container8').addClass('off2');
+    });
+});
+$(function(){
+    $('.9').click(function(){
+        $('.container8').removeClass('off2');
+        $('.container8').addClass('active1');
+        $('.container0').addClass('off2');
+        $('.container1').addClass('off2');
+        $('.container2').addClass('off2');
+        $('.container3').addClass('off2');
+        $('.container4').addClass('off2');
+        $('.container5').addClass('off2');
+        $('.container6').addClass('off2');
+        $('.container7').addClass('off2');
     });
 });
