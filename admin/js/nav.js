@@ -3,12 +3,10 @@ let sidebar = document.querySelector(".sidebar");
 let searchBtn = document.querySelector(".fa-search");
 
 btn.onclick = function() {
-    // $('.sidebar').toggleClass('active');
+    $('.sidebar').toggleClass('active');
     sidebar.classList.toggle("active");
 }
-searchBtn.onclick = function() {
-    sidebar.classList.toggle("active");
-}
+
 
 $(function(){
     $('.1').click(function(){
