@@ -1078,9 +1078,31 @@ body{
     border: 1px solid rgb(236, 236, 236);
     outline: none;
 }
-.zagolovok13 input{
-    margin-left: 145px;
-    width: 1095px;
+.zagolovok12{
+    display: flex;
+    align-items: center;
+}
+#name_review{
+    margin-left: 100px;
+    margin-bottom: 10px;
+    width: 1090px;
+}
+.opisanie12{
+    display: flex;
+    align-items: center;
+    
+}
+.opisanie12 p{
+    margin-left: 10px;
+}
+.opisanie12 textarea{
+    height: 30px;
+    margin: 10px 0 10px 38px;
+    background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(236, 236, 236);
+}
+#sliderReview p{
+    margin: 5px 0 0 10px;
 }
 .zagolovok2 input{
     margin-left: 90px;
@@ -1156,24 +1178,25 @@ body{
     border: 1px solid rgb(236, 236, 236);
     outline: none;
 }
+
 .menu1 input{
-    margin-left: 112px;
+    margin-left: 166px;
     width: 1090px;
 }
 .menu2 input{
-    margin-left: 110px;
+    margin-left: 164px;
     width: 1090px;
 }
 .menu3 input{
-    margin-left: 110px;
+    margin-left: 163px;
     width: 1090px;
 }
 .menu4 input{
-    margin-left: 32px;
+    margin-left: 163px;
     width: 1090px;
 }
 .menu5 input{
-    margin-left: 32px;
+    margin-left: 163px;
     width: 1090px;
 }
 .con0btn{
@@ -1254,8 +1277,9 @@ body{
     border: none;
     border-radius: 5px;
     transition: all 0.2s ;
-    margin: 0;
+    margin: 0 0 0 15px;
 }
+
 .con7btn button:hover{
     background-color: #fff;
     color: #11101d;
@@ -1303,6 +1327,7 @@ body{
     border-radius: 5px;
     transition: all 0.2s ;
     margin: 0;
+    margin-left: 15px;
 }
 .con5btn button:hover{
     background-color: #fff;
@@ -1360,4 +1385,51 @@ body{
     background-color: red;
     width: 100%;
     height: 500px;
+}
+.Otblock2{
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 25px;
+}
+.opisanie13 input{
+    margin-left: 15px;
+}
+.opis2{
+    margin-left: 60px;
+}
+#checkbox1{
+    margin: 0;
+}
+#text_contact1{
+    margin-left: 80px;
+}
+
+
+.opisanie14 input{
+    margin-left: 15px;
+}
+.opis3{
+    margin-left: 60px;
+}
+#checkbox2{
+    margin: 0;
+}
+#text_contact2{
+    margin-left: 80px;
+}
+
+
+.opisanie15 input{
+    margin-left: 15px;
+}
+.opis4{
+    margin-left: 60px;
+}
+#checkbox3{
+    margin: 0;
+}
+#text_contact3{
+    margin-left: 80px;
 }
