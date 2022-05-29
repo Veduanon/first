@@ -342,7 +342,7 @@ function writeDataServis() {
 
       var updates = { text1: text1, text2: text2, text3: text3, text4: text4, text5: text5, text6: text6 };
       firebase.database().ref("news/service").update(updates);
-  alert("Updated!")
+  alert("Загружено!")
 }
 
 
@@ -353,7 +353,7 @@ function writeDataNavbar() {
   firebase.database().ref("news/main").update({
     name_Site: nameSite,
   });
-  alert("Updated!")
+  alert("Загружено!")
 }
 
 
@@ -535,7 +535,7 @@ function writeDataAttraction() {
     text: text
 
   });
-  alert("Updated!")
+  alert("Загружено!")
 }
 // contacts block
 firebase.database().ref("news/Contact").on('value', (sanpshot) => {
@@ -577,7 +577,7 @@ function writeDataContact() {
 
       var updates = { text_1: text_1, text_2: text_2, text_3: text_3, text_Dopolnenie1: text_Dopolnenie1, text_Dopolnenie2:text_Dopolnenie2, text_Dopolnenie3:text_Dopolnenie3, text_Ssilka1:text_Ssilka1, text_Ssilka2:text_Ssilka2, text_Ssilka3:text_Ssilka3, text_Ssilka4:text_Ssilka4, text_Ssilka5:text_Ssilka5, text_Ssilka6:text_Ssilka6 };
       firebase.database().ref("news/Contact").update(updates);
-  alert("Updated!")
+  alert("Загружено!")
 }
 
 
@@ -756,7 +756,7 @@ function writeDataReview() {
     comment: text
     
   });
-  alert("Updated!")
+  alert("Загружено!")
 }
 
   firebase.database().ref("news/Portfolio").once('value', (snapshot) => {
@@ -803,14 +803,22 @@ firebase.database().ref("news/Review").once('value', (snapshot) => {
 function deleteSlide(key) {
 
   firebase.database().ref('news/Portfolio/' + key).remove();
-  alert("Deleted")
+  alert("Удалено")
+  setTimeout(function(){
+    location.reload();
+  }, 1000);
+}
+function deleteSlide(key) {
+
+  firebase.database().ref('news/main/photo/logo').remove();
+  alert("Удалено")
   setTimeout(function(){
     location.reload();
   }, 1000);
 }
 function deleteSlideReview(key) {
   firebase.database().ref('news/Review/' + key).remove();
-  alert("Deleted")
+  alert("Удалено")
   setTimeout(function(){
     location.reload();
   }, 1000);
