@@ -35,85 +35,43 @@ function gener(){
 
     firebase.database().ref("news/service").get().then((snapshot) => {
         const data = snapshot.val();
-        document.querySelector(".squares_2").innerHTML+=`
-        <div class="square_2">
-                        <div>
-                            <h2 id="header_servis1">
-                            ${data.header1}
-                            </h2>
-                            <span id="text_servis1">
-                            ${data.text1}
-                            </span>
-                        </div>
-                        
-                        <button class="button">Посчитать цену</button>
-                    </div>
-                    <div class="square_2">
-                        <div>
-                            <h2 id="header_servis2">
-                            ${data.header2}
-                            </h2>
-                            <span id="text_servis2">
-                            ${data.text2}
-                            </span>
-                        </div>
-
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
-
-                    <div class="square_2">
-                        <div>
-                            <h2 id="header_servis3">
-                            ${data.header3}
-                            </h2>
-                            <span id="text_servis3">
-                            ${data.text3}
-                            </span>
-                        </div>
-                        
-
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
-
-                    <div class="square_2">
-                        <div>
-                            <h2 id="header_servis4">
-                            ${data.header4}
-                            </h2>
-                            <span id="text_servis4">
-                            ${data.text4}
-                            </span>
-                        </div>
-                        
-
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
-                    <div class="square_2">
-                        <div>
-                            <h2 id="header_servis5">
-                            ${data.header5}
-                            </h2>
-                            <span id="text_servis5">
-                            ${data.text5}
-                            </span>
-                        </div>
-                        
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
-                    <div class="square_2">
-                        <div>
-                            <h2 id="header_servis6">
-                            ${data.header6}
-                            </h2>
-                            <span id="text_servis6">
-                            ${data.text6}
-                            </span>
-                        </div>
-
-                        <button class="button_test">Посчитать цену</button>
-                    </div>
+        document.getElementById("header_servis1").innerHTML+=`
+        ${data.header1}
         `
-    })
+        document.getElementById("header_servis2").innerHTML+=`
+        ${data.header2}
+        `
+        document.getElementById("header_servis3").innerHTML+=`
+        ${data.header3}
+        `
+        document.getElementById("header_servis4").innerHTML+=`
+        ${data.header4}
+        `
+        document.getElementById("header_servis5").innerHTML+=`
+        ${data.header5}
+        `
+        document.getElementById("header_servis6").innerHTML+=`
+        ${data.header6}
+        `
+        document.getElementById("text_servis1").innerHTML+=`
+        ${data.text1}
+        `
+        document.getElementById("text_servis2").innerHTML+=`
+        ${data.text1}
+        `
+        document.getElementById("text_servis3").innerHTML+=`
+        ${data.text1}
+        `
+        document.getElementById("text_servis4").innerHTML+=`
+        ${data.text1}
+        `
+        document.getElementById("text_servis5").innerHTML+=`
+        ${data.text1}
+        `
+        document.getElementById("text_servis6").innerHTML+=`
+        ${data.text1}
+        `
+      })
         firebase.database().ref("news/Aboutcompany/logo_aboutcompany").get().then((snapshot) => {
             logo_okomp.src = snapshot.val().LogoUrl;
           })
@@ -140,8 +98,8 @@ function gener(){
             document.querySelector(".section_6").innerHTML+=`
             <div class="section_6_1">
                     <div id="square footer_square_1" class="square footer_square_1">
-                        <h3 id="indexHeader_contact1">${data.header_1}</h3>
-                        <img id="IconContact1" src="${data.IconURL1}" alt="" style="height: 50px; width: 50px;">
+                    <img id="IconContact1" src="${data.IconURL1}" alt="" style="height: 50px; width: 50px;">
+                        <p id="indexHeader_contact1">${data.header_1}</p>
                         <a id="makeHref1">
                             <span id="indexText_contact1" class="section_6_span1">${data.text_1}</span>
                         </a>
@@ -150,8 +108,8 @@ function gener(){
                         </a>
                     </div>
                     <div class="square footer_square_1">
-                        <img id="IconContact2" src="${data.IconURL2}" alt="" style="height: 50px; width: 50px;">
-                        <h3 id="indexHeader_contact2">${data.header_2}</h3>
+                    <img id="IconContact2" src="${data.IconURL2}" alt="" style="height: 50px; width: 50px;">
+                        <p id="indexHeader_contact2">${data.header_2}</p>
                         <a id="makeHref2">
                             <span id="indexText_contact2" class="section_6_span3">${data.text_2}</span>
                         </a>
@@ -160,8 +118,8 @@ function gener(){
                         </a>
                     </div>
                     <div class="square footer_square">
-                        <h3 id="indexHeader_contact3">${data.header_3}</h3>
-                        <img id="IconContact3" src="${data.IconURL3}" alt="" style="height: 50px; width: 50px;">
+                    <img id="IconContact3" src="${data.IconURL3}" alt="" style="height: 50px; width: 50px;">
+                        <p id="indexHeader_contact3">${data.header_3}</p>
                         <a id="makeHref3">
                             <span id="indexText_contact3">${data.text_3}</span>
                         </a>
@@ -270,6 +228,17 @@ firebase.auth().onAuthStateChanged((user) => {
          `
   }
 });
+
+function signOut() {
+  // [START auth_sign_out]
+  firebase.auth().signOut().then(() => {
+    alert("вы вышли")
+  }).catch((error) => {
+    // An error happened.
+  });
+  // [END auth_sign_out]
+}
+
 // write Data main
 function writeDataMain(header, text) {
   header=document.getElementById('header_admin');
