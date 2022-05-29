@@ -270,6 +270,17 @@ firebase.auth().onAuthStateChanged((user) => {
          `
   }
 });
+
+function signOut() {
+  // [START auth_sign_out]
+  firebase.auth().signOut().then(() => {
+    alert("вы вышли")
+  }).catch((error) => {
+    // An error happened.
+  });
+  // [END auth_sign_out]
+}
+
 // write Data main
 function writeDataMain(header, text) {
   header=document.getElementById('header_admin');

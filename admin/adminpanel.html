@@ -101,7 +101,7 @@
                         <div id="job" class="job"></div>
                     </div>
                 </div>
-                <i class="fas fa-sign-out-alt" id="log_out"></i>
+                <i class="fas fa-sign-out-alt" onclick="signOut()"></i>
             </div>
         </div>
     </div>
@@ -114,7 +114,6 @@
             <div class="menublock">
                 <h2>Меню</h2>
             </div>
-            <div class="content0">
                 <div class="textname8">
                     <h4>Название</h4>
                     <h4 class="text10">Текст</h4>
@@ -134,27 +133,7 @@
                     <p>Название сайта</p>
                         <input id="editNameite" type="text" placeholder="Введите название...">
                     </div>
-                    <div class="menu1 menu">
-                        <p>1</p>
-                        <input class="in" type="text" placeholder="Введите название...">
-                    </div>
-                    <div class="menu2 menu">
-                        <p>2</p>
-                        <input type="text" placeholder="Введите название...">
-                    </div>
-                    <div class="menu3 menu">
-                        <p>3</p>
-                        <input type="text" placeholder="Введите название...">
-                    </div>
-                    <div class="menu4 menu">
-                        <p>4</p>
-                        <input type="text" placeholder="Введите название...">
-                    </div>
-                    <div class="menu5 menu">
-                        <p>5</p>
-                        <input type="text" placeholder="Введите название...">
-                    </div>
-                </div>
+
                 <div class="con0btn">
                     <button onclick="writeDataNavbar()">Сохранить</button>
                 </div>
@@ -186,19 +165,9 @@
                             </div>
                         </form>
                     </div>
-                    <h2 class="fon">Фон</h2>
-                    <div class="glavvideo">
-                        <h5>Видео</h5>
-                        <h4 id="BackgroundProglab"></h4>
-                        <input id="imagee" type="file">
-                        <button onclick="uploadImage()">Загрузить</button>
-                    </div>
                     <div id="test"></div>
                     <div id="bttn" class="btn">
                         <button onclick="writeDataMain()">Сохранить</button>         
-                </div>
-                <div id="slider">
-                    
                 </div>
             </div>
 
@@ -412,9 +381,7 @@
                     <h2>Отзывы</h2>
                     
                     <div class="con14">
-                        <div class="content14">
-                            <i class="fas fa-trash"></i>
-                        </div>                       
+                        <div id="sliderReview"></div>                      
                         <div class="icon4">
                             <p>Фотография</p>
                             <input id="photo_review" type="file">
@@ -428,10 +395,7 @@
                                 <p>Коментарий</p>
                                 <textarea name="" id="comment_review" cols="149" rows="3" placeholder="Введите комантарии..."></textarea>
                             </div>
-                        </div>
-                        <div id="sliderReview">
-                            <p>Слайдер</p>
-                        </div>          
+                        </div>         
                     </div>
                     <div class="con5btn">
                         <button onclick="uploadReview()">Сохранить</button>
@@ -527,20 +491,15 @@
                 <div class="portblock">
                         <h2>Портфолио</h2>
                         <div class="con18">
-                            <div class="content18 style">
-                            </div>
+                            <div id="slider"></div>
                             <div class="rightblock">
                                 <div class="rightbloc1_1">
                                     <input type="file" id="portoflios">
                                 </div>
-                                <div class="rightbloc1_2">
-                                    <i class="fas fa-trash"></i>
-                                </div>
                             </div>
                         </div>
                         <div class="con7btn">
-                            <button onclick="uploadPhotoSlider()">UpLOAD</button>
-                            <button>Сохранить</button>
+                            <button onclick="uploadPhotoSlider()">Сохранить</button>
                         </div>
                 </div>
             </div>
