@@ -83,7 +83,9 @@
                 </a>
                 <span class="tooltip">Контакты</span>
             </li>
-           
+            
+            
+            
         </ul>
         <div class="profile_content">
             <div class="profile">
@@ -93,7 +95,7 @@
                         <div id="job" class="job"></div>
                     </div>
                 </div>
-                <i class="fas fa-sign-out-alt" onclick="signOut()"></i>
+                <i id="signS" class="fas fa-sign-out-alt" onclick="signOut()"></i>
             </div>
         </div>
     </div>
@@ -106,6 +108,7 @@
             <div class="menublock">
                 <h2>Меню</h2>
             </div>
+            <div class="content0 style">
                 <div class="textname8">
                     <h4>Название</h4>
                     <h4 class="text10">Текст</h4>
@@ -115,24 +118,21 @@
                     <div id="noneLogo">
                         <img style="width: 50px; height: 50px;" id="LogoShow" src="" alt="">
                     </div>
-                    <button onclick="deleteLogo()">Удалить</button>
                     <h4 id="LogoProglab"></h4>
                     <input id="upLogo" type="file">
+                    <button onclick="deleteLogo()">Удалить</button>
                     <button onclick="uploadLogo()">Загрузить</button>
+                    <h4 id="progslider"></h4>
                 </div>
                 <div class="zagolovok0">
                     <p>Название сайта</p>
                         <input id="editNameite" type="text" placeholder="Введите название...">
                     </div>
-<<<<<<< HEAD
-                    
-                </div>
-=======
 
->>>>>>> 6902292812a29dd538a6276aefc22acd499524a1
                 <div class="con0btn">
                     <button onclick="writeDataNavbar()">Сохранить</button>
                 </div>
+            </div>
             </div>
             
             
@@ -161,10 +161,6 @@
                             </div>
                         </form>
                     </div>
-<<<<<<< HEAD
-                    
-=======
->>>>>>> 6902292812a29dd538a6276aefc22acd499524a1
                     <div id="test"></div>
                     <div id="bttn" class="btn">
                         <button onclick="writeDataMain()">Сохранить</button>         
@@ -400,7 +396,6 @@
                     <div class="con5btn">
                         <button onclick="uploadReview()">Сохранить</button>
                         <h3 id="progress_review"></h3>
-                        <button onclick="">Удалить</button>
                     </div>
                 </div>
             </div>
@@ -502,8 +497,9 @@
                             <button onclick="uploadPhotoSlider()">Сохранить</button>
                         </div>
                 </div>
-            </div>
 
+            </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="js/nav.js"></script>
     <script src="https://kit.fontawesome.com/8cb796bd7d.js" crossorigin="anonymous"></script>
