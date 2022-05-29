@@ -233,6 +233,7 @@ function signOut() {
   // [START auth_sign_out]
   firebase.auth().signOut().then(() => {
     alert("вы вышли")
+    window.location.href = 'auth.html';
   }).catch((error) => {
     // An error happened.
   });
@@ -263,7 +264,7 @@ firebase.database().ref("news/main").on('value', (sanpshot) => {
 
 
 })
-// Upload logo
+// Загрузка logo
 function uploadLogo(url) {
   var ref = firebase.storage().ref();
   var file1 = document.querySelector("#upLogo").files[0];
@@ -278,19 +279,19 @@ function uploadLogo(url) {
   .then(downloadURL => {
     console.log(downloadURL);
     LogoSaveURLtoRealtimDB(downloadURL)
-    alert("Uploaded")
+    alert("Загружено")
     firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
       if (snapshot.exists()) {
         var dataa = snapshot.val();
         document.getElementById("noneLogo").innerHTML=
         `<img style="max-width:50px;" src="${dataa.LogoUrl}">`
-        }
-      });
+        
+      }
+    });
   });
-
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    LogoProglab.innerHTML = "Upload"+ progess +"%";
+    LogoProglab.innerHTML = "Загрузка"+ progess +"%";
   })
 }
 
@@ -304,40 +305,14 @@ firebase.database().ref("news/main/photo/logo").get().then((snapshot) => {
     LogoShow.src = snapshot.val().LogoUrl;
     }
   });
-function deleteLogo(){
-  firebase.database().ref("news/main/photo/logo").remove()
-  document.getElementById("noneLogo").innerHTML=''
-  }
+
 // Service
 firebase.database().ref("news/service").on('value', (sanpshot) => {
-  header1 = sanpshot.val().header1;
-  header2 = sanpshot.val().header2;
-  header3 = sanpshot.val().header3;
-  header4 = sanpshot.val().header4;
-  header5 = sanpshot.val().header5;
-  header6 = sanpshot.val().header6;
-
-  text1 = sanpshot.val().text1;
-  text2 = sanpshot.val().text2;
-  text3 = sanpshot.val().text3;
-  text4 = sanpshot.val().text4;
-  text5 = sanpshot.val().text5;
-  text6 = sanpshot.val().text6;
-
-  document.getElementById("header_Servis1").setAttribute("value", header1)
-  document.getElementById("header_Servis2").setAttribute("value", header2)
-  document.getElementById("header_Servis3").setAttribute("value", header3)
-  document.getElementById("header_Servis4").setAttribute("value", header4)
-  document.getElementById("header_Servis5").setAttribute("value", header5)
-  document.getElementById("header_Servis6").setAttribute("value", header6)
-  
-  document.getElementById("text_Servis1").innerHTML=text1
-  document.getElementById("text_Servis2").innerHTML=text2
-  document.getElementById("text_Servis3").innerHTML=text3
-  document.getElementById("text_Servis4").innerHTML=text4
-  document.getElementById("text_Servis5").innerHTML=text5
-  document.getElementById("text_Servis6").innerHTML=text6
-
+  for(let i = (0+1);i<=6; i++){
+    var data = sanpshot.val();
+    document.getElementById("header_Servis"+i).setAttribute("value", data["header"+i])
+    document.getElementById("text_Servis"+i).innerHTML=data["text"+i]
+  }
 })
 function writeDataServis() {
   hheader=document.getElementById('header_Servis1');
@@ -382,7 +357,7 @@ function writeDataNavbar() {
 }
 
 
-// About company: show/upload image, icons. Change text, headers
+// About company: show/загрузка image, icons. Change text, headers
 function uploadImageAndIcons(url) {
   ref = firebase.storage().ref();
   file1 = document.querySelector("#okomp_file").files[0];
@@ -391,7 +366,7 @@ function uploadImageAndIcons(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -402,7 +377,7 @@ function uploadImageAndIcons(url) {
 
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    OcompProglab.innerHTML = "Upload"+ progess +"%";
+    OcompProglab.innerHTML = "Загрузка"+ progess +"%";
   })
 }
 
@@ -414,28 +389,18 @@ function OkompSaveURLtoRealtimDB(URL){
 
 firebase.database().ref("news/Aboutcompany").on('value', (sanpshot) => {
 
+  for(let i = (0+1);i<=3; i++){
+    var data = sanpshot.val();
+    document.getElementById("header_aboutcomp"+i).setAttribute("value", data["title"+i])
+    document.getElementById("text_aboutcomp"+i).setAttribute("value", data["text"+i])
+  }
       title = sanpshot.val().title;
-      title1 = sanpshot.val().title1;
-      title2 = sanpshot.val().title2;
-      title3 = sanpshot.val().title3;
-
       text = sanpshot.val().text;
-      text1 = sanpshot.val().text1;
-      text2 = sanpshot.val().text2;
-      text3 = sanpshot.val().text3;
       document.getElementById("header_company").setAttribute("value", title)
-      document.getElementById("header_aboutcomp1").setAttribute("value", title1)
-      document.getElementById("header_aboutcomp2").setAttribute("value", title2)
-      document.getElementById("header_aboutcomp3").setAttribute("value", title3)
-      
       document.getElementById("text_company").innerHTML=text
-      document.getElementById("text_aboutcomp1").setAttribute("value", text1)
-      document.getElementById("text_aboutcomp2").setAttribute("value", text2)
-      document.getElementById("text_aboutcomp3").setAttribute("value", text3)
   })
 function writeDataAboutcomp() {
 
-    var title = document.getElementById("header_company").value;
     var text = document.getElementById("text_company").value;
 
     var title1 = document.getElementById("header_aboutcomp1").value;
@@ -462,7 +427,7 @@ function writeDataAboutcomp() {
       contentType: file1.type
     };
     const task = ref.child(name1).put(file1, metadata);
-    alert("Uploaded")
+    alert("Загружено")
     console.log(name1)
     task
     .then(snapshot => snapshot.ref.getDownloadURL())
@@ -473,7 +438,7 @@ function writeDataAboutcomp() {
   
     task.on('state-changed', (snapshot)=>{
       var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-      progress_icon1.innerHTML = "Upload"+ progess +"%";
+      progress_icon1.innerHTML = "Загрузка"+ progess +"%";
     })
   }
   function Icon1SaveURLtoRealtimDB(URL){
@@ -491,7 +456,7 @@ function writeDataAboutcomp() {
       contentType: file1.type
     };
     const task = ref.child(name1).put(file1, metadata);
-    alert("Uploaded")
+    alert("Загружено")
     console.log(name1)
     task
     .then(snapshot => snapshot.ref.getDownloadURL())
@@ -502,7 +467,7 @@ function writeDataAboutcomp() {
   
     task.on('state-changed', (snapshot)=>{
       var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-      progress_icon2.innerHTML = "Upload "+ progess +"%";
+      progress_icon2.innerHTML = "Загрузка "+ progess +"%";
     })
   }
   
@@ -521,7 +486,7 @@ function writeDataAboutcomp() {
         contentType: file1.type
       };
       const task = ref.child(name1).put(file1, metadata);
-      alert("Uploaded")
+      alert("Загружено")
       console.log(name1)
       task
       .then(snapshot => snapshot.ref.getDownloadURL())
@@ -532,7 +497,7 @@ function writeDataAboutcomp() {
     
       task.on('state-changed', (snapshot)=>{
         var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-        progress_icon3.innerHTML = "Upload "+ progess +"%";
+        progress_icon3.innerHTML = "Загрузка "+ progess +"%";
       })
     }
     
@@ -542,7 +507,7 @@ function writeDataAboutcomp() {
       });
     };
 
-// END!!! About company: show/upload image, icons. Change text, headers
+// END!!! About company: show/загрузка image, icons. Change text, headers
 
 //                                                      attraction block
 firebase.database().ref("news/Attraction").on('value', (sanpshot) => {
@@ -574,46 +539,18 @@ function writeDataAttraction() {
 }
 // contacts block
 firebase.database().ref("news/Contact").on('value', (sanpshot) => {
-
-  header_1 = sanpshot.val().header_1;
-  header_2 = sanpshot.val().header_2;
-  header_3 = sanpshot.val().header_3;
-
-  text_1 = sanpshot.val().text_1;
-  text_2 = sanpshot.val().text_2;
-  text_3 = sanpshot.val().text_3;
-  text_Dopolnenie1 = sanpshot.val().text_Dopolnenie1;
-  text_Dopolnenie2 = sanpshot.val().text_Dopolnenie2;
-  text_Dopolnenie3 = sanpshot.val().text_Dopolnenie3;
-
-  text_contactSsilka1 = sanpshot.val().text_Ssilka1;
-  text_contactSsilka2 = sanpshot.val().text_Ssilka2;
-  text_contactSsilka3 = sanpshot.val().text_Ssilka3;
-  text_contactSsilka4 = sanpshot.val().text_Ssilka4;
-  text_contactSsilka5 = sanpshot.val().text_Ssilka5;
-  text_contactSsilka6 = sanpshot.val().text_Ssilka6;
-
-  document.getElementById("header_contact1").setAttribute("value", header_1)
-  document.getElementById("header_contact2").setAttribute("value", header_2)
-  document.getElementById("header_contact3").setAttribute("value", header_3)
-  
-  document.getElementById("text_contact1").setAttribute("value", text_1)
-  document.getElementById("text_contact2").setAttribute("value", text_2)
-  document.getElementById("text_contact3").setAttribute("value", text_3)
-  document.getElementById("text_contactAdditional1").setAttribute("value", text_Dopolnenie1)
-  document.getElementById("text_contactAdditional2").setAttribute("value", text_Dopolnenie2)
-  document.getElementById("text_contactAdditional3").setAttribute("value", text_Dopolnenie3)
-  
-  
-  document.getElementById("text_contactSsilka1").setAttribute("value", text_contactSsilka1)
-  document.getElementById("text_contactSsilka2").setAttribute("value", text_contactSsilka2)
-  document.getElementById("text_contactSsilka3").setAttribute("value", text_contactSsilka3)
-  document.getElementById("text_contactSsilka4").setAttribute("value", text_contactSsilka4)
-  document.getElementById("text_contactSsilka5").setAttribute("value", text_contactSsilka5)
-  document.getElementById("text_contactSsilka6").setAttribute("value", text_contactSsilka6)
+  for(let i = (0+1);i<=3; i++){
+    var data = sanpshot.val();
+    document.getElementById("header_contact"+i).setAttribute("value", data["header_"+i])
+    document.getElementById("text_contact"+i).setAttribute("value", data["text_"+i])
+    document.getElementById("text_contactAdditional"+i).setAttribute("value", data["text_Dopolnenie"+i])
+  }
+  for(let i = (0+1);i<=6; i++){
+    var data = sanpshot.val();
+    document.getElementById("text_contactSsilka"+i).setAttribute("value", data["text_Ssilka"+i])
+  }
 })
 function writeDataContact() {
-
 
   var header_1 = document.getElementById("header_contact1").value;
   var text_1 = document.getElementById("text_contact1").value;
@@ -652,7 +589,7 @@ function uploadIconContact1(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -663,7 +600,7 @@ function uploadIconContact1(url) {
 
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
+    progress_review.innerHTML = "Загрузка "+ progess +"%";
   })
 }
 
@@ -681,7 +618,7 @@ function uploadIconContact2(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -692,7 +629,7 @@ function uploadIconContact2(url) {
   
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
+    progress_review.innerHTML = "Загрузка "+ progess +"%";
   })
 }
 
@@ -710,7 +647,7 @@ function uploadIconContact3(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -721,7 +658,7 @@ function uploadIconContact3(url) {
   
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
+    progress_review.innerHTML = "Загрузка "+ progess +"%";
   })
 }
 
@@ -740,7 +677,7 @@ function uploadPhotoSlider() {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -751,7 +688,7 @@ function uploadPhotoSlider() {
   
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
+    progslider.innerHTML = "Загрузка "+ progess +"%";
   })
 }
 function PortfolioSaveURLtoRealtimDB(URL){
@@ -771,7 +708,7 @@ function uploadReview(url) {
     contentType: file1.type
   };
   const task = ref.child(name1).put(file1, metadata);
-  alert("Uploaded")
+  alert("Загружено")
   console.log(name1)
   task
   .then(snapshot => snapshot.ref.getDownloadURL())
@@ -789,8 +726,11 @@ function uploadReview(url) {
   
   task.on('state-changed', (snapshot)=>{
     var progess = (snapshot.bytesTransferred/snapshot.totalBytes) * 100;
-    progress_review.innerHTML = "Upload "+ progess +"%";
+    progress_review.innerHTML = "Загрузка "+ progess +"%";
   })
+  setTimeout(function(){
+    location.reload();
+  }, 1850);
 }
 
 function ReviewSaveURLtoRealtimDB(URL){
@@ -864,10 +804,16 @@ function deleteSlide(key) {
 
   firebase.database().ref('news/Portfolio/' + key).remove();
   alert("Deleted")
+  setTimeout(function(){
+    location.reload();
+  }, 1000);
 }
 function deleteSlideReview(key) {
   firebase.database().ref('news/Review/' + key).remove();
   alert("Deleted")
+  setTimeout(function(){
+    location.reload();
+  }, 1000);
 }
 
 
