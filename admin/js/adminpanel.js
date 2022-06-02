@@ -98,7 +98,7 @@ function gener(){
             document.querySelector(".section_6").innerHTML+=`
             <div class="section_6_1">
                     <div id="square footer_square_1" class="square footer_square_1">
-                    <img id="IconContact1" src="${data.IconURL1}" alt="" style="height: 38px; width: 38px;">
+                    <img id="IconContact1" src="${data.IconURL1}" alt="" style="height: 32; width: 32;">
                         <p id="indexHeader_contact1">${data.header_1}</p>
                         <a id="makeHref1">
                             <span id="indexText_contact1" class="section_6_span1">${data.text_1}</span>
@@ -108,7 +108,7 @@ function gener(){
                         </a>
                     </div>
                     <div class="square footer_square_1">
-                    <img id="IconContact2" src="${data.IconURL2}" alt="" style="height: 38px; width: 38px;">
+                    <img id="IconContact2" src="${data.IconURL2}" alt="" style="height: 32; width: 32;">
                         <p id="indexHeader_contact2">${data.header_2}</p>
                         <a id="makeHref2">
                             <span id="indexText_contact2" class="section_6_span3">${data.text_2}</span>
@@ -118,7 +118,7 @@ function gener(){
                         </a>
                     </div>
                     <div class="square footer_square">
-                    <img id="IconContact3" src="${data.IconURL3}" alt="" style="height: 38px; width: 38px;">
+                    <img id="IconContact3" src="${data.IconURL3}" alt="" style="height: 32; width: 32;">
                         <p id="indexHeader_contact3">${data.header_3}</p>
                         <a id="makeHref3">
                             <span id="indexText_contact3">${data.text_3}</span>
