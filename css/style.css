@@ -396,6 +396,7 @@ footer{
     justify-content: center;
     align-items: center;
     font-size: 18px;
+    padding: 20px 0;
 }
 
 .section_6_1 div i{
@@ -419,6 +420,10 @@ footer{
 .section_6_span2{
     display: block;
     padding-top: 2px !important;
+}
+
+.section_6_span3{
+    padding: 0 20px;
 }
 
 .section_6_1 div span a{

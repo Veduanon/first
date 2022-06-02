@@ -142,8 +142,16 @@ function func() {
       break;
   };
 
-  final_result = result_2 + result_1 + 'тг';
+  final_result = result_2 + result_1
 
+  if (isNaN(final_result)){
+    final_result = '0тг'
+  }else{
+    // final_result = result_2 + result_1;
+    // final_result.toLocaleString('DE');
+    final_result = final_result.toLocaleString('en') + 'тг';
+  }
+  
   result.setAttribute('placeholder', final_result);
 };
 
