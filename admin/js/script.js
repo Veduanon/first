@@ -77,7 +77,7 @@ $(function() {
       $('.resetblock').toggleClass('block');
   });
 });
-
+ 
 $(function(){
   $('#Modal').click(function(){
     $('.resetblock').removeClass('off');
