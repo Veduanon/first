@@ -772,7 +772,7 @@ function writeDataReview() {
       <img style="width:280px; height:280px;" src="${dataa.PhotoURL}"><img>
       </div>
       <div class="cardbtn" style="width: 100%; height: 5%;display: flex; align-items: center; justify-content:center;">
-      <button onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;"  style="height:30px;width: 80px;">Удалить</button>
+      <button onclick="deleteSlide('`+childKey+`')">Удалить</button>
       </div>
 
       </div>
@@ -813,7 +813,7 @@ function deleteSlide(key) {
     location.reload();
   }, 1000);
 }
-function deleteSlide(key) {
+function deleteLogo(key) {
 
   firebase.database().ref('news/main/photo/logo').remove();
   alert("Удалено")
