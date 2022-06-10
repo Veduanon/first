@@ -766,13 +766,18 @@ function writeDataReview() {
     starCountRef.on('value', (snapshot) => {
       const dataa = snapshot.val();
       document.getElementById("slider").innerHTML += `
-      <div style="display: flex; align-items: flex-end; border: 2px solid #11101d;">
-      <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
+      <div class="Cards" style="margin-top:15px;">
+      <div class="carditem" style="display: flex; align-items: center; justify-content:center;width: 100%; height: 90%;></div>
+      <div style="display: flex; align-items: flex-end; margin-top:15px;">
+      <img style="width:280px; height:280px;" src="${dataa.PhotoURL}"><img>
       </div>
-      <div style="display: flex;
-      flex-direction: row;
-      justify-content: flex-end;"">
-        <img onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
+      <div class="cardbtn" style="width: 100%; height: 5%;display: flex; align-items: center; justify-content:center;">
+      <button onclick="deleteSlide('` + childKey + `')" style="width:20px; height:20px;"  style="height:30px;width: 80px;">Удалить</button>
+      </div>
+
+      </div>
+      
+        
       </div>
         `
     })

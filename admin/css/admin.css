@@ -246,7 +246,7 @@ body{
     font-size: 24px;
 }
 .container1{
-    padding-top: 40px;
+    /* padding-top: 40px; */
     width: 90%;
     height: 100%;
     position: absolute;
@@ -254,7 +254,8 @@ body{
     display: none;
 }
 .glavblock{
-    margin: 5px 0 5px 0;
+    /* margin: 5px 0 5px 0; */
+    margin: 0;
 }
 .textname{
     height: 10%;
@@ -327,11 +328,11 @@ body{
     height: 100%;
     position: absolute;
     /* display: block; */
-    padding-top: 15px;
+    /* padding-top: 15px; */
     display: none;
 }
 .uslugiblock{
-    margin: 10px 0 10px 0;
+    /* margin: 10px 0 10px 0; */
 }
 .textname1{
     height: 10%;
@@ -498,7 +499,7 @@ body{
     color: #fff;
 }
 .container3{
-    padding-top: 15px;
+    /* padding-top: 15px; */
     width: 90%;
     height: 100%;
     position: absolute;
@@ -506,10 +507,10 @@ body{
     display: none;
 }
 .okompblock{
-    margin: 5px 0 5px 0;
+    /* margin: 5px 0 5px 0; */
 }
 .content8{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     height: 60px;
     width: 100%;
     border-radius: 5px ;
@@ -705,7 +706,7 @@ body{
     color: #fff;
 }
 .container4{
-    padding-top: 15px;
+    /* padding-top: 15px; */
     width: 90%;
     height: 100%;
     position: absolute;
@@ -713,7 +714,7 @@ body{
     display: none;
 }
 .privblock{
-    margin: 40px 0 5px 0;
+    /* margin: 40px 0 5px 0; */
 }
 
 .textname1{
@@ -729,7 +730,7 @@ body{
 }
 
 .content13{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 5px;
     height: 35%;
@@ -806,10 +807,10 @@ body{
     display: none;
 }
 .otblock{
-    margin: 40px 0 5px 0;
+    /* margin: 40px 0 5px 0; */
 }
 .content8{
-    margin-top: 15px;
+    /* margin-top: 15px; */
     height: 60px;
     width: 100%;
     border-radius: 5px ;
@@ -896,16 +897,15 @@ body{
     display: none;
 }
 .conblock{
-    margin: 40px 0 5px 0;
+    /* margin: 40px 0 5px 0; */
 }
 
 .style{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 5px;
     height: 35%;
-    padding:0 10px 0 10px ;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .textname13{
     height: 10%;
@@ -1129,10 +1129,12 @@ body{
 }
 
 .menublock{
-    margin: 40px 0 5px 0;
+    /* margin: 40px 0 5px 0; */
+    margin: 0;
 }
 .content0{
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    margin: 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 5px;
     height: 20%;
@@ -1185,22 +1187,23 @@ body{
     color: #fff;
 }
 .content1{
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    margin: 0;
 }
 .content2{
     margin-top: 0px;
 }                          
 .container7{
-    padding-top: 15px;
+    /* padding-top: 15px; */
     width: 90%;
     height: 100%;
     position: absolute;
 }
 .portblock{
-    margin: 20px 0 5px 0;
+    /* margin: 20px 0 5px 0; */
 }
 .con18{
-    display: flex;
+    /* display: flex; */
 }
 .con18 input{
     margin-top: 15px;
@@ -1370,15 +1373,22 @@ body{
     width: 250px;
     height: 300px;
 }
-.rightbloc1_1{
-    height: 50%;
-    width: 100%;
-    padding-bottom: 20px;
-    margin-top: 0;
+
+.t{
+    margin: 30px 0 15px 0;
 }
-.rightbloc1_2{
-    height: 50%;
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
+#slider{
+    display: grid;
+    grid-template-columns: repeat(3, 301px);
+    grid-template-rows: auto;
+    gap: 15px;
+    column-gap: 150px;
+    justify-content: center;
+}
+.Cards{
+    height: 350px;
+    width: auto;
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
