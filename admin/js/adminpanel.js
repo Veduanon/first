@@ -791,14 +791,18 @@ firebase.database().ref("news/Review").once('value', (snapshot) => {
     starCountRef.on('value', (snapshot) => {
       const dataa = snapshot.val();
       document.getElementById("sliderReview").innerHTML +=`
-      <div style="border:3px solid">
+      <div class="cards2" style="height:auto;">
       <div id="sliderRev">
         <p> ${dataa.name}</p>
         <p> ${dataa.comment} </p>
-      </div>
-      <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
-      <img onclick="deleteSlideReview('` + childKey + `')" style="width:20px; height:20px;" src="/source/trash-can-solid.svg"></img>
-      </div>
+        <div class=""carditem2 style="height:10%;width:100%;display:flex;align-items: center; justify-content:center;"></div>
+        <img style="width:300px; height:300px;" src="${dataa.PhotoURL}"><img>
+        <div class="cardbtn" style="height:90%;width:100%;display:flex;align-items: center; justify-content:center;;
+        ">
+        <button onclick="deleteSlideReview('` + childKey + `')" style="width:80px; height:30px;" src="/source/trash-can-solid.svg">Удалить</button>
+        </div>
+        </div>
+        </div>
       `
     })
   })

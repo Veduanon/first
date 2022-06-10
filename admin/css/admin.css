@@ -275,6 +275,7 @@ body{
     width: 100%;
     height: 150px;
     padding-left: 14px;
+
 }
 .opisanie textarea{
     padding-left: 5px;
@@ -285,6 +286,8 @@ body{
     border-radius: 5px;
     background-color: rgb(246, 246, 246);
     border: 1px solid rgb(236, 236, 236);
+    width: 84%;
+    height: 90%;
 }
 
 .glavvideo{
@@ -298,15 +301,17 @@ body{
 }
 
 .btn{
-    margin-top: 20px;
+    margin-top: 0px;
     width: 100%;
-    height: 50px;
+    height: 150px;
     display: flex;
     justify-content: end;
+    align-items: center;
+
 }
 .btn button{
     margin: 0;
-    height: 90%;
+    height: 50px;
     width: 120px;
     background-color: #11101d;
     color: #fff;
@@ -1096,6 +1101,10 @@ body{
 }
 #sliderReview{
     width: 350px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+    gap: 50px;
 }
 #sliderReview p{
     margin: 5px 0 0 10px;
@@ -1331,7 +1340,7 @@ body{
 .opisanie13 input{
     margin-left: 15px;
 }
-.opis2{
+#checkbox4{
     margin-left: 60px;
 }
 #checkbox1{
@@ -1345,7 +1354,7 @@ body{
 .opisanie14 input{
     margin-left: 15px;
 }
-.opis3{
+#checkbox5{
     margin-left: 60px;
 }
 #checkbox2{
@@ -1359,7 +1368,7 @@ body{
 .opisanie15 input{
     margin-left: 15px;
 }
-.opis4{
+#checkbox6{
     margin-left: 60px;
 }
 #checkbox3{
@@ -1385,10 +1394,22 @@ body{
     column-gap: 150px;
     justify-content: center;
 }
+
 .Cards{
     height: 350px;
     width: auto;
     border-radius: 5px;
     background-color: rgb(244, 244, 244);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.cards2{
+    height: 350px;
+    width: auto;
+    border-radius: 5px;
+    background-color: rgb(244, 244, 244);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.icon4{
+    /* background-color: red; */
+
 }
