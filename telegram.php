@@ -8,11 +8,11 @@ $number = $_POST['user_number'];
 $message = $_POST['user_message'];
 $token = "5472090290:AAG4acoeC6vjL9Jsi3B5Y9j4OLiEYVPk7ks";
 $chat_id = "-1001709791044";
-$arr = array([
+$arr = array(
     'Имя пользователя: ' => $name,
     'Номер: ' => $number,
     'Сообщение: ' => $message,
-]);
+);
 
 foreach($arr as $key => $value) {
   $txt .= "<b>".$key."</b> ".$value."%0A";
