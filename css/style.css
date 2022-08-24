@@ -331,7 +331,7 @@ header{
 .section_4_1 form div{
     display: grid;
     gap: 15px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .section_4_1 form div input{
