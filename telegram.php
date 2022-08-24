@@ -3,11 +3,11 @@
 /* https://api.telegram.org/bot5222133279:AAFpjNhsMuDOEVEqR3k39PskNhL66oU6plw/getUpdates,
 где, XXXXXXXXXXXXXXXXXXXXXXX - токен вашего бота, полученный ранее */
 
-$name = $_GET['user_name'];
+$name = $_POST['user_name'];
 $number = $_POST['user_number'];
 $message = $_POST['user_message'];
 $token = "5472090290:AAG4acoeC6vjL9Jsi3B5Y9j4OLiEYVPk7ks";
-$chat_id = "-1001709791044";
+$chat_id = "-1709791044";
 $arr = array([
     'Имя пользователя: ' => $name,
     'Номер: ' => $number,
